@@ -8,8 +8,8 @@
 // gatsby-plugin-react-helmet
 // gatsby-plugin-styled-components
 // gatsby-plugin-nprogress
-//
-//
+// gatsby-plugin-material-ui
+// gatsby-theme-material-ui
 //
 
 module.exports = {
@@ -45,5 +45,7 @@ module.exports = {
         minimum: 0.2,
       },
     },
+    `gatsby-plugin-material-ui`,
+    `gatsby-theme-material-ui`,
   ],
 }
