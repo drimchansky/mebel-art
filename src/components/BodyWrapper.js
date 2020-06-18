@@ -25,7 +25,7 @@ const BodyWrapperStyled = styled.div`
   z-index: 2;
 
   @media (max-width: ${breakpoints.small}) {
-    transform: ${(props) => (props.active ? 'none' : 'translate(60%, 3%)')};
+    transform: ${(props) => (props.active ? 'translate(60%, 3%)' : 'none')};
     transition: all 320ms;
   }
   @media (min-width: ${breakpoints.medium}) {

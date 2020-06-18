@@ -12,7 +12,7 @@ const Header = ({ active, setActive }) => {
   return (
     <HeaderStyled>
       <ContainerStyled disableGutters>
-        <Logo desctoponly />
+        <Logo desctoponly="true" />
         <Nav />
       </ContainerStyled>
     </HeaderStyled>

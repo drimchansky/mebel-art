@@ -16,7 +16,8 @@ html {
   font-size: 16px;
   font-family: ${fonts.main};
   line-height: 1.15; 
-  -webkit-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden; 
 
   @media(min-width: ${breakpoints.small}) {
     font-size: 18px;
