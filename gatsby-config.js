@@ -5,8 +5,9 @@
 // gatsby-plugin-sharp
 // gatsby-transformer-sharp
 // gatsby-source-filesystem
+// gatsby-plugin-react-helmet
 // gatsby-plugin-styled-components
-//
+// gatsby-plugin-nprogress
 //
 //
 //
@@ -14,7 +15,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Мебель Арт',
-    description: 'Кухни по индивидуальным дизайн-проектам, город Ярославль',
+    description: 'Купить кухню по индивидуальному дизайн-проекту, город Ярославль',
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -27,12 +28,21 @@ module.exports = {
         path: `${__dirname}/static/images/`,
       },
     },
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         displayName: true,
         minify: false,
         transpileTemplateLiterals: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#f9bc60`,
+        showSpinner: false,
+        minimum: 0.2,
       },
     },
   ],

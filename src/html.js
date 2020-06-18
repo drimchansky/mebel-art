@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 export default function HTML(props) {
   return (
-    <html {...props.htmlAttributes}>
+    <html lang="ru" {...props.htmlAttributes}>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -25,6 +25,12 @@ export default function HTML(props) {
         <meta name="application-name" content="Funniture Art" />
         <meta name="msapplication-TileColor" content="#f9bc60" />
         <meta name="theme-color" content="#f9bc60" />
+
+        <meta
+          name="google-site-verification"
+          content="G4uA9d9gfAG6-nqFgZLBj_VXSZb-M7ur2BFS9rKymQc"
+        />
+        <meta name="yandex-verification" content="7bc37e493d31c119" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
