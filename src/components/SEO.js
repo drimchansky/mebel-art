@@ -20,7 +20,11 @@ const SEO = ({ title, description }) => {
   return (
     <>
       <Helmet
-        title={index ? data.site.siteMetadata.title : `${title} | ${data.site.siteMetadata.title}`}>
+        title={
+          index
+            ? `${data.site.siteMetadata.description} | ${data.site.siteMetadata.title}`
+            : `${title}`
+        }>
         <meta name="description" content={description || data.site.siteMetadata.description} />
       </Helmet>
     </>

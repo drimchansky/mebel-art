@@ -8,14 +8,14 @@ import Main from '../components/Main'
 import Footer from '../components/Footer'
 import BodyWrapper from '../components/BodyWrapper'
 
-export default function Home() {
+export default function Rewiews() {
   return (
     <>
       <SEO />
       <Layout>
         <Header />
         <BodyWrapper>
-          <Main>Главная страница</Main>
+          <Main>Главная с отзывами</Main>
           <Footer />
         </BodyWrapper>
       </Layout>

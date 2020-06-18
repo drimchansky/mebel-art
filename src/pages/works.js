@@ -11,11 +11,11 @@ import BodyWrapper from '../components/BodyWrapper'
 export default function Home() {
   return (
     <>
-      <SEO />
+      <SEO title="Наши проекты" description="Примеры выполненных работ" />
       <Layout>
         <Header />
         <BodyWrapper>
-          <Main>Главная страница</Main>
+          <Main>Страница с работами</Main>
           <Footer />
         </BodyWrapper>
       </Layout>
