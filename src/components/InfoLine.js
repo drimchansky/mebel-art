@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
-import Button from './CustomButton'
+import Button from '../components/CustomButton'
 // util
 import { colors, breakpoints } from '../util/cssConfig'
 
@@ -13,7 +13,12 @@ const InfoLine = () => {
       <ContainerStyled maxWidth="lg">
         <TextStyled>Кухни #1 в Ярославле и области</TextStyled>
         <PhoneStyled href="tel:89657265897">+7 (965) 726-58-97</PhoneStyled>
-        <Button variant="contained" size="small" href="/contacts">
+        <Button
+          variant="contained"
+          size="small"
+          href="/contacts"
+          bgColor={colors.highlight}
+          textColor={colors.darker}>
           Бесплатный замер
         </Button>
       </ContainerStyled>
