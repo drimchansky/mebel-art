@@ -16,7 +16,6 @@ const BodyWrapper = ({ children, active, setActive }) => {
     </BodyWrapperStyled>
   )
 }
-
 const BodyWrapperStyled = styled.div`
   flex-grow: 1;
   height: 100%;
