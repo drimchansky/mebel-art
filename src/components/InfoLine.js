@@ -49,6 +49,7 @@ const TextStyled = styled.span``
 const PhoneStyled = styled.a`
   color: ${colors.white};
   margin-left: auto;
+  margin-right: 0.5rem;
   padding: 0.5rem;
 `
 
