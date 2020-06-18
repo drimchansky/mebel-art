@@ -17,8 +17,8 @@ const InfoLine = () => {
           variant="contained"
           size="small"
           href="/contacts"
-          bgColor={colors.highlight}
-          textColor={colors.darker}>
+          bgcolor={colors.highlight}
+          textcolor={colors.darker}>
           Бесплатный замер
         </Button>
       </ContainerStyled>
@@ -51,6 +51,7 @@ const PhoneStyled = styled.a`
   margin-left: auto;
   margin-right: 0.5rem;
   padding: 0.5rem;
+  text-decoration: none;
 `
 
 export default InfoLine
