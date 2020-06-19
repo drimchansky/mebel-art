@@ -23,9 +23,11 @@ const BodyWrapperStyled = styled.div`
   flex-direction: column;
   background: ${colors.white};
   z-index: 2;
+  overflow-x: hidden;
 
   @media (max-width: ${breakpoints.small}) {
     transform: ${(props) => (props.active ? 'translate(60%, 3%)' : 'none')};
+    /* position: relative; */
     transition: all 320ms;
   }
   @media (min-width: ${breakpoints.medium}) {
