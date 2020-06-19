@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
   console.log(active)
 
   return (
-    <LayoutStyled>
+    <LayoutStyled active={active}>
       <GlobalStyle />
       <InfoLine />
       <Header active={active} setActive={setActive} />
@@ -29,10 +29,11 @@ const Layout = ({ children }) => {
 }
 
 const LayoutStyled = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  position: static;
+  position: ${(props) => (props.active ? 'fixed' : 'static')};
 `
 
 export default Layout
