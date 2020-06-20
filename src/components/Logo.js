@@ -2,6 +2,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+// util
+import { colors } from '../util/cssConfig'
 
 const Logo = ({ desctoponly }) => {
   return (
@@ -12,18 +14,24 @@ const Logo = ({ desctoponly }) => {
 }
 
 const LogoStyled = styled(Link)`
+  text-decoration: none;
+  font-weight: bold;
+  color: ${colors.darker};
+  font-size: 1.3rem;
+  letter-spacing: -1px;
+
   ${(props) => {
     if (props.desctoponly) {
       return `
       display: none;
-      visibility: none;
+      visibility: hidden;
         @media(min-width: 600px) {
           display: block;
           visibility: visible;
         }
       `
     }
-  }}
+  }};
 `
 
 export default Logo

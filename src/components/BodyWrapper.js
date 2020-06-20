@@ -3,15 +3,17 @@ import React from 'react'
 import styled from 'styled-components'
 // components
 import Hamburger from '../components/Hamburger'
+import Logo from '../components/Logo'
 // utils
 import { breakpoints, colors } from '../util/cssConfig'
 
 const BodyWrapper = ({ children, active, setActive }) => {
   return (
     <BodyWrapperStyled active={active}>
-      <MobileTopline>
+      <MobileHeader>
         <Hamburger active={active} setActive={setActive} />
-      </MobileTopline>
+        <Logo />
+      </MobileHeader>
       {children}
     </BodyWrapperStyled>
   )
@@ -34,8 +36,11 @@ const BodyWrapperStyled = styled.div`
   }
 `
 
-const MobileTopline = styled.div`
+const MobileHeader = styled.header`
   @media (max-width: ${breakpoints.medium}) {
+    position: relative;
+    padding: 0.9rem 1.2rem;
+    text-align: center;
   }
 
   @media (min-width: ${breakpoints.medium}) {
