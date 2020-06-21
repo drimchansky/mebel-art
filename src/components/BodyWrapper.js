@@ -26,22 +26,17 @@ const BodyWrapperStyled = styled.div`
   background: ${colors.white};
   z-index: 2;
   overflow-x: hidden;
+  transform: ${(props) => (props.active ? 'translate(60%, 3%)' : 'none')};
+  transition: all 320ms;
 
-  @media (max-width: ${breakpoints.small}) {
-    transform: ${(props) => (props.active ? 'translate(60%, 3%)' : 'none')};
-    /* position: relative; */
-    transition: all 320ms;
-  }
   @media (min-width: ${breakpoints.medium}) {
   }
 `
 
 const MobileHeader = styled.header`
-  @media (max-width: ${breakpoints.medium}) {
-    position: relative;
-    padding: 0.9rem 1.2rem;
-    text-align: center;
-  }
+  position: relative;
+  padding: 0.9rem 1.2rem;
+  text-align: center;
 
   @media (min-width: ${breakpoints.medium}) {
     display: none;

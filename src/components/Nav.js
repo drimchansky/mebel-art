@@ -40,6 +40,8 @@ const Nav = () => {
 }
 
 const NavStyled = styled.nav`
+  margin-top: 30px;
+
   & ul {
     list-style-type: none;
     margin: 0;
@@ -48,15 +50,9 @@ const NavStyled = styled.nav`
 
   & a {
     text-decoration: none;
+    color: ${(props) => (props.activeClassName ? 'red' : 'white')};
   }
 
-  @media (max-width: ${breakpoints.medium}) {
-    margin-top: 30px;
-
-    & a {
-      color: ${(props) => (props.activeClassName ? 'red' : 'white')};
-    }
-  }
   @media (min-width: ${breakpoints.medium}) {
     color: red;
   }
