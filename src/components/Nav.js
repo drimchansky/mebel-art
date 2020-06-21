@@ -3,26 +3,36 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 // util
-import { breakpoints } from '../util/cssConfig'
+import { breakpoints, colors } from '../util/cssConfig'
 
 const Nav = () => {
   return (
     <NavStyled>
       <ul>
         <li>
-          <Link to="/">Главная</Link>
+          <Link to="/" activeClassName="active">
+            Главная
+          </Link>
         </li>
         <li>
-          <Link to="/services">Услуги</Link>
+          <Link to="/services" activeClassName="active">
+            Услуги
+          </Link>
         </li>
         <li>
-          <Link to="/works">Работы</Link>
+          <Link to="/works" activeClassName="active">
+            Работы
+          </Link>
         </li>
         <li>
-          <Link to="/reviews">Отзывы</Link>
+          <Link to="/reviews" activeClassName="active">
+            Отзывы
+          </Link>
         </li>
         <li>
-          <Link to="/contacts">Контакты</Link>
+          <Link to="/contacts" activeClassName="active">
+            Контакты
+          </Link>
         </li>
       </ul>
     </NavStyled>
@@ -36,8 +46,16 @@ const NavStyled = styled.nav`
     padding: 0;
   }
 
+  & a {
+    text-decoration: none;
+  }
+
   @media (max-width: ${breakpoints.medium}) {
-    color: green;
+    margin-top: 30px;
+
+    & a {
+      color: ${(props) => (props.activeClassName ? 'red' : 'white')};
+    }
   }
   @media (min-width: ${breakpoints.medium}) {
     color: red;
