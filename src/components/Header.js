@@ -28,11 +28,19 @@ const HeaderStyled = styled.header`
   height: 100%;
   background: ${colors.dark};
 
-  @media (min-width: ${breakpoints.medium}) {
+  @media (min-width: ${breakpoints.small}) {
     position: relative;
     background: ${colors.white};
+    padding: 0.6rem 0;
   }
 `
-const ContainerStyled = styled(Container)``
+const ContainerStyled = styled(Container)`
+  @media (min-width: ${breakpoints.small}) {
+    /* Overwrite MaterialUI */
+    display: flex !important;
+    padding: 0 0.5rem !important;
+    justify-content: space-between;
+  }
+`
 
 export default Header

@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 // util
-import { colors } from '../util/cssConfig'
+import { colors, breakpoints } from '../util/cssConfig'
 
 const Hamburger = ({ active, setActive }) => {
   return (
@@ -33,6 +33,15 @@ const HamburgerStyled = styled.button`
   margin: 0;
   overflow: visible;
   left: 10px;
+
+  &:focus {
+    outline: none;
+  }
+
+  @media (min-width: ${breakpoints.small}) {
+    display: none;
+    visibility: hidden;
+  }
 `
 
 const HamburderBoxStyled = styled.span`
@@ -48,7 +57,7 @@ const HamburderInnerStyled = styled.span`
   margin-top: -2px;
   width: 40px;
   height: 4px;
-  background-color: ${colors.darker};
+  background-color: ${colors.dark};
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
@@ -61,7 +70,7 @@ const HamburderInnerStyled = styled.span`
     display: block;
     width: 40px;
     height: 4px;
-    background-color: ${colors.darker};
+    background-color: ${colors.dark};
     border-radius: 4px;
     position: absolute;
     transition-property: transform;

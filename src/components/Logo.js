@@ -16,7 +16,7 @@ const Logo = ({ desctoponly }) => {
 const LogoStyled = styled(Link)`
   text-decoration: none;
   font-weight: bold;
-  color: ${colors.darker};
+  color: ${colors.dark};
   font-size: 1.3rem;
   letter-spacing: -1px;
 
@@ -26,7 +26,9 @@ const LogoStyled = styled(Link)`
       display: none;
       visibility: hidden;
         @media(min-width: 600px) {
-          display: block;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           visibility: visible;
         }
       `

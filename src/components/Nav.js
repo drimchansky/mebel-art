@@ -47,6 +47,10 @@ const NavStyled = styled.nav`
     margin: 0;
     padding: 0;
     max-width: 60%;
+
+    @media (min-width: ${breakpoints.small}) {
+      display: flex;
+    }
   }
 
   & a {
@@ -55,10 +59,16 @@ const NavStyled = styled.nav`
     color: ${colors.white};
     padding: 1rem 1.4rem;
     font-size: 1.2rem;
+
+    @media (min-width: ${breakpoints.small}) {
+      color: ${colors.dark};
+      padding: 0.5rem 0.5rem;
+      font-size: 1rem;
+    }
   }
 
-  @media (min-width: ${breakpoints.medium}) {
-    color: red;
+  @media (min-width: ${breakpoints.small}) {
+    margin: 0;
   }
 `
 

@@ -39,6 +39,22 @@ html {
 /* Active class for navigation menu */
 .active {
   border-left: 4px solid ${colors.white};
+  position: relative;
+
+  @media(min-width: ${breakpoints.small}) {
+    border: none;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      height: 3px;
+      width: 70%;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      background: ${colors.dark};
+    }
+  }
 }
 
 body {

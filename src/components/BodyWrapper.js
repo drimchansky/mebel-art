@@ -40,9 +40,9 @@ const MobileHeader = styled.header`
   padding: 0.9rem 1.2rem;
   text-align: center;
 
-  @media (min-width: ${breakpoints.medium}) {
+  @media (min-width: ${breakpoints.small}) {
     display: none;
-    visibility: none;
+    visibility: hidden;
   }
 `
 
