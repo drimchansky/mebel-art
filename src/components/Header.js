@@ -31,7 +31,7 @@ const HeaderStyled = styled.header`
   @media (min-width: ${breakpoints.small}) {
     position: relative;
     background: ${colors.white};
-    padding: 0.6rem 0;
+    padding: 0;
   }
 `
 const ContainerStyled = styled(Container)`

@@ -47,7 +47,7 @@ html {
     &:before {
       content: '';
       position: absolute;
-      height: 3px;
+      height: 4px;
       width: 70%;
       left: 50%;
       bottom: 0;

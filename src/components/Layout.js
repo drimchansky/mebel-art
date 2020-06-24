@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
       <InfoLine />
       <Header active={active} setActive={setActive} />
       <BodyWrapper active={active} setActive={setActive}>
-        <Main> {children} </Main>
+        <Main>{children}</Main>
         <Footer />
       </BodyWrapper>
     </LayoutStyled>
