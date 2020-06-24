@@ -6,7 +6,7 @@ import Logo from '../components/Logo'
 import Nav from '../components/Nav'
 import Container from '@material-ui/core/Container'
 // utils
-import { colors } from '../util/cssConfig'
+import { colors, breakpoints } from '../util/cssConfig'
 
 const Header = ({ active, setActive }) => {
   return (
@@ -27,6 +27,11 @@ const HeaderStyled = styled.header`
   width: 100%;
   height: 100%;
   background: ${colors.dark};
+
+  @media (min-width: ${breakpoints.medium}) {
+    position: relative;
+    background: ${colors.white};
+  }
 `
 const ContainerStyled = styled(Container)``
 

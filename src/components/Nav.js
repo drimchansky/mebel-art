@@ -46,11 +46,15 @@ const NavStyled = styled.nav`
     list-style-type: none;
     margin: 0;
     padding: 0;
+    max-width: 60%;
   }
 
   & a {
+    display: block;
     text-decoration: none;
-    color: ${(props) => (props.activeClassName ? 'red' : 'white')};
+    color: ${colors.white};
+    padding: 0.4rem 1rem;
+    font-size: 1.2rem;
   }
 
   @media (min-width: ${breakpoints.medium}) {

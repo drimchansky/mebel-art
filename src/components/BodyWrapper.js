@@ -27,6 +27,7 @@ const BodyWrapperStyled = styled.div`
   z-index: 2;
   overflow-x: hidden;
   transform: ${(props) => (props.active ? 'translate(60%, 3%)' : 'none')};
+  border-radius: ${(props) => (props.active ? '7px' : 'none')};
   transition: all 320ms;
 
   @media (min-width: ${breakpoints.medium}) {

@@ -1,7 +1,7 @@
 // packages
 import { createGlobalStyle } from 'styled-components'
 // util
-import { fonts, breakpoints } from '../util/cssConfig'
+import { fonts, breakpoints, colors } from '../util/cssConfig'
 
 const GlobalStyle = createGlobalStyle`
 
@@ -34,6 +34,11 @@ html {
   @media(min-width: ${breakpoints.extra}) {
     font-size: 24px;
   }
+}
+
+/* Active class for navigation menu */
+.active {
+  border-left: 4px solid ${colors.white};
 }
 
 body {
