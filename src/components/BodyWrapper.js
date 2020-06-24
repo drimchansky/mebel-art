@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Hamburger from '../components/Hamburger'
 import Logo from '../components/Logo'
 // utils
-import { breakpoints, colors } from '../util/cssConfig'
+import { breakpoints, colors, shadows } from '../util/cssConfig'
 
 const BodyWrapper = ({ children, active, setActive }) => {
   return (
@@ -29,6 +29,7 @@ const BodyWrapperStyled = styled.div`
   transform: ${(props) => (props.active ? 'translate(60%, 3%)' : 'none')};
   border-radius: ${(props) => (props.active ? '7px' : 'none')};
   transition: all 320ms;
+  box-shadow: ${shadows.four};
 
   @media (min-width: ${breakpoints.medium}) {
   }

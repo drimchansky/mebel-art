@@ -53,7 +53,7 @@ const NavStyled = styled.nav`
     display: block;
     text-decoration: none;
     color: ${colors.white};
-    padding: 0.4rem 1rem;
+    padding: 1rem 1.4rem;
     font-size: 1.2rem;
   }
 
