@@ -25,7 +25,7 @@ const BodyWrapperStyled = styled.div`
   flex-direction: column;
   background: ${colors.white};
   z-index: 2;
-  overflow-x: hidden;
+  overflow: hidden;
   transform: ${(props) => (props.active ? 'translate(60%, 3%)' : 'none')};
   border-radius: ${(props) => (props.active ? '7px' : 'none')};
   transition: all 320ms;

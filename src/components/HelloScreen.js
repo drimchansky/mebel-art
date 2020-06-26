@@ -21,7 +21,6 @@ const HelloScreen = () => {
       }
     }
   `)
-  console.log(data)
 
   const imageData = data.file.childImageSharp.fluid
   return (

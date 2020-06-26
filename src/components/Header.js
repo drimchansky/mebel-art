@@ -38,7 +38,7 @@ const ContainerStyled = styled(Container)`
   @media (min-width: ${breakpoints.small}) {
     /* Overwrite MaterialUI */
     display: flex !important;
-    padding: 0 0.5rem !important;
+    padding: 0 1rem !important;
     justify-content: space-between;
   }
 `

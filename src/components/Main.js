@@ -7,7 +7,7 @@ const Main = ({ children }) => {
 }
 
 const MainStyled = styled.main`
-  flex-grow: 1;
+  flex: 1 0 auto;
 `
 
 export default Main
