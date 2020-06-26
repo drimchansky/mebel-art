@@ -13,7 +13,6 @@ import GlobalStyle from '../util/GlobalStyle'
 const Layout = ({ children }) => {
   // Mobile menu state
   const [active, setActive] = useState(false)
-  console.log(active)
 
   return (
     <LayoutStyled active={active}>

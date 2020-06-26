@@ -1,46 +1,54 @@
 // packages
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import Card from '@material-ui/core/Card'
-import Typography from '@material-ui/core/Typography'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
 
 const Cards = () => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     file(sourceInstanceName: { eq: "images" }, name: { eq: "preview" }) {
-  //       childImageSharp {
-  //         fluid(maxWidth: 1920, quality: 100) {
-  //           ...GatsbyImageSharpFluid_withWebp
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(filter: { frontmatter: { type: { eq: "feature" } } }, limit: 4) {
+        edges {
+          node {
+            frontmatter {
+              description
+              title
+              image {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const cardsData = data.allMarkdownRemark.edges
+
+  console.log(cardsData[0].node.frontmatter.image.childImageSharp)
 
   return (
     <CardsStyled>
       <Container maxWidth="lg">
-        <Grid container>
-          <Grid item sm={12} md={6} lg={3}>
-            <Card>
-              <CardMedia image="/static/images/preview.jpg" title="Contemplative Reptile" />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Lizard
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  Lizards are a widespread group of squamate reptiles, with over 6,000 species,
-                  ranging across all continents except Antarctica
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+        <Grid container spacing={2}>
+          {cardsData.map((item) => {
+            return (
+              <Grid key={item.node.frontmatter.title} item sm={12} md={6} lg={3}>
+                <CardStyled>
+                  <Img fluid={item.node.frontmatter.image.childImageSharp.fluid} />
+                  <h2>{item.node.frontmatter.title}</h2>
+                  <p>{item.node.frontmatter.description}</p>
+                </CardStyled>
+              </Grid>
+            )
+          })}
         </Grid>
       </Container>
     </CardsStyled>
@@ -48,5 +56,7 @@ const Cards = () => {
 }
 
 const CardsStyled = styled.section``
+
+const CardStyled = styled.div``
 
 export default Cards
