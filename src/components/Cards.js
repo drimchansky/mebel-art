@@ -10,29 +10,25 @@ import Grid from '@material-ui/core/Grid'
 const Cards = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: { frontmatter: { type: { eq: "feature" } } }, limit: 4) {
+      allContentfulFeature {
         edges {
           node {
-            frontmatter {
-              description
-              title
-              image {
-                childImageSharp {
-                  fluid {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
+            id
+            image {
+              fluid {
+                ...GatsbyContentfulFluid
               }
             }
+            title
+            description
           }
         }
       }
     }
   `)
 
-  const cardsData = data.allMarkdownRemark.edges
-
-  console.log(cardsData[0].node.frontmatter.image.childImageSharp)
+  const cardsData = data.allContentfulFeature.edges
+  console.log(cardsData)
 
   return (
     <CardsStyled>
@@ -40,11 +36,11 @@ const Cards = () => {
         <Grid container spacing={2}>
           {cardsData.map((item) => {
             return (
-              <Grid key={item.node.frontmatter.title} item sm={12} md={6} lg={3}>
+              <Grid key={item.node.title} item sm={12} md={6} lg={3}>
                 <CardStyled>
-                  <Img fluid={item.node.frontmatter.image.childImageSharp.fluid} />
-                  <h2>{item.node.frontmatter.title}</h2>
-                  <p>{item.node.frontmatter.description}</p>
+                  <Img fluid={item.node.image.fluid} />
+                  <h2>{item.node.title}</h2>
+                  <p>{item.node.description}</p>
                 </CardStyled>
               </Grid>
             )

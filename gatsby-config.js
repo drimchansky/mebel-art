@@ -1,17 +1,4 @@
-//
-// Plugins order
-//
-// gatsby-transformer-sharp
-// gatsby-plugin-sharp
-// gatsby-transformer-sharp
-// gatsby-transformer-remark + gatsby-remark-images
-// gatsby-source-filesystem
-// gatsby-plugin-react-helmet
-// gatsby-plugin-styled-components
-// gatsby-plugin-nprogress
-// gatsby-plugin-material-ui
-// gatsby-theme-material-ui
-//
+require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
@@ -23,33 +10,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 1000,
-            },
-          },
-        ],
-      },
-    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/static/images/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/content/`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -62,6 +28,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `d5gbiizsd4dt`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         color: `#f9bc60`,
@@ -69,6 +42,7 @@ module.exports = {
         minimum: 0.2,
       },
     },
+
     `gatsby-plugin-material-ui`,
   ],
 }
