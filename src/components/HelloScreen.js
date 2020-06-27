@@ -27,15 +27,14 @@ const HelloScreen = () => {
       <BackgroundImageStyled Tag="div" fluid={imageData}>
         <WrapperStyled>
           <h1>
-            Ваша кухня по индивидуальному
-            <br />
-            дизайн-проекту
+            Ваша новая кухня по индивидуальному <br /> дизайн-проекту
           </h1>
           <CustomButton
             bgcolor={colors.highlight}
             textcolor={colors.darker}
             size="medium"
-            href="/contacts">
+            href="/contacts"
+            disableElevation>
             Бесплатный замер и дизайн проект
           </CustomButton>
         </WrapperStyled>
@@ -44,13 +43,8 @@ const HelloScreen = () => {
   )
 }
 
-const HelloScreenStyled = styled.section`
-  height: 300px;
+const HelloScreenStyled = styled.section``
 
-  @media (min-width: ${breakpoints.small}) {
-    height: 450px;
-  }
-`
 const BackgroundImageStyled = styled(BackgroundImage)`
   height: 100%;
 `
@@ -59,15 +53,21 @@ const WrapperStyled = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
+  padding: 5rem 0;
 
   & h1 {
     color: ${colors.white};
+    margin-top: 0;
     text-align: center;
-    font-size: 2rem;
-    max-width: 800px;
+    font-size: 1.8rem;
+    max-width: 1000px;
+
+    @media (min-width: ${breakpoints.small}) {
+      font-size: 2.2rem;
+    }
   }
 `
 

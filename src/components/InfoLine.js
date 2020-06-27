@@ -18,7 +18,8 @@ const InfoLine = () => {
           size="small"
           href="/contacts"
           bgcolor={colors.highlight}
-          textcolor={colors.darker}>
+          textcolor={colors.darker}
+          disableElevation>
           Бесплатный замер
         </Button>
       </ContainerStyled>
