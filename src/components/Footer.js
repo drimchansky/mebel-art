@@ -4,6 +4,8 @@ import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+// icons
+import DoneIcon from '@material-ui/icons/Done'
 // utils
 import { colors } from '../util/cssConfig'
 
@@ -24,11 +26,26 @@ const Footer = () => {
           <Grid item md={4}>
             <TitleStyled>Почему выбирают нас?</TitleStyled>
             <ListStyled>
-              <li>Огромный вариант отделки</li>
-              <li>Безопасные материалы</li>
-              <li>Гарантия качества</li>
-              <li>Работаем с 2017 года</li>
-              <li>Индивидуальное производство</li>
+              <li>
+                <DoneIcon fontSize="small" />
+                Огромный вариант отделки
+              </li>
+              <li>
+                <DoneIcon fontSize="small" />
+                Безопасные материалы
+              </li>
+              <li>
+                <DoneIcon fontSize="small" />
+                Гарантия качества
+              </li>
+              <li>
+                <DoneIcon fontSize="small" />
+                Работаем с 2017 года
+              </li>
+              <li>
+                <DoneIcon fontSize="small" />
+                Индивидуальное производство
+              </li>
             </ListStyled>
           </Grid>
           <Grid item md={4}>
@@ -48,11 +65,35 @@ const Footer = () => {
 const FooterStyled = styled.footer`
   border-bottom: 8px solid ${colors.dark};
   flex-shrink: 0;
+  padding: 4rem 0;
 `
-const TitleStyled = styled.h4``
+const TitleStyled = styled.h4`
+  margin: 0;
+  color: ${colors.dark};
+  font-size: 1.1rem;
+`
 
-const TextStyled = styled.p``
+const TextStyled = styled.p`
+  color: ${colors.black};
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 0.9rem;
+`
 
-const ListStyled = styled.ul``
+const ListStyled = styled.ul`
+  margin: 0;
+  padding-top: 0.5rem;
+  padding-left: ${(props) => (props.dotted ? '1rem' : '0')};
+  list-style-type: ${(props) => (props.dotted ? 'disc' : 'none')};
+  color: ${colors.black};
+
+  & li {
+    padding: 0.3rem 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+`
 
 export default Footer
