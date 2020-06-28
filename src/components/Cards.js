@@ -34,7 +34,7 @@ const Cards = () => {
 
   return (
     <CardsStyled>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Grid container spacing={2} justify="space-around">
           {cardsData.map((item) => {
             return (

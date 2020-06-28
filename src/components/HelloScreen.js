@@ -63,7 +63,7 @@ const WrapperStyled = styled.div`
     margin-top: 0;
     text-align: center;
     font-size: 1.8rem;
-    max-width: 1000px;
+    max-width: 1060px;
 
     @media (min-width: ${breakpoints.small}) {
       font-size: 2.2rem;

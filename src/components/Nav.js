@@ -14,11 +14,11 @@ const Nav = () => {
             Главная
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/services" activeClassName="active">
             Услуги
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/works" activeClassName="active">
             Работы
