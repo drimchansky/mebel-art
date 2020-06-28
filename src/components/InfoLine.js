@@ -14,12 +14,12 @@ const InfoLine = () => {
         <TextStyled>Кухни #1 в Ярославле и области</TextStyled>
         <PhoneStyled href="tel:89657265897">+7 (965) 726-58-97</PhoneStyled>
         <Button
-          variant="contained"
           size="small"
           href="/contacts"
           bgcolor={colors.highlight}
           textcolor={colors.darker}
-          disableElevation>
+          disableElevation
+          variant="contained">
           Бесплатный замер
         </Button>
       </ContainerStyled>

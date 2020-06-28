@@ -35,14 +35,16 @@ const Cards = () => {
   return (
     <CardsStyled>
       <Container maxWidth="xl">
-        <Grid container spacing={2} justify="space-around">
+        <Grid container spacing={6} justify="space-around">
           {cardsData.map((item) => {
             return (
               <GridItemStyled key={item.node.title} item sm={6} md={3}>
                 <CardStyled>
                   <ImageStyled fluid={item.node.image.fluid} />
-                  <h2>{item.node.title}</h2>
-                  <p>{item.node.description}</p>
+                  <DescriptionStyled>
+                    <h2>{item.node.title}</h2>
+                    <p>{item.node.description}</p>
+                  </DescriptionStyled>
                 </CardStyled>
               </GridItemStyled>
             )
@@ -54,7 +56,7 @@ const Cards = () => {
 }
 
 const CardsStyled = styled.section`
-  padding: 1.5rem 0 2rem;
+  padding: 3rem 0 4rem;
 `
 
 const GridItemStyled = styled(Grid)`
@@ -64,16 +66,21 @@ const GridItemStyled = styled(Grid)`
 
 const CardStyled = styled.div`
   & h2 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: ${colors.accent};
     margin: 0.5rem 0;
   }
   & p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin: 0.5rem 0;
     color: ${colors.gray};
   }
 `
+const DescriptionStyled = styled.div`
+  background: ${colors.white};
+  padding: 0.5rem;
+`
+
 const ImageStyled = styled(Img)`
   border-radius: 5px 5px 0 0;
   border-bottom: 4px solid ${colors.accent};
