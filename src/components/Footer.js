@@ -75,9 +75,10 @@ const TitleStyled = styled.h4`
 
 const TextStyled = styled.p`
   color: ${colors.black};
-  padding: 0.5rem 0;
+  padding: 0.2rem 0 0.5rem;
   margin: 0;
   font-size: 0.9rem;
+  line-height: 1.5;
 `
 
 const ListStyled = styled.ul`
