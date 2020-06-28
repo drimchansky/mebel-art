@@ -6,6 +6,8 @@ import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+// utils
+import { colors } from '../util/cssConfig'
 
 const Cards = () => {
   const data = useStaticQuery(graphql`
@@ -33,16 +35,16 @@ const Cards = () => {
   return (
     <CardsStyled>
       <Container maxWidth="lg">
-        <Grid container spacing={2}>
+        <Grid container spacing={2} justify="space-around">
           {cardsData.map((item) => {
             return (
-              <Grid key={item.node.title} item sm={12} md={6} lg={3}>
+              <GridItemStyled key={item.node.title} item sm={6} md={3}>
                 <CardStyled>
-                  <Img fluid={item.node.image.fluid} />
+                  <ImageStyled fluid={item.node.image.fluid} />
                   <h2>{item.node.title}</h2>
                   <p>{item.node.description}</p>
                 </CardStyled>
-              </Grid>
+              </GridItemStyled>
             )
           })}
         </Grid>
@@ -51,8 +53,30 @@ const Cards = () => {
   )
 }
 
-const CardsStyled = styled.section``
+const CardsStyled = styled.section`
+  padding: 1.5rem 0 2rem;
+`
 
-const CardStyled = styled.div``
+const GridItemStyled = styled(Grid)`
+  max-width: 400px;
+  flex-grow: 1;
+`
+
+const CardStyled = styled.div`
+  & h2 {
+    font-size: 1.25rem;
+    color: ${colors.accent};
+    margin: 0.5rem 0;
+  }
+  & p {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    color: ${colors.gray};
+  }
+`
+const ImageStyled = styled(Img)`
+  border-radius: 5px 5px 0 0;
+  border-bottom: 4px solid ${colors.accent};
+`
 
 export default Cards
