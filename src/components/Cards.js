@@ -38,7 +38,7 @@ const Cards = () => {
         <Grid container spacing={6} justify="space-around">
           {cardsData.map((item) => {
             return (
-              <GridItemStyled key={item.node.title} item sm={6} md={3}>
+              <GridItemStyled key={item.node.title} item sm={6} md={4}>
                 <CardStyled>
                   <ImageStyled fluid={item.node.image.fluid} />
                   <DescriptionStyled>

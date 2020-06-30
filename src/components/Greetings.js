@@ -30,7 +30,7 @@ const Greetings = () => {
 }
 
 const ContainerStyled = styled(Container)`
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
 `
 
 export default Greetings

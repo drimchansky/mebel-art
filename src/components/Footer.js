@@ -17,7 +17,7 @@ const Footer = () => {
           <Grid item md={4}>
             <TitleStyled>Адрес</TitleStyled>
             <TextStyled>Ярославль и Ярославская область</TextStyled>
-            <TitleStyled>Контакты</TitleStyled>
+            <TitleStyled marginTop="10px">Контакты</TitleStyled>
             <TextStyled>
               example@gmail.com <br />
               +7 (965) 726-58-97
@@ -69,6 +69,7 @@ const FooterStyled = styled.footer`
 `
 const TitleStyled = styled.h4`
   margin: 0;
+  margin-top: ${(props) => (props.marginTop ? '1rem' : '0')};
   color: ${colors.dark};
   font-size: 1.1rem;
 `
@@ -90,6 +91,11 @@ const ListStyled = styled.ul`
 
   & li {
     padding: 0.3rem 0;
+    display: ${(props) => (props.dotted ? 'list-item' : 'flex')};
+
+    & svg {
+      margin-right: 4px;
+    }
 
     &:first-child {
       padding-top: 0;
