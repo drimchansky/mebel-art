@@ -4,7 +4,18 @@ import styled from 'styled-components'
 // components
 import { Button } from 'gatsby-theme-material-ui'
 
-const CustomButton = ({ children, size, variant, bgcolor, textcolor, href, disableElevation }) => {
+const CustomButton = ({
+  children,
+  size,
+  variant,
+  bgcolor,
+  textcolor,
+  href,
+  disableElevation,
+  startIcon,
+  endIcon,
+  disabled,
+}) => {
   return (
     <ButtonStyled
       variant={variant}
@@ -12,7 +23,10 @@ const CustomButton = ({ children, size, variant, bgcolor, textcolor, href, disab
       bgcolor={bgcolor}
       to={href}
       textcolor={textcolor}
-      disableElevation={disableElevation}>
+      disableElevation={disableElevation}
+      startIcon={startIcon}
+      endIcon={endIcon}
+      disabled={disabled}>
       {children}
     </ButtonStyled>
   )
