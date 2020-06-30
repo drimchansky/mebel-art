@@ -14,7 +14,7 @@ import { colors, shadows } from '../util/cssConfig'
 const ContactsForm = () => {
   return (
     <FormStyled>
-      <TitleStyled>Заинтересованы покупкой кухни мечты?</TitleStyled>
+      <TitleStyled>Заинтересованы в покупке кухни мечты?</TitleStyled>
       <Grid container spacing={2}>
         <Grid item container xs={12} md={5} alignContent="space-between">
           <TextFieldStyled
@@ -91,6 +91,7 @@ const FormStyled = styled.form`
     background: ${colors.white};
     /* border: 1px solid black; */
     box-shadow: ${shadows.five};
+    border-radius: 7px;
   }
 `
 //
