@@ -104,9 +104,8 @@ const TextFieldStyled = styled(TextField)`
 
   & fieldset {
     border-color: ${colors.black} !important;
-    @media (min-width: 960px) {
-      border-color: ${colors.black} !important;
-    }
+    /* Fix border visibility */
+    margin: -1px;
   }
 
   & label {

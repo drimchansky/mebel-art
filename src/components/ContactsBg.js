@@ -21,7 +21,7 @@ const ContactsBg = () => {
   `)
   const imageData = data.file.childImageSharp.fluid
   return (
-    <BG Tag="section" fluid={imageData}>
+    <BG Tag="section" fluid={imageData} backgroundColor={`${colors.dark}`}>
       <Overflow />
     </BG>
   )

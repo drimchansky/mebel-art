@@ -24,7 +24,7 @@ const HelloScreen = () => {
   const imageData = data.file.childImageSharp.fluid
   return (
     <HelloScreenStyled>
-      <BackgroundImageStyled Tag="div" fluid={imageData}>
+      <BackgroundImageStyled Tag="div" fluid={imageData} backgroundColor={`${colors.dark}`}>
         <WrapperStyled>
           <h1>
             Ваша новая кухня по индивидуальному <br /> дизайн-проекту
@@ -68,6 +68,15 @@ const WrapperStyled = styled.div`
     @media (min-width: ${breakpoints.small}) {
       font-size: 2.2rem;
     }
+
+    @media (min-width: ${breakpoints.medium}) {
+      font-size: 2.5rem;
+      max-width: 1200px;
+    }
+  }
+
+  @media (min-width: ${breakpoints.medium}) {
+    padding: 8rem 0;
   }
 `
 
