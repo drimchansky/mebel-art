@@ -16,7 +16,7 @@ const Logo = ({ desctoponly }) => {
 const LogoStyled = styled(Link)`
   text-decoration: none;
   font-weight: bold;
-  color: ${colors.dark};
+  color: ${colors.black};
   font-size: 1.3rem;
   letter-spacing: -1px;
 

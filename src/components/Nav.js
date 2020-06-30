@@ -61,8 +61,8 @@ const NavStyled = styled.nav`
     font-size: 1.2rem;
 
     @media (min-width: ${breakpoints.small}) {
-      color: ${colors.dark};
-      padding: 1.5rem 0.5rem;
+      color: ${colors.black};
+      padding: 1.5rem 1rem;
       font-size: 1rem;
     }
   }

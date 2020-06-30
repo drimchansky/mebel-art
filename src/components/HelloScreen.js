@@ -27,7 +27,8 @@ const HelloScreen = () => {
       <BackgroundImageStyled Tag="div" fluid={imageData} backgroundColor={`${colors.dark}`}>
         <WrapperStyled>
           <h1>
-            Ваша новая кухня по индивидуальному <br /> дизайн-проекту
+            Ваша новая кухня <br />
+            по индивидуальному дизайн-проекту
           </h1>
           <CustomButton
             bgcolor={colors.highlight}
@@ -53,30 +54,27 @@ const WrapperStyled = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0) linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.8)) repeat
+    scroll 0% 0%;
   height: 100%;
   width: 100%;
   padding: 5rem 0;
 
   & h1 {
     color: ${colors.white};
+    text-shadow: rgba(0, 0, 0, 0.15) 0px 2px 2px;
     margin-top: 0;
     text-align: center;
     font-size: 1.8rem;
     max-width: 1060px;
 
     @media (min-width: ${breakpoints.small}) {
-      font-size: 2.2rem;
-    }
-
-    @media (min-width: ${breakpoints.medium}) {
-      font-size: 2.5rem;
-      max-width: 1200px;
+      font-size: 2rem;
     }
   }
 
   @media (min-width: ${breakpoints.medium}) {
-    padding: 8rem 0;
+    padding: 6rem 0;
   }
 `
 

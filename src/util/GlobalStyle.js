@@ -48,7 +48,7 @@ html {
       content: '';
       position: absolute;
       height: 4px;
-      width: 70%;
+      width: 60%;
       left: 50%;
       bottom: 0;
       transform: translateX(-50%);

@@ -70,7 +70,7 @@ const FooterStyled = styled.footer`
 const TitleStyled = styled.h4`
   margin: 0;
   margin-top: ${(props) => (props.marginTop ? '1rem' : '0')};
-  color: ${colors.dark};
+  color: ${colors.black};
   font-size: 1.1rem;
 `
 

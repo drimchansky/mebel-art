@@ -16,7 +16,7 @@ const InfoLine = () => {
         <Button
           size="small"
           href="/contacts"
-          bgcolor={colors.highlight}
+          bgcolor={colors.white}
           textcolor={colors.darker}
           disableElevation
           variant="contained">
