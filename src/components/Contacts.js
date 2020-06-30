@@ -28,6 +28,8 @@ const Contacts = () => {
 }
 
 const SectionStyled = styled.section`
+  background: ${colors.white};
+
   @media (min-width: 1200px) {
     background: linear-gradient(0deg, ${colors.dark} 35%, ${colors.lightgray} 0);
     padding-bottom: 6rem;
