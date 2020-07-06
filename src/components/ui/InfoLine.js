@@ -3,9 +3,9 @@ import React from 'react'
 import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
-import Button from '../components/CustomButton'
+import Button from './CustomButton'
 // util
-import { colors, breakpoints } from '../util/cssConfig'
+import { colors, breakpoints } from '../../util/cssConfig'
 
 const InfoLine = () => {
   return (

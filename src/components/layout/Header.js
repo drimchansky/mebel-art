@@ -2,11 +2,11 @@
 import React from 'react'
 import styled from 'styled-components'
 // components
-import Logo from '../components/Logo'
-import Nav from '../components/Nav'
+import Logo from '../ui/Logo'
+import Nav from '../ui/Nav'
 import Container from '@material-ui/core/Container'
 // utils
-import { colors, breakpoints } from '../util/cssConfig'
+import { colors, breakpoints } from '../../util/cssConfig'
 
 const Header = ({ active, setActive }) => {
   return (

@@ -1,7 +1,7 @@
 // packages
 import React from 'react'
 // components
-import Layout from '../components/Layout'
+import Layout from '../components/layout/Layout'
 import SEO from '../components/SEO'
 
 export default function Home() {

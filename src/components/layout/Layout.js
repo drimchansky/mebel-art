@@ -2,13 +2,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 // components
-import Header from '../components/Header'
-import Main from '../components/Main'
-import Footer from '../components/Footer'
-import BodyWrapper from '../components/BodyWrapper'
-import InfoLine from '../components/InfoLine'
+import Header from './Header'
+import Main from './Main'
+import Footer from './Footer'
+import BodyWrapper from './BodyWrapper'
+import InfoLine from '../ui/InfoLine'
 // util
-import GlobalStyle from '../util/GlobalStyle'
+import GlobalStyle from '../../util/GlobalStyle'
 
 const Layout = ({ children }) => {
   // Mobile menu state

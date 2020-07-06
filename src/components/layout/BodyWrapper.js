@@ -2,10 +2,10 @@
 import React from 'react'
 import styled from 'styled-components'
 // components
-import Hamburger from '../components/Hamburger'
-import Logo from '../components/Logo'
+import Hamburger from '../ui/Hamburger'
+import Logo from '../ui/Logo'
 // utils
-import { breakpoints, colors, shadows } from '../util/cssConfig'
+import { breakpoints, colors, shadows } from '../../util/cssConfig'
 
 const BodyWrapper = ({ children, active, setActive }) => {
   return (

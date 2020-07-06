@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 // util
-import { breakpoints, colors } from '../util/cssConfig'
+import { breakpoints, colors } from '../../util/cssConfig'
 
 const Nav = () => {
   return (

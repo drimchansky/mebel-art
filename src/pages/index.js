@@ -1,11 +1,11 @@
 // packages
 import React from 'react'
 // components
-import Layout from '../components/Layout'
+import Layout from '../components/layout/Layout'
 import SEO from '../components/SEO'
-import HelloScreen from '../components/HelloScreen'
-import Cards from '../components/Cards'
-import Greetings from '../components/Greetings'
+import HelloScreen from '../components/ui/HelloScreen'
+import Cards from '../components/ui/Cards'
+import Greetings from '../components/ui/Greetings'
 
 export default function Home() {
   return (

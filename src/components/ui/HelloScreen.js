@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 // components
-import CustomButton from '../components/CustomButton'
+import CustomButton from './CustomButton'
 // util
-import { colors, breakpoints } from '../util/cssConfig'
+import { colors, breakpoints } from '../../util/cssConfig'
 
 const HelloScreen = () => {
   const data = useStaticQuery(graphql`

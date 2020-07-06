@@ -4,9 +4,9 @@ import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import Typography from './Typography'
+import Typography from '../Typography'
 // utils
-import { colors } from '../util/cssConfig'
+// import { colors } from '../../util/cssConfig'
 
 const Greetings = () => {
   return (

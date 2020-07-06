@@ -9,7 +9,7 @@ import CustomButtom from './CustomButton'
 // icons
 import SendIcon from '@material-ui/icons/Send'
 // utils
-import { colors, shadows } from '../util/cssConfig'
+import { colors, shadows } from '../../util/cssConfig'
 
 const ContactsForm = () => {
   return (
