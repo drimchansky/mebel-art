@@ -111,6 +111,10 @@ const HelloScreenWrapperStyled = styled.div`
     @media (min-width: ${breakpoints.medium}) {
       font-size: 2.5rem;
     }
+
+    @media (min-width: ${breakpoints.large}) {
+      max-width: 800px;
+    }
   }
 
   & p {
