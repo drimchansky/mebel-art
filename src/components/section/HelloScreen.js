@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 // components
 import Container from '@material-ui/core/Container'
 import CustomButton from '../ui/CustomButton'
+import BackgroundImage from 'gatsby-background-image'
 // util
 import { colors, breakpoints } from '../../util/cssConfig'
 
@@ -19,47 +20,97 @@ const HelloScreen = () => {
           }
         }
       }
+      file(sourceInstanceName: { eq: "images" }, name: { eq: "kitchen-art" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
-  `).allContentfulGeneralInfo.edges[0].node
+  `)
+
+  const generalInfo = data.allContentfulGeneralInfo.edges[0].node
+  const imageData = data.file.childImageSharp.fluid
 
   return (
-    <HelloScreenStyled>
-      <Container maxWidth="xl">
-        <LeftSideStyled>
-          <h1>{data.description}</h1>
-          <p>{data.ourOffer}</p>
-          <CustomButton
-            bgcolor={colors.dark}
-            textcolor={colors.white}
-            size="medium"
-            href="/contacts"
-            disableElevation>
-            Свяжитесь с нами
-          </CustomButton>
-        </LeftSideStyled>
-        <RightSideStyled>Right</RightSideStyled>
-      </Container>
-    </HelloScreenStyled>
+    <BackgroundImageStyled Tag="section" fluid={imageData}>
+      <HelloScreenStyled>
+        <Container maxWidth="xl">
+          <HelloScreenWrapperStyled>
+            <h1>{generalInfo.description}</h1>
+            <p>{generalInfo.ourOffer}</p>
+            <CustomButton
+              bgcolor={colors.dark}
+              textcolor={colors.white}
+              size="large"
+              href="/contacts"
+              disableElevation>
+              Свяжитесь с нами
+            </CustomButton>
+          </HelloScreenWrapperStyled>
+        </Container>
+      </HelloScreenStyled>
+    </BackgroundImageStyled>
   )
 }
 
-const HelloScreenStyled = styled.section`
-  padding: 2rem 0 2rem;
-
-  @media (max-width: ${breakpoints.medium}) {
-    background-image: url('./images/kitchen-art.png');
+const BackgroundImageStyled = styled(BackgroundImage)`
+  &:before {
     background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: 40%;
+    background-position: right bottom !important;
+    background-size: 40% !important;
+  }
+  &:after {
+    background-repeat: no-repeat;
+    background-position: right bottom !important;
+    background-size: 40% !important;
+  }
+
+  @media (min-width: ${breakpoints.medium}) {
+    &:before {
+      background-position: right center !important;
+      z-index: 1 !important;
+    }
+    &:after {
+      background-position: right center !important;
+      z-index: 1 !important;
+    }
+  }
+
+  @media (min-width: ${breakpoints.large}) {
+    &:before {
+      background-size: 55% !important;
+    }
+    &:after {
+      background-size: 55% !important;
+    }
   }
 `
 
-const LeftSideStyled = styled.div`
+const HelloScreenStyled = styled.section`
+  padding: 2rem 0;
+
+  @media (min-width: ${breakpoints.small}) {
+    padding: 2.5rem 0 3.5rem;
+  }
+
+  @media (min-width: 960px) {
+    background: linear-gradient(to right, 
+     ${colors.white} 60%, ${colors.lightgray} 40%);
+`
+
+const HelloScreenWrapperStyled = styled.div`
   color: ${colors.black};
 
   & h1 {
+    max-width: 700px;
     font-size: 2rem;
     line-height: 1;
+
+    @media (min-width: ${breakpoints.medium}) {
+      font-size: 2.5rem;
+    }
   }
 
   & p {
@@ -68,18 +119,13 @@ const LeftSideStyled = styled.div`
     margin-bottom: 2rem;
 
     @media (min-width: 400px) {
-      max-width: 75%;
+      max-width: 70%;
     }
 
-    @media (min-width: 600px) {
-      max-width: 67%;
+    @media (min-width: ${breakpoints.small}) {
+      max-width: 50%;
     }
   }
-`
-
-const RightSideStyled = styled.div`
-  display: none;
-  visibility: none;
 `
 
 export default HelloScreen

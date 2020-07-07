@@ -6,6 +6,7 @@ import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import Typography from '../Typography'
 // utils
 import { colors, shadows } from '../../util/cssConfig'
 
@@ -32,6 +33,7 @@ const Cards = () => {
   return (
     <CardsStyled>
       <Container maxWidth="xl">
+        <Title>Почему с нами выгодно?</Title>
         <Grid container spacing={6} justify="space-around">
           {cardsData.map((item) => {
             return (
@@ -39,7 +41,7 @@ const Cards = () => {
                 <CardStyled>
                   <ImageStyled fluid={item.node.image.fluid} />
                   <DescriptionStyled>
-                    <h2>{item.node.title}</h2>
+                    <h3>{item.node.title}</h3>
                     <p>{item.node.description}</p>
                   </DescriptionStyled>
                 </CardStyled>
@@ -56,6 +58,11 @@ const CardsStyled = styled.section`
   padding: 3rem 0 4rem;
 `
 
+const Title = styled.h2`
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+`
+
 const GridItemStyled = styled(Grid)`
   max-width: 400px;
   flex-grow: 1;
@@ -69,7 +76,7 @@ const CardStyled = styled.div`
   display: flex;
   flex-direction: column;
 
-  & h2 {
+  & h3 {
     font-size: 1.1rem;
     color: ${colors.accent};
     margin: 0.5rem 0;
