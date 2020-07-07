@@ -7,7 +7,7 @@ import Container from '@material-ui/core/Container'
 import ImagesSlider from '../ui/ImagesSlider'
 
 const ImagesGrid = () => {
-  const data = useStaticQuery(graphql`
+  const images = useStaticQuery(graphql`
     query {
       allContentfulGallery {
         edges {
@@ -22,10 +22,7 @@ const ImagesGrid = () => {
         }
       }
     }
-  `)
-
-  const images = data.allContentfulGallery.edges[0].node.images
-  console.log(images)
+  `).allContentfulGallery.edges[0].node.images
 
   return (
     <ImagesGridStyled>

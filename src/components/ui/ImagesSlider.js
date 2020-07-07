@@ -6,10 +6,6 @@ import Img from 'gatsby-image'
 import Slider from 'react-slick'
 
 export default class ImagesSlider extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const settings = {
       dots: false,
@@ -23,7 +19,7 @@ export default class ImagesSlider extends Component {
       <Slider {...settings}>
         {this.props.images.map((item) => {
           return (
-            <div>
+            <div key={item.title}>
               <ImageWrapper>
                 <Img fluid={item.fluid} imgStyle={{ objectFit: 'contain' }}></Img>
               </ImageWrapper>

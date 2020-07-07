@@ -6,3 +6,11 @@ exports.onClientEntry = () => {
     console.log(`👍 IntersectionObserver is polyfilled`)
   }
 }
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node: {
+      fs: 'empty',
+    },
+  })
+}

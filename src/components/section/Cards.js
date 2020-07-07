@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid'
 import { colors, shadows } from '../../util/cssConfig'
 
 const Cards = () => {
-  const data = useStaticQuery(graphql`
+  const cardsData = useStaticQuery(graphql`
     query {
       allContentfulFeature {
         edges {
@@ -27,10 +27,7 @@ const Cards = () => {
         }
       }
     }
-  `)
-
-  const cardsData = data.allContentfulFeature.edges
-  console.log(cardsData)
+  `).allContentfulFeature.edges
 
   return (
     <CardsStyled>
