@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 // components
 import Logo from '../ui/Logo'
-import Nav from '../ui/Nav'
+import Nav from './Nav'
 import Container from '@material-ui/core/Container'
 // utils
 import { colors, breakpoints } from '../../util/cssConfig'

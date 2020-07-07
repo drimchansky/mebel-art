@@ -6,7 +6,7 @@ import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
 import BodyWrapper from './BodyWrapper'
-import InfoLine from '../ui/InfoLine'
+import InfoLine from '../section/InfoLine'
 // util
 import GlobalStyle from '../../util/GlobalStyle'
 

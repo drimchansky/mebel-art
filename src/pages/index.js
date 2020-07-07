@@ -3,9 +3,9 @@ import React from 'react'
 // components
 import Layout from '../components/layout/Layout'
 import SEO from '../components/SEO'
-import HelloScreen from '../components/ui/HelloScreen'
-import Cards from '../components/ui/Cards'
-import Greetings from '../components/ui/Greetings'
+import HelloScreen from '../components/section/HelloScreen'
+import Cards from '../components/section/Cards'
+import Greetings from '../components/section/Greetings'
 
 export default function Home() {
   return (

@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
-import Button from './CustomButton'
+import Button from '../ui/CustomButton'
 // util
 import { colors, breakpoints } from '../../util/cssConfig'
 

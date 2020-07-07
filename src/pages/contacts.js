@@ -3,7 +3,7 @@ import React from 'react'
 // components
 import Layout from '../components/layout/Layout'
 import SEO from '../components/SEO'
-import Contacts from '../components/ui/Contacts'
+import Contacts from '../components/section/contacts/Contacts'
 
 export default function contacts() {
   return (

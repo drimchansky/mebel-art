@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 // components
-import CustomButton from './CustomButton'
+import CustomButton from '../ui/CustomButton'
 // util
 import { colors, breakpoints } from '../../util/cssConfig'
 

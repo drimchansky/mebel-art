@@ -5,11 +5,11 @@ import styled from 'styled-components'
 import { Grid } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import CustomButtom from './CustomButton'
+import CustomButtom from '../../ui/CustomButton'
 // icons
 import SendIcon from '@material-ui/icons/Send'
 // utils
-import { colors, shadows } from '../../util/cssConfig'
+import { colors, shadows } from '../../../util/cssConfig'
 
 const ContactsForm = () => {
   return (
@@ -126,7 +126,5 @@ const TextFieldStyled = styled(TextField)`
     }
   }
 `
-
-const StyledButton = styled(Button)``
 
 export default ContactsForm
