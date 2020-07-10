@@ -57,7 +57,7 @@ const HamburderInnerStyled = styled.span`
   margin-top: -2px;
   width: 40px;
   height: 4px;
-  background-color: ${colors.dark};
+  background-color: ${colors.black};
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
@@ -70,7 +70,7 @@ const HamburderInnerStyled = styled.span`
     display: block;
     width: 40px;
     height: 4px;
-    background-color: ${colors.dark};
+    background-color: ${colors.black};
     border-radius: 4px;
     position: absolute;
     transition-property: transform;

@@ -80,10 +80,12 @@ const BackgroundImageStyled = styled(BackgroundImage)`
 
   @media (min-width: ${breakpoints.large}) {
     &:before {
-      background-size: 55% !important;
+      background-size: 45% !important;
+      background-position: 90% center !important;
     }
     &:after {
-      background-size: 55% !important;
+      background-size: 45% !important;
+      background-position: 90% center !important;
     }
   }
 `
@@ -102,18 +104,28 @@ const HelloScreenStyled = styled.section`
 
 const HelloScreenWrapperStyled = styled.div`
   color: ${colors.black};
+  z-index: 2;
+  position: relative;
+
+  @media (min-width: ${breakpoints.medium}) {
+    margin-left: 1rem;
+  }
+
+  @media (min-width: ${breakpoints.large}) {
+    margin-left: 3rem;
+  }
 
   & h1 {
-    max-width: 700px;
+    max-width: 620px;
     font-size: 2rem;
     line-height: 1;
 
     @media (min-width: ${breakpoints.medium}) {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
     }
 
-    @media (min-width: ${breakpoints.large}) {
-      max-width: 800px;
+    @media (min-width: 1600px) {
+      max-width: 700px;
     }
   }
 
