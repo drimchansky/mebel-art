@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 // components
 import Container from '@material-ui/core/Container'
-import CustomButton from '../ui/CustomButton'
+import { Button } from 'gatsby-theme-material-ui'
 import BackgroundImage from 'gatsby-background-image'
 // util
 import { colors, breakpoints } from '../../util/cssConfig'
@@ -40,14 +40,9 @@ const HelloScreen = () => {
           <HelloScreenWrapperStyled>
             <h1>{generalInfo.description}</h1>
             <p>{generalInfo.ourOffer}</p>
-            <CustomButton
-              bgcolor={colors.dark}
-              textcolor={colors.white}
-              size="large"
-              href="/contacts"
-              disableElevation>
+            <ButtonStyled href="/contacts" disableElevation>
               Свяжитесь с нами
-            </CustomButton>
+            </ButtonStyled>
           </HelloScreenWrapperStyled>
         </Container>
       </HelloScreenStyled>
@@ -90,6 +85,16 @@ const BackgroundImageStyled = styled(BackgroundImage)`
   }
 `
 
+const ButtonStyled = styled(Button)`
+  padding: 0.5rem 1rem !important;
+  background: ${colors.dark} !important;
+  color: ${colors.white} !important;
+
+  @media (min-width: ${breakpoints.small}) {
+    padding: 0.5rem 2rem !important;
+  }
+`
+
 const HelloScreenStyled = styled.section`
   padding: 2rem 0;
 
@@ -98,8 +103,8 @@ const HelloScreenStyled = styled.section`
   }
 
   @media (min-width: 960px) {
-    background: linear-gradient(to right, 
-     ${colors.white} 60%, ${colors.lightgray} 40%);
+    background: linear-gradient(to right, ${colors.white} 60%, ${colors.lightgray} 40%);
+  }
 `
 
 const HelloScreenWrapperStyled = styled.div`
