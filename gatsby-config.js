@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        displayName: true,
+        displayName: process.env.MODE == 'development' ? true : false,
         minify: false,
         transpileTemplateLiterals: false,
       },
