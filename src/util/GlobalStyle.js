@@ -36,6 +36,20 @@ html {
   }
 }
 
+/* Slick styling */
+
+.slick-slider {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.slick-arrow {
+ 
+  &:before {
+    color: ${colors.black};
+  }
+}
+
 /* Active class for navigation menu */
 .active {
   border-left: 4px solid ${colors.white};
