@@ -52,6 +52,8 @@ const ReviewsList = () => {
   )
 }
 
-const ReviewsListStyled = styled.ul``
+const ReviewsListStyled = styled.ul`
+  padding: 0;
+`
 
 export default ReviewsList
