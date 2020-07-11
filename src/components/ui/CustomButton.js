@@ -15,7 +15,7 @@ const CustomButton = ({
   startIcon,
   endIcon,
   disabled,
-  marginTop,
+  margintop,
 }) => {
   return (
     <ButtonStyled
@@ -28,7 +28,7 @@ const CustomButton = ({
       startIcon={startIcon}
       endIcon={endIcon}
       disabled={disabled}
-      marginTop={marginTop}>
+      margintop={margintop}>
       {children}
     </ButtonStyled>
   )
@@ -37,7 +37,7 @@ const CustomButton = ({
 const ButtonStyled = styled(Button)`
   background: ${(props) => props.bgcolor} !important;
   color: ${(props) => props.textcolor} !important;
-  margin-top: ${(props) => (props.marginTop ? props.marginTop : '')} !important;
+  margin-top: ${(props) => (props.margintop ? props.margintop : '')} !important;
 `
 
 export default CustomButton

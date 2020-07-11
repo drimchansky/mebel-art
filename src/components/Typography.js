@@ -4,8 +4,17 @@ import styled from 'styled-components'
 // utils
 import { colors } from '../util/cssConfig'
 
-const Typography = ({ children }) => {
-  return <TypographyStyled>{children}</TypographyStyled>
+function createMarkup(html) {
+  console.log(html)
+  return { __html: html }
+}
+
+const Typography = ({ children, html }) => {
+  if (html) {
+    return <TypographyStyled dangerouslySetInnerHTML={createMarkup(html)} />
+  } else {
+    return <TypographyStyled>{children}</TypographyStyled>
+  }
 }
 
 const TypographyStyled = styled.div`

@@ -1,22 +1,57 @@
 // packages
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
-import Typography from '../Typography'
+import Typography from '../../Typography'
+import ReviewItem from './ReviewItem'
 // utils
-import { colors, shadows, breakpoints } from '../../util/cssConfig'
+import { breakpoints } from '../../../util/cssConfig'
 
 const ReviewsList = () => {
-  // const reviewsData = useStaticQuery(graphql`
-  //   query {
+  const reviewsData = useStaticQuery(graphql`
+    query {
+      allContentfulReview(sort: { fields: [date], order: DESC }) {
+        edges {
+          node {
+            images {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+            }
+            name
+            id
+            date(formatString: "DD MMMM, YYYY", locale: "ru")
+            childContentfulReviewBodyRichTextNode {
+              childContentfulRichText {
+                html
+              }
+            }
+          }
+        }
+      }
+    }
+  `).allContentfulReview.edges
 
-  //   }
-  // `).allContentfulFeature.edges
-
-  return <div></div>
+  return (
+    <Container maxWidth="md">
+      <ReviewsListStyled>
+        {reviewsData.map((item) => {
+          return (
+            <ReviewItem
+              key={item.node.id}
+              name={item.node.name}
+              date={item.node.date}
+              html={item.node.childContentfulReviewBodyRichTextNode.childContentfulRichText.html}
+            />
+          )
+        })}
+      </ReviewsListStyled>
+    </Container>
+  )
 }
+
+const ReviewsListStyled = styled.ul``
 
 export default ReviewsList

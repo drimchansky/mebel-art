@@ -6,7 +6,6 @@ import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-import Typography from '../Typography'
 // utils
 import { colors, shadows, breakpoints } from '../../util/cssConfig'
 

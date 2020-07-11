@@ -62,7 +62,7 @@ const ContactsForm = () => {
             size="large"
             variant="contained"
             startIcon={<SendIcon />}
-            marginTop="1.5rem">
+            margintop="1.5rem">
             Отправить
           </CustomButton>
         </Grid>
