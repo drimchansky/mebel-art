@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import { colors } from '../util/cssConfig'
 
 function createMarkup(html) {
-  console.log(html)
   return { __html: html }
 }
 

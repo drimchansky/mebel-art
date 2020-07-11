@@ -4,10 +4,21 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 // components
 import Typography from '../../Typography'
+import ImagesSlider from '../../ui/ImagesSlider'
 // utils
 import { colors, shadows, breakpoints } from '../../../util/cssConfig'
 
-const ReviewItem = ({ name, date, html }) => {
+const renderImages = (images) => {
+  if (images) {
+    return images.length === 1 ? (
+      <Img fluid={images[0].fluid} />
+    ) : (
+      <ImagesSlider images={images} autoHeight="true" />
+    )
+  }
+}
+
+const ReviewItem = ({ name, date, images, html }) => {
   return (
     <ReviewItemStyled>
       <NameStyled>
@@ -18,6 +29,7 @@ const ReviewItem = ({ name, date, html }) => {
       </NameStyled>
       <DateStyled>{date}</DateStyled>
       <Typography html={html}></Typography>
+      <ImagesWrapper>{renderImages(images)}</ImagesWrapper>
     </ReviewItemStyled>
   )
 }
@@ -39,11 +51,11 @@ const NameStyled = styled.span`
   font-size: 1.1rem;
   /* font-weight: 500; */
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 
   & svg {
-    height: 25px;
-    width: 25px;
+    height: auto;
+    width: 30px;
     margin-right: 8px;
     fill: #4b729f;
   }
@@ -54,6 +66,13 @@ const DateStyled = styled.span`
   font-weight: 300;
   font-size: 0.8rem;
   padding: 0.3rem 0;
+`
+const ImagesWrapper = styled.div`
+  padding: 1.5rem 5px;
+
+  @media (min-width: ${breakpoints.small}) {
+    padding: 2rem 20%;
+  }
 `
 
 export default ReviewItem

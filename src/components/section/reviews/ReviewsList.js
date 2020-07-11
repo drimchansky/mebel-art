@@ -43,6 +43,7 @@ const ReviewsList = () => {
               key={item.node.id}
               name={item.node.name}
               date={item.node.date}
+              images={item.node.images}
               html={item.node.childContentfulReviewBodyRichTextNode.childContentfulRichText.html}
             />
           )

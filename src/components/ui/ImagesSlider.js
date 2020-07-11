@@ -22,7 +22,7 @@ export default class ImagesSlider extends Component {
         {this.props.images.map((item) => {
           return (
             <div key={item.title}>
-              <ImageWrapper>
+              <ImageWrapper autoHeight={this.props.autoHeight}>
                 <Img fluid={item.fluid} imgStyle={{ objectFit: 'contain' }}></Img>
               </ImageWrapper>
             </div>
@@ -34,10 +34,10 @@ export default class ImagesSlider extends Component {
 }
 
 const ImageWrapper = styled.div`
-  height: 70vw;
+  height: ${(props) => (props.autoHeight ? 'auto' : '70vw')};
 
   @media (min-width: ${breakpoints.small}) {
-    height: 600px;
+    height: ${(props) => (props.autoHeight ? 'auto' : '600px')};
   }
 
   & > div {
