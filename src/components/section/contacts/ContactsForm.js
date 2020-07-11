@@ -4,7 +4,7 @@ import styled from 'styled-components'
 // compoents
 import { Grid } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
-import CustomButtom from '../../ui/CustomButton'
+import CustomButton from '../../ui/CustomButton'
 // icons
 import SendIcon from '@material-ui/icons/Send'
 // utils
@@ -14,8 +14,8 @@ const ContactsForm = () => {
   return (
     <FormStyled>
       <TitleStyled>Заинтересованы в покупке кухни мечты?</TitleStyled>
-      <Grid container spacing={2}>
-        <Grid item container xs={12} md={5} alignContent="space-between">
+      <Grid container spacing={2} justify="center">
+        <Grid item container xs={12} sm={8} md={5} justify="center">
           <TextFieldStyled
             id="name"
             label="Имя"
@@ -23,6 +23,9 @@ const ContactsForm = () => {
             variant="outlined"
             required
             fullWidth
+            style={{
+              marginRight: '3px',
+            }}
           />
           <TextFieldStyled
             id="tel"
@@ -33,30 +36,35 @@ const ContactsForm = () => {
             margin="normal"
             required
             fullWidth
+            style={{
+              marginRight: '3px',
+            }}
           />
         </Grid>
-        <Grid item xs={12} md={7}>
+        <Grid item container xs={12} sm={8} md={7}>
           <TextFieldStyled
             id="textarea"
             multiline
             label="Cообщение"
             variant="outlined"
             color="primary"
-            rows={4}
             required
             fullWidth
+            style={{
+              marginRight: '3px',
+            }}
           />
         </Grid>
         <Grid item container xs={12} justify="center">
-          <CustomButtom
+          <CustomButton
             bgcolor={colors.accent}
             textcolor={colors.white}
             size="large"
             variant="contained"
             startIcon={<SendIcon />}
-            style={{ padding: '0.5rem 3rem', marginTop: '1.5rem' }}>
+            marginTop="1.5rem">
             Отправить
-          </CustomButtom>
+          </CustomButton>
         </Grid>
       </Grid>
     </FormStyled>
@@ -65,7 +73,7 @@ const ContactsForm = () => {
 
 const TitleStyled = styled.span`
   display: block;
-  padding: 0.5rem 0 1rem 0;
+  padding: 0.5rem 0 2rem 0;
   font-size: 1.2rem;
   color: ${colors.black};
 
@@ -98,14 +106,14 @@ const FormStyled = styled.form`
 //
 
 const TextFieldStyled = styled(TextField)`
+  flex-direction: row !important;
+
   @media (min-width: 960px) {
     margin-bottom: 0 !important;
   }
 
   & fieldset {
     border-color: ${colors.black} !important;
-    /* Fix border visibility */
-    margin: -1px;
   }
 
   & label {
@@ -118,6 +126,7 @@ const TextFieldStyled = styled(TextField)`
   & textarea,
   & input {
     color: ${colors.black};
+    height: 100%;
 
     @media (min-width: 960px) {
       color: ${colors.black};
