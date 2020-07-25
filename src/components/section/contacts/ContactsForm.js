@@ -1,6 +1,8 @@
 // packages
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import cogoToast from 'cogo-toast'
+import axios from 'axios'
 // compoents
 import { Grid } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
@@ -11,14 +13,49 @@ import SendIcon from '@material-ui/icons/Send'
 import { colors, shadows } from '../../../util/cssConfig'
 
 const ContactsForm = () => {
+  const [formName, setFormName] = useState('')
+  const [formPhone, setFormPhone] = useState('')
+  const [formMessage, setFormMessage] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const data = new FormData(e.target)
+    console.log('form submitted, ', data)
+
+    axios({
+      method: 'post',
+      url: 'https://formsubmit.co/drimchansky@gmail.com',
+      data: data,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        'Access-Control-Allow-Origin': 'https://formsubmit.co',
+      },
+    })
+      .then(function (response) {
+        //handle success
+        cogoToast.success('Ваше сообщение отправлено!')
+        setFormName('')
+        setFormPhone('')
+        setFormMessage('')
+      })
+      .catch(function (response) {
+        //handle error
+        console.log('ошибка', response)
+        cogoToast.error('Что-то пошло не так')
+      })
+  }
+
   return (
-    <FormStyled>
+    <FormStyled onSubmit={handleSubmit}>
       <TitleStyled>Заинтересованы в покупке кухни мечты?</TitleStyled>
       <Grid container spacing={2} justify="center">
         <Grid item container xs={12} sm={8} md={5} justify="center">
           <TextFieldStyled
             id="name"
             label="Имя"
+            name="Name"
+            onChange={(e) => setFormName(e.target.value)}
+            value={formName}
             color="primary"
             variant="outlined"
             required
@@ -31,6 +68,9 @@ const ContactsForm = () => {
             id="tel"
             type="tel"
             label="Телефон"
+            name="phone"
+            onChange={(e) => setFormPhone(e.target.value)}
+            value={formPhone}
             variant="outlined"
             color="primary"
             margin="normal"
@@ -46,6 +86,9 @@ const ContactsForm = () => {
             id="textarea"
             multiline
             label="Cообщение"
+            name="message"
+            onChange={(e) => setFormMessage(e.target.value)}
+            value={formMessage}
             variant="outlined"
             color="primary"
             required
@@ -60,6 +103,7 @@ const ContactsForm = () => {
             bgcolor={colors.accent}
             textcolor={colors.white}
             size="large"
+            type="submit"
             variant="contained"
             startIcon={<SendIcon />}
             margintop="1.5rem">

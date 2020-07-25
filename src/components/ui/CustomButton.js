@@ -16,6 +16,7 @@ const CustomButton = ({
   endIcon,
   disabled,
   margintop,
+  type,
 }) => {
   return (
     <ButtonStyled
@@ -23,6 +24,7 @@ const CustomButton = ({
       size={size}
       bgcolor={bgcolor}
       to={href}
+      type={type}
       textcolor={textcolor}
       disableElevation={disableElevation}
       startIcon={startIcon}

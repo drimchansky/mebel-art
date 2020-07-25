@@ -4,10 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
-import Typography from '../../Typography'
 import ReviewItem from './ReviewItem'
-// utils
-import { breakpoints } from '../../../util/cssConfig'
 
 const ReviewsList = () => {
   const reviewsData = useStaticQuery(graphql`
