@@ -68,10 +68,10 @@ const DateStyled = styled.span`
   padding: 0.3rem 0;
 `
 const ImagesWrapper = styled.div`
-  padding: 1.5rem 5px;
+  padding: 1rem 5px 1.5rem;
 
   @media (min-width: ${breakpoints.small}) {
-    padding: 2rem 20%;
+    padding: 1rem 20% 2rem;
   }
 `
 
