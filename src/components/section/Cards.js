@@ -58,8 +58,12 @@ const CardsStyled = styled.section`
 `
 
 const Title = styled.h2`
-  margin-bottom: 2rem;
   font-size: 1.8rem;
+  color: ${colors.black};
+
+  @media (min-width: ${breakpoints.small}) {
+    padding-left: 3rem;
+  }
 `
 
 const GridItemStyled = styled(Grid)`

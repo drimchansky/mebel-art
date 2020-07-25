@@ -126,7 +126,7 @@ const TextFieldStyled = styled(TextField)`
   & textarea,
   & input {
     color: ${colors.black};
-    height: 100%;
+    height: 100% !important;
 
     @media (min-width: 960px) {
       color: ${colors.black};

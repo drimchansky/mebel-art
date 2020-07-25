@@ -9,6 +9,7 @@ import ImagesSlider from '../../ui/ImagesSlider'
 import { colors, shadows, breakpoints } from '../../../util/cssConfig'
 
 const renderImages = (images) => {
+  console.log(images)
   if (images) {
     return images.length === 1 ? (
       <Img fluid={images[0].fluid} />
@@ -29,7 +30,7 @@ const ReviewItem = ({ name, date, images, html }) => {
       </NameStyled>
       <DateStyled>{date}</DateStyled>
       <Typography html={html}></Typography>
-      <ImagesWrapper>{renderImages(images)}</ImagesWrapper>
+      {images && <ImagesWrapper>{renderImages(images)}</ImagesWrapper>}
     </ReviewItemStyled>
   )
 }
