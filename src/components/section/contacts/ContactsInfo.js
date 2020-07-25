@@ -1,6 +1,7 @@
 // packages
 import React from 'react'
 import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
 // icons
 import PlaceIcon from '@material-ui/icons/Place'
 import MailOutlineIcon from '@material-ui/icons/MailOutline'
@@ -9,6 +10,19 @@ import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone'
 import { colors } from '../../../util/cssConfig'
 
 const ContactsInfo = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulGeneralInfo {
+        edges {
+          node {
+            description
+            ourOffer
+          }
+        }
+      }
+    }
+  `).allContentfulGeneralInfo.edges[0].node
+
   return (
     <InfoStyled>
       <ul>
@@ -19,11 +33,11 @@ const ContactsInfo = () => {
         </li>
         <li>
           <MailOutlineIcon />
-          <span>example@gmail.com</span>
+          <span>{data.eMail}</span>
         </li>
         <li>
           <PhoneIphoneIcon />
-          <span>(01) 666 - 693 - 456</span>
+          <span>{data.phone}</span>
         </li>
       </ul>
     </InfoStyled>

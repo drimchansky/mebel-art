@@ -1,6 +1,7 @@
 // packages
 import React from 'react'
 import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
 // components
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
@@ -10,6 +11,19 @@ import DoneIcon from '@material-ui/icons/Done'
 import { colors } from '../../util/cssConfig'
 
 const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulGeneralInfo {
+        edges {
+          node {
+            description
+            ourOffer
+          }
+        }
+      }
+    }
+  `).allContentfulGeneralInfo.edges[0].node
+
   return (
     <FooterStyled>
       <Container maxWidth="lg">
@@ -19,8 +33,8 @@ const Footer = () => {
             <TextStyled>Ярославль и Ярославская область</TextStyled>
             <TitleStyled marginTop="10px">Контакты</TitleStyled>
             <TextStyled>
-              example@gmail.com <br />
-              +7 (965) 726-58-97
+              {data.eMail} <br />
+              {data.phone}
             </TextStyled>
           </Grid>
           <Grid item md={4}>
