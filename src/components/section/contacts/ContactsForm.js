@@ -19,41 +19,28 @@ const ContactsForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const data = {
-      Имя: formName,
-      Телефон: formPhone,
-      Сообщение: formMessage,
-    }
+    const data = new FormData(e.target)
 
     axios({
       method: 'POST',
-      url: 'https://formsubmit.co/ajax/drimchansky@gmail.com',
+      url: 'https://formsubmit.co/ajax/drimchansky@mail.com',
       data: data,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
     })
       .then(function (response) {
-        //handle success
         cogoToast.success('Ваше сообщение отправлено!')
         setFormName('')
         setFormPhone('')
         setFormMessage('')
       })
       .catch(function (response) {
-        //handle error
-        console.log('ошибка', response)
         cogoToast.error('Что-то пошло не так')
       })
-
-    console.log(data)
   }
 
   return (
     <FormStyled onSubmit={handleSubmit}>
       <TitleStyled>Заинтересованы в покупке кухни мечты?</TitleStyled>
       <Grid container spacing={2} justify="center">
-        <input type="hidden" name="_url" value="https://furniture-art-yaroslavl/contacts" />
         <Grid item container xs={12} sm={8} md={5} justify="center">
           <TextFieldStyled
             id="name"
