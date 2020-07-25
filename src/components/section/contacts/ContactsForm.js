@@ -23,7 +23,7 @@ const ContactsForm = () => {
 
     axios({
       method: 'POST',
-      url: 'https://formsubmit.co/ajax/drimchansky@gmail.com',
+      url: 'https://formsubmit.co/ajax/deko32@mail.ru',
       data: data,
     })
       .then(function (response) {
@@ -33,7 +33,12 @@ const ContactsForm = () => {
         setFormMessage('')
       })
       .catch(function (response) {
-        cogoToast.error('Что-то пошло не так')
+        cogoToast.error(
+          'Что-то пошло не так, вы можете связаться с нами через социальные сети или по телефону',
+          {
+            hideAfter: 10,
+          }
+        )
       })
   }
 
@@ -45,7 +50,7 @@ const ContactsForm = () => {
           <TextFieldStyled
             id="name"
             label="Имя"
-            name="Name"
+            name="Имя"
             onChange={(e) => setFormName(e.target.value)}
             value={formName}
             color="primary"
@@ -60,7 +65,7 @@ const ContactsForm = () => {
             id="tel"
             type="tel"
             label="Телефон"
-            name="phone"
+            name="Телефон"
             onChange={(e) => setFormPhone(e.target.value)}
             value={formPhone}
             variant="outlined"
@@ -78,7 +83,7 @@ const ContactsForm = () => {
             id="textarea"
             multiline
             label="Cообщение"
-            name="message"
+            name="Сообщение"
             onChange={(e) => setFormMessage(e.target.value)}
             value={formMessage}
             variant="outlined"

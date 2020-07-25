@@ -15,8 +15,8 @@ const ContactsInfo = () => {
       allContentfulGeneralInfo {
         edges {
           node {
-            description
-            ourOffer
+            eMail
+            phone
           }
         }
       }

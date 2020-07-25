@@ -16,8 +16,8 @@ const Footer = () => {
       allContentfulGeneralInfo {
         edges {
           node {
-            description
-            ourOffer
+            eMail
+            phone
           }
         }
       }
