@@ -23,7 +23,7 @@ const ContactsForm = () => {
 
     axios({
       method: 'POST',
-      url: 'https://formsubmit.co/ajax/drimchansky@mail.com',
+      url: 'https://formsubmit.co/ajax/drimchansky@gmail.com',
       data: data,
     })
       .then(function (response) {
