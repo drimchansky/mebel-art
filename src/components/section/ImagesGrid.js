@@ -4,7 +4,9 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
-import ImagesSlider from '../ui/ImagesSlider'
+import Gallery from '@browniebroke/gatsby-image-gallery'
+// utilities
+import '@browniebroke/gatsby-image-gallery/dist/style.css'
 
 const ImagesGrid = () => {
   const images = useStaticQuery(graphql`
@@ -14,7 +16,10 @@ const ImagesGrid = () => {
           node {
             images {
               id
-              fluid {
+              thumb: fluid(maxWidth: 270, maxHeight: 270) {
+                ...GatsbyContentfulFluid
+              }
+              full: fluid(maxWidth: 1024) {
                 ...GatsbyContentfulFluid
               }
             }
@@ -26,7 +31,9 @@ const ImagesGrid = () => {
 
   return (
     <ImagesGridStyled>
-      <Container maxWidth="md">gallery</Container>
+      <Container maxWidth="md">
+        <Gallery images={images} />
+      </Container>
     </ImagesGridStyled>
   )
 }
