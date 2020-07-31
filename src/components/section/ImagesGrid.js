@@ -26,9 +26,7 @@ const ImagesGrid = () => {
 
   return (
     <ImagesGridStyled>
-      <Container maxWidth="md">
-        <ImagesSlider images={images} />
-      </Container>
+      <Container maxWidth="md">gallery</Container>
     </ImagesGridStyled>
   )
 }
