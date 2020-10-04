@@ -137,7 +137,7 @@ const HelloScreenWrapperStyled = styled.div`
     }
 
     @media (min-width: 1600px) {
-      max-width: 700px;
+      max-width: 1000px;
     }
   }
 

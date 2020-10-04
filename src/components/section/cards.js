@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 // utils
-import { colors, shadows, breakpoints } from '../../util/css-config'
+import { colors, shadows } from '../../util/css-config'
 
 const Cards = () => {
   const cardsData = useStaticQuery(graphql`
@@ -57,14 +57,10 @@ const CardsStyled = styled.section`
   padding: 3rem 0 4rem;
 `
 
-const Title = styled.h2`
-  font-size: 1.8rem;
-  color: ${colors.black};
-
-  @media (min-width: ${breakpoints.small}) {
-    padding-left: 3rem;
-  }
-`
+// const Title = styled.h2`
+//   font-size: 1.8rem;
+//   color: ${colors.black};
+// `
 
 const GridItemStyled = styled(Grid)`
   max-width: 400px;

@@ -23,12 +23,13 @@ const HeaderStyled = styled.header`
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 0;
+  z-index: -1;
   width: 100%;
   height: 100%;
   background: ${colors.dark};
 
   @media (min-width: ${breakpoints.small}) {
+    z-index: 0;
     position: relative;
     background: ${colors.white};
     padding: 0;

@@ -54,11 +54,18 @@ const NavStyled = styled.nav`
   }
 
   & a {
+    text-transform: uppercase;
     display: block;
     text-decoration: none;
     color: ${colors.white};
     padding: 1rem 1.4rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+    }
 
     @media (min-width: ${breakpoints.small}) {
       color: ${colors.black};
