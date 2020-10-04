@@ -41,7 +41,7 @@ const HelloScreen = () => {
             <h1>
               Лучшие <span>кухни</span>
               <br />
-              для лучших <span>людей</span>
+              <span>для</span> лучших <span>людей</span>
             </h1>
             {/* <h1>{generalInfo.description}</h1> */}
             <p>{generalInfo.ourOffer}</p>
@@ -147,9 +147,9 @@ const HelloScreenWrapperStyled = styled.div`
 
   & h1 {
     max-width: 620px;
-    font-size: 1.7rem;
-    font-weight: 800;
-    line-height: 1;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: -1px;
     margin: 0;
@@ -157,11 +157,11 @@ const HelloScreenWrapperStyled = styled.div`
     & span {
       font-weight: 800;
       letter-spacing: initial;
+      color: ${colors.accent};
     }
 
     @media (min-width: ${breakpoints.medium}) {
       font-size: 2.5rem;
-      line-height: 0.9;
     }
 
     @media (min-width: 1600px) {
@@ -173,6 +173,7 @@ const HelloScreenWrapperStyled = styled.div`
     font-size: 1rem;
     line-height: 1.3;
     margin: 2rem 0;
+    color: ${colors.gray};
 
     @media (min-width: 400px) {
       max-width: 70%;
