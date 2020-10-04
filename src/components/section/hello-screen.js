@@ -45,9 +45,14 @@ const HelloScreen = () => {
             </h1>
             {/* <h1>{generalInfo.description}</h1> */}
             <p>{generalInfo.ourOffer}</p>
-            <ButtonStyled href="/contacts" disableElevation>
-              Свяжитесь с нами
-            </ButtonStyled>
+            <ButtonsWrapper>
+              <ButtonStyled href="/contacts" disableElevation>
+                Свяжитесь с нами
+              </ButtonStyled>
+              <ButtonMoreStyled variant="outlined" href="#" disableElevation>
+                Узнать больше
+              </ButtonMoreStyled>
+            </ButtonsWrapper>
           </HelloScreenWrapperStyled>
         </Container>
       </HelloScreenStyled>
@@ -90,6 +95,15 @@ const BackgroundImageStyled = styled(BackgroundImage)`
   }
 `
 
+const ButtonsWrapper = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+
+  @media (min-width: ${breakpoints.small}) {
+    flex-direction: row;
+  } ;
+`
+
 const ButtonStyled = styled(Button)`
   padding: 0.5rem 1rem !important;
   background: ${colors.dark} !important;
@@ -97,6 +111,19 @@ const ButtonStyled = styled(Button)`
 
   @media (min-width: ${breakpoints.small}) {
     padding: 0.5rem 2rem !important;
+  }
+`
+
+const ButtonMoreStyled = styled(Button)`
+  padding: 0.5rem 0.5rem !important;
+  border: 3px ${colors.accent} solid !important;
+  color: ${colors.accent} !important;
+  margin-top: 0.5rem !important;
+
+  @media (min-width: ${breakpoints.small}) {
+    padding: 0.5rem 1rem !important;
+    margin-top: 0 !important;
+    margin-left: 0.5rem !important;
   }
 `
 

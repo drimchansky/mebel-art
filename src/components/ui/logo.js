@@ -24,6 +24,7 @@ const LogoStyled = styled(Link)`
   & span {
     font-weight: 800;
     margin-left: 2px;
+    color: ${colors.accent};
   }
 
   ${(props) => {
