@@ -36,9 +36,14 @@ const HelloScreen = () => {
   return (
     <BackgroundImageStyled Tag="section" fluid={imageData}>
       <HelloScreenStyled>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <HelloScreenWrapperStyled>
-            <h1>{generalInfo.description}</h1>
+            <h1>
+              Лучшие <span>кухни</span>
+              <br />
+              для лучших <span>людей</span>
+            </h1>
+            {/* <h1>{generalInfo.description}</h1> */}
             <p>{generalInfo.ourOffer}</p>
             <ButtonStyled href="/contacts" disableElevation>
               Свяжитесь с нами
@@ -112,21 +117,22 @@ const HelloScreenWrapperStyled = styled.div`
   z-index: 2;
   position: relative;
 
-  @media (min-width: ${breakpoints.medium}) {
-    margin-left: 1rem;
-  }
-
-  @media (min-width: ${breakpoints.large}) {
-    margin-left: 3rem;
-  }
-
   & h1 {
     max-width: 620px;
-    font-size: 2rem;
+    font-size: 1.7rem;
+    font-weight: 800;
     line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+
+    & span {
+      font-weight: 800;
+      letter-spacing: initial;
+    }
 
     @media (min-width: ${breakpoints.medium}) {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
+      line-height: 0.9;
     }
 
     @media (min-width: 1600px) {
@@ -136,7 +142,7 @@ const HelloScreenWrapperStyled = styled.div`
 
   & p {
     font-size: 1rem;
-    line-height: 1.2;
+    line-height: 1.3;
     margin-bottom: 2rem;
 
     @media (min-width: 400px) {
