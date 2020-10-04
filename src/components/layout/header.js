@@ -11,7 +11,7 @@ import { colors, breakpoints } from '../../util/css-config'
 const Header = ({ active, setActive }) => {
   return (
     <HeaderStyled>
-      <ContainerStyled disableGutters>
+      <ContainerStyled disableGutters maxWidth="xl">
         <Logo desctoponly="true" />
         <Nav />
       </ContainerStyled>

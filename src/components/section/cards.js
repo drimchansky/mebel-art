@@ -31,9 +31,9 @@ const Cards = () => {
 
   return (
     <CardsStyled>
-      <Container maxWidth="xl">
-        <Title>Почему с нами выгодно?</Title>
-        <Grid container spacing={6} justify="center">
+      <Container maxWidth="lg">
+        {/* <Title>Почему с нами выгодно?</Title> */}
+        <Grid container spacing={3} justify="space-around">
           {cardsData.map((item) => {
             return (
               <GridItemStyled key={item.node.title} item sm={6} md={4}>
@@ -71,10 +71,6 @@ const GridItemStyled = styled(Grid)`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-
-  @media (min-width: ${breakpoints.large}) {
-    padding: 3rem 2rem !important;
-  }
 `
 
 const CardStyled = styled.div`

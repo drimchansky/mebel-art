@@ -108,7 +108,7 @@ const HelloScreenStyled = styled.section`
   }
 
   @media (min-width: 960px) {
-    background: linear-gradient(to right, ${colors.white} 60%, ${colors.lightgray} 40%);
+    background: linear-gradient(to right, ${colors.white} 68%, ${colors.lightgray} 32%);
   }
 `
 
@@ -124,6 +124,7 @@ const HelloScreenWrapperStyled = styled.div`
     line-height: 1;
     text-transform: uppercase;
     letter-spacing: -1px;
+    margin: 0;
 
     & span {
       font-weight: 800;
@@ -143,13 +144,17 @@ const HelloScreenWrapperStyled = styled.div`
   & p {
     font-size: 1rem;
     line-height: 1.3;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 
     @media (min-width: 400px) {
       max-width: 70%;
     }
 
     @media (min-width: ${breakpoints.small}) {
+      max-width: 65%;
+    }
+
+    @media (min-width: ${breakpoints.large}) {
       max-width: 50%;
     }
   }
