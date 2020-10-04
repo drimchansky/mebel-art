@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
+import { Link } from 'gatsby'
 // util
 import { colors, breakpoints } from '../../util/css-config'
 
@@ -10,7 +11,14 @@ const InfoLine = () => {
   return (
     <InfoLineStyled>
       <ContainerStyled maxWidth="xl">
-        <TextStyled>Кухни #1 в Ярославле и области</TextStyled>
+        <LinksList>
+          <li>
+            <Link to="#">Акции</Link>
+            <Link to="#">О нас</Link>
+            <Link to="#">Ответы на вопросы</Link>
+            <Link to="#">Партнёры</Link>
+          </li>
+        </LinksList>
         <PhoneStyled href="tel:89657265897">+7 (965) 726-58-97</PhoneStyled>
       </ContainerStyled>
     </InfoLineStyled>
@@ -27,7 +35,6 @@ const InfoLineStyled = styled.div`
     width: 100%;
     color: ${colors.white};
     background: ${colors.dark};
-    padding: 0.3rem;
   }
 `
 const ContainerStyled = styled(Container)`
@@ -35,14 +42,45 @@ const ContainerStyled = styled(Container)`
   align-items: center;
 `
 
-const TextStyled = styled.span``
+const LinksList = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  & li {
+  }
+
+  & a {
+    font-size: 0.7rem;
+    text-decoration: none;
+    color: ${colors.white};
+    padding: 0.5rem;
+    transition: color 0.1s ease;
+
+    &:hover,
+    &:focus {
+      color: ${colors.accent};
+    }
+  }
+
+  & a:not(:forst-child) {
+    margin-left: 0.3rem;
+  }
+`
 
 const PhoneStyled = styled.a`
   color: ${colors.white};
+  font-size: 0.7rem;
   margin-left: auto;
   margin-right: 0.5rem;
   padding: 0.5rem;
   text-decoration: none;
+  transition: color 0.1s ease;
+
+  &:hover,
+  &:focus {
+    color: ${colors.accent};
+  }
 `
 
 export default InfoLine

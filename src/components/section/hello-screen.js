@@ -136,6 +136,7 @@ const HelloScreenStyled = styled.section`
 
   @media (min-width: 960px) {
     background: linear-gradient(to right, ${colors.white} 68%, ${colors.lightgray} 32%);
+    padding-bottom: 5rem;
   }
 `
 

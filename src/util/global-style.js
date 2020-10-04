@@ -55,9 +55,6 @@ html {
   border-left: 4px solid ${colors.white};
   position: relative;
 
-  &:hover {
-    text-decoration: none !important;
-  }
 
   @media(min-width: ${breakpoints.small}) {
     border: none;
