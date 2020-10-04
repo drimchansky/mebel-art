@@ -1,9 +1,9 @@
 // packages
 import React from 'react'
 // components
-import Layout from '../components/layout/Layout'
+import Layout from '../components/layout/layout'
 import SEO from '../components/SEO'
-import ImagesGrid from '../components/section/ImagesGrid'
+import ImagesGrid from '../components/section/images-grid'
 
 export default function Home() {
   return (

@@ -1,9 +1,9 @@
 // packages
 import React from 'react'
 // components
-import Layout from '../components/layout/Layout'
+import Layout from '../components/layout/layout'
 import SEO from '../components/SEO'
-import Contacts from '../components/section/contacts/Contacts'
+import Contacts from '../components/section/contacts/contacts'
 
 export default function contacts() {
   return (

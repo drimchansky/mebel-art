@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 // utils
-import { colors } from '../util/cssConfig'
+import { colors } from '../util/css-config'
 
 function createMarkup(html) {
   return { __html: html }

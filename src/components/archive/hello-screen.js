@@ -6,7 +6,7 @@ import BackgroundImage from 'gatsby-background-image'
 // components
 import CustomButton from '../ui/CustomButton'
 // util
-import { colors, breakpoints } from '../../util/cssConfig'
+import { colors, breakpoints } from '../../util/css-config'
 
 const HelloScreen = () => {
   const data = useStaticQuery(graphql`

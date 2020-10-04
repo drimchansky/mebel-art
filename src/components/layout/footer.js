@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid'
 // icons
 import DoneIcon from '@material-ui/icons/Done'
 // utils
-import { colors } from '../../util/cssConfig'
+import { colors } from '../../util/css-config'
 
 const Footer = () => {
   const data = useStaticQuery(graphql`

@@ -3,11 +3,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { Grid, Container } from '@material-ui/core'
 // components
-import ContactsForm from './ContactsForm'
-import ContactsInfo from './ContactsInfo'
-import ContactsBg from './ContactsBg'
+import ContactsForm from './contacts-form'
+import ContactsInfo from './contacts-info'
+import ContactsBg from './contacts-bg'
 // utils
-import { colors } from '../../../util/cssConfig'
+import { colors } from '../../../util/css-config'
 
 const Contacts = () => {
   return (

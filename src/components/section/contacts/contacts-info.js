@@ -7,7 +7,7 @@ import PlaceIcon from '@material-ui/icons/Place'
 import MailOutlineIcon from '@material-ui/icons/MailOutline'
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone'
 // utils
-import { colors } from '../../../util/cssConfig'
+import { colors } from '../../../util/css-config'
 
 const ContactsInfo = () => {
   const data = useStaticQuery(graphql`

@@ -1,7 +1,7 @@
 // packages
 import { createGlobalStyle } from 'styled-components'
 // util
-import { fonts, breakpoints, colors } from '../util/cssConfig'
+import { fonts, breakpoints, colors } from '../util/css-config'
 
 const GlobalStyle = createGlobalStyle`
 

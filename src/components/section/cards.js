@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 // utils
-import { colors, shadows, breakpoints } from '../../util/cssConfig'
+import { colors, shadows, breakpoints } from '../../util/css-config'
 
 const Cards = () => {
   const cardsData = useStaticQuery(graphql`

@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 // util
-import { colors, breakpoints } from '../../util/cssConfig'
+import { colors, breakpoints } from '../../util/css-config'
 
 const Hamburger = ({ active, setActive }) => {
   return (
