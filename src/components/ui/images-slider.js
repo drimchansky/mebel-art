@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Slider from 'react-slick'
 // utils
-import { breakpoints } from '../../util/cssConfig'
+import { breakpoints } from '../../util/css-config'
 
 export default class ImagesSlider extends Component {
   render() {

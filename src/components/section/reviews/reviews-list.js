@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
-import ReviewItem from './ReviewItem'
+import ReviewItem from './review-item'
 
 const ReviewsList = () => {
   const reviewsData = useStaticQuery(graphql`

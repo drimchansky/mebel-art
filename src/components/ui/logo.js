@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 // util
-import { colors } from '../../util/cssConfig'
+import { colors } from '../../util/css-config'
 
 const Logo = ({ desctoponly }) => {
   return (

@@ -6,11 +6,11 @@ import axios from 'axios'
 // compoents
 import { Grid } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
-import CustomButton from '../../ui/CustomButton'
+import CustomButton from '../../ui/custom-button'
 // icons
 import SendIcon from '@material-ui/icons/Send'
 // utils
-import { colors, shadows } from '../../../util/cssConfig'
+import { colors, shadows } from '../../../util/css-config'
 
 const ContactsForm = () => {
   const [formName, setFormName] = useState('')

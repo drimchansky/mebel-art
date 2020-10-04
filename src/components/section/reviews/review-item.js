@@ -3,10 +3,10 @@ import React from 'react'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 // components
-import Typography from '../../Typography'
-import ImagesSlider from '../../ui/ImagesSlider'
+import Typography from '../../typography'
+import ImagesSlider from '../../ui/images-slider'
 // utils
-import { colors, shadows, breakpoints } from '../../../util/cssConfig'
+import { colors, shadows, breakpoints } from '../../../util/css-config'
 
 const renderImages = (images) => {
   console.log(images)
