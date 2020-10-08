@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 // utils
-import { colors, shadows, breakpoints } from '../../util/css-config'
+import { colors, shadows } from '../../util/css-config'
 
 const Cards = () => {
   const cardsData = useStaticQuery(graphql`
@@ -31,9 +31,9 @@ const Cards = () => {
 
   return (
     <CardsStyled>
-      <Container maxWidth="xl">
-        <Title>Почему с нами выгодно?</Title>
-        <Grid container spacing={6} justify="center">
+      <Container maxWidth="lg">
+        {/* <Title>Почему с нами выгодно?</Title> */}
+        <Grid container spacing={3} justify="space-around">
           {cardsData.map((item) => {
             return (
               <GridItemStyled key={item.node.title} item sm={6} md={4}>
@@ -57,24 +57,16 @@ const CardsStyled = styled.section`
   padding: 3rem 0 4rem;
 `
 
-const Title = styled.h2`
-  font-size: 1.8rem;
-  color: ${colors.black};
-
-  @media (min-width: ${breakpoints.small}) {
-    padding-left: 3rem;
-  }
-`
+// const Title = styled.h2`
+//   font-size: 1.8rem;
+//   color: ${colors.black};
+// `
 
 const GridItemStyled = styled(Grid)`
   max-width: 400px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-
-  @media (min-width: ${breakpoints.large}) {
-    padding: 3rem 2rem !important;
-  }
 `
 
 const CardStyled = styled.div`

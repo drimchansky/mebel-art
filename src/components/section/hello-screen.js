@@ -36,13 +36,23 @@ const HelloScreen = () => {
   return (
     <BackgroundImageStyled Tag="section" fluid={imageData}>
       <HelloScreenStyled>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <HelloScreenWrapperStyled>
-            <h1>{generalInfo.description}</h1>
+            <h1>
+              Лучшие <span>кухни</span>
+              <br />
+              <span>для</span> лучших <span>людей</span>
+            </h1>
+            {/* <h1>{generalInfo.description}</h1> */}
             <p>{generalInfo.ourOffer}</p>
-            <ButtonStyled href="/contacts" disableElevation>
-              Свяжитесь с нами
-            </ButtonStyled>
+            <ButtonsWrapper>
+              <ButtonStyled href="/contacts" disableElevation>
+                Свяжитесь с нами
+              </ButtonStyled>
+              <ButtonMoreStyled variant="outlined" href="#" disableElevation>
+                Узнать больше
+              </ButtonMoreStyled>
+            </ButtonsWrapper>
           </HelloScreenWrapperStyled>
         </Container>
       </HelloScreenStyled>
@@ -85,6 +95,15 @@ const BackgroundImageStyled = styled(BackgroundImage)`
   }
 `
 
+const ButtonsWrapper = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+
+  @media (min-width: ${breakpoints.small}) {
+    flex-direction: row;
+  } ;
+`
+
 const ButtonStyled = styled(Button)`
   padding: 0.5rem 1rem !important;
   background: ${colors.dark} !important;
@@ -92,6 +111,19 @@ const ButtonStyled = styled(Button)`
 
   @media (min-width: ${breakpoints.small}) {
     padding: 0.5rem 2rem !important;
+  }
+`
+
+const ButtonMoreStyled = styled(Button)`
+  padding: 0.5rem 0.5rem !important;
+  border: 3px ${colors.accent} solid !important;
+  color: ${colors.accent} !important;
+  margin-top: 0.5rem !important;
+
+  @media (min-width: ${breakpoints.small}) {
+    padding: 0.5rem 1rem !important;
+    margin-top: 0 !important;
+    margin-left: 0.5rem !important;
   }
 `
 
@@ -103,7 +135,8 @@ const HelloScreenStyled = styled.section`
   }
 
   @media (min-width: 960px) {
-    background: linear-gradient(to right, ${colors.white} 60%, ${colors.lightgray} 40%);
+    background: linear-gradient(to right, ${colors.white} 68%, ${colors.lightgray} 32%);
+    padding-bottom: 5rem;
   }
 `
 
@@ -112,38 +145,45 @@ const HelloScreenWrapperStyled = styled.div`
   z-index: 2;
   position: relative;
 
-  @media (min-width: ${breakpoints.medium}) {
-    margin-left: 1rem;
-  }
-
-  @media (min-width: ${breakpoints.large}) {
-    margin-left: 3rem;
-  }
-
   & h1 {
     max-width: 620px;
-    font-size: 2rem;
-    line-height: 1;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin: 0;
+
+    & span {
+      font-weight: 800;
+      letter-spacing: initial;
+      color: ${colors.accent};
+    }
 
     @media (min-width: ${breakpoints.medium}) {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
     }
 
     @media (min-width: 1600px) {
-      max-width: 700px;
+      max-width: 1000px;
     }
   }
 
   & p {
     font-size: 1rem;
-    line-height: 1.2;
-    margin-bottom: 2rem;
+    line-height: 1.3;
+    margin: 2rem 0;
+    color: ${colors.gray};
 
     @media (min-width: 400px) {
       max-width: 70%;
     }
 
     @media (min-width: ${breakpoints.small}) {
+      max-width: 65%;
+    }
+
+    @media (min-width: ${breakpoints.large}) {
       max-width: 50%;
     }
   }

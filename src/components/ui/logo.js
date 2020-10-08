@@ -8,17 +8,24 @@ import { colors } from '../../util/css-config'
 const Logo = ({ desctoponly }) => {
   return (
     <LogoStyled desctoponly={desctoponly} to="/">
-      Мебель Арт
+      Мебель <span>Арт</span>
     </LogoStyled>
   )
 }
 
 const LogoStyled = styled(Link)`
   text-decoration: none;
-  font-weight: bold;
+  text-transform: uppercase;
+  font-weight: 300;
   color: ${colors.black};
   font-size: 1.3rem;
   letter-spacing: -1px;
+
+  & span {
+    font-weight: 800;
+    margin-left: 2px;
+    color: ${colors.accent};
+  }
 
   ${(props) => {
     if (props.desctoponly) {

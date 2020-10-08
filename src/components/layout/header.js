@@ -11,7 +11,7 @@ import { colors, breakpoints } from '../../util/css-config'
 const Header = ({ active, setActive }) => {
   return (
     <HeaderStyled>
-      <ContainerStyled disableGutters>
+      <ContainerStyled disableGutters maxWidth="xl">
         <Logo desctoponly="true" />
         <Nav />
       </ContainerStyled>
@@ -23,12 +23,13 @@ const HeaderStyled = styled.header`
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 0;
+  z-index: -1;
   width: 100%;
   height: 100%;
   background: ${colors.dark};
 
   @media (min-width: ${breakpoints.small}) {
+    z-index: 0;
     position: relative;
     background: ${colors.white};
     padding: 0;

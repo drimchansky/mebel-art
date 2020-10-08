@@ -55,6 +55,7 @@ html {
   border-left: 4px solid ${colors.white};
   position: relative;
 
+
   @media(min-width: ${breakpoints.small}) {
     border: none;
     
