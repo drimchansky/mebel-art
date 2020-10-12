@@ -13,7 +13,11 @@ const ReviewsList = () => {
         edges {
           node {
             images {
-              fluid {
+              id
+              thumb: fluid(maxWidth: 270, maxHeight: 270) {
+                ...GatsbyContentfulFluid
+              }
+              full: fluid(maxWidth: 1024) {
                 ...GatsbyContentfulFluid
               }
             }

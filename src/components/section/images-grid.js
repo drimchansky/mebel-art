@@ -22,9 +22,9 @@ const ImagesGrid = () => {
               full: fluid(maxWidth: 1024) {
                 ...GatsbyContentfulFluid
               }
-            }
+            } 
           }
-        }
+        } 
       }
     }
   `).allContentfulGallery.edges[0].node.images

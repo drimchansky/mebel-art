@@ -4,20 +4,10 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 // components
 import Typography from '../../typography'
-import ImagesSlider from '../../ui/images-slider'
-// utils
+import Gallery from '@browniebroke/gatsby-image-gallery'
+// utilities
+import '@browniebroke/gatsby-image-gallery/dist/style.css'
 import { colors, shadows, breakpoints } from '../../../util/css-config'
-
-const renderImages = (images) => {
-  console.log(images)
-  if (images) {
-    return images.length === 1 ? (
-      <Img fluid={images[0].fluid} />
-    ) : (
-      <ImagesSlider images={images} autoHeight="true" />
-    )
-  }
-}
 
 const ReviewItem = ({ name, date, images, html }) => {
   return (
@@ -30,7 +20,7 @@ const ReviewItem = ({ name, date, images, html }) => {
       </NameStyled>
       <DateStyled>{date}</DateStyled>
       <Typography html={html}></Typography>
-      {images && <ImagesWrapper>{renderImages(images)}</ImagesWrapper>}
+      {images ? <Gallery mdColWidth="20" imgClass="review-image" images={images} /> : ''}
     </ReviewItemStyled>
   )
 }
@@ -46,7 +36,12 @@ const ReviewItemStyled = styled.li`
   &:not(:first-child) {
     margin-top: 1.5rem;
   }
+
+  & .review-image {
+    border-radius: 10px;
+  }
 `
+
 const NameStyled = styled.span`
   position: relative;
   font-size: 1.1rem;
@@ -75,5 +70,7 @@ const ImagesWrapper = styled.div`
     padding: 1rem 20% 2rem;
   }
 `
+
+
 
 export default ReviewItem
