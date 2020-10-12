@@ -68,7 +68,7 @@ const NavStyled = styled.nav`
     }
 
     @media (min-width: ${breakpoints.small}) {
-      color: ${colors.black};
+      color: ${colors.accent};
       padding: 1.5rem 1rem;
     }
   }

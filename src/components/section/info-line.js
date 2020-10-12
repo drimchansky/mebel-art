@@ -55,11 +55,11 @@ const LinksList = styled.ul`
     text-decoration: none;
     color: ${colors.white};
     padding: 0.5rem;
-    transition: color 0.1s ease;
+    transition: opacity 0.1s ease;
 
     &:hover,
     &:focus {
-      color: ${colors.accent};
+      opacity: 0.8;
     }
   }
 
@@ -75,11 +75,11 @@ const PhoneStyled = styled.a`
   margin-right: 0.5rem;
   padding: 0.5rem;
   text-decoration: none;
-  transition: color 0.1s ease;
+  transition: opacity 0.1s ease;
 
   &:hover,
   &:focus {
-    color: ${colors.accent};
+    opacity: 0.8;
   }
 `
 

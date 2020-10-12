@@ -1,10 +1,10 @@
 const colors = {
   highlight: '#f9bc60',
-  accent: '#E16162',
+  accent: '#283646',
   gray: '#4d5156',
   lightgray: '#f1f0ee',
   black: '#212529',
-  dark: '#094067',
+  dark: '#1c5796',
   darker: '#001E1D',
   white: '#fffffe',
   medium: '#abd1c6',

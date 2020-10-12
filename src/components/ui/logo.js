@@ -17,7 +17,7 @@ const LogoStyled = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 300;
-  color: ${colors.black};
+  color: ${colors.dark};
   font-size: 1.3rem;
   letter-spacing: -1px;
 

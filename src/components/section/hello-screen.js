@@ -39,7 +39,7 @@ const HelloScreen = () => {
         <Container maxWidth="lg">
           <HelloScreenWrapperStyled>
             <h1>
-              Лучшие <span>кухни</span>
+              Лучшие <span>кухни -</span>
               <br />
               <span>для</span> лучших <span>людей</span>
             </h1>
@@ -128,7 +128,7 @@ const ButtonMoreStyled = styled(Button)`
 `
 
 const HelloScreenStyled = styled.section`
-  padding: 2rem 0;
+  padding: 3rem 0;
 
   @media (min-width: ${breakpoints.small}) {
     padding: 2.5rem 0 3.5rem;
@@ -141,14 +141,14 @@ const HelloScreenStyled = styled.section`
 `
 
 const HelloScreenWrapperStyled = styled.div`
-  color: ${colors.black};
+  color: ${colors.accent};
   z-index: 2;
   position: relative;
 
   & h1 {
     max-width: 620px;
     font-size: 1.6rem;
-    font-weight: 300;
+    font-weight: 800;
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: -1px;
@@ -157,7 +157,6 @@ const HelloScreenWrapperStyled = styled.div`
     & span {
       font-weight: 800;
       letter-spacing: initial;
-      color: ${colors.accent};
     }
 
     @media (min-width: ${breakpoints.medium}) {
