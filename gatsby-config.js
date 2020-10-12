@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Мебель Арт',
     description: 'Купить кухню по индивидуальному дизайн-проекту, город Ярославль',
-    url: 'https://furniture-art-yaroslavl.ru',
+    url: 'https://mebel-art76.ru',
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -37,7 +37,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
-        color: `#f9bc60`,
+        color: `#1c5796`,
         showSpinner: false,
         minimum: 0.2,
       },
