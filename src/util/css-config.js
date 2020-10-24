@@ -3,7 +3,7 @@ const colors = {
   accent: '#283646',
   gray: '#4d5156',
   lightgray: '#f1f0ee',
-  black: '#212529',
+  black: '#212529',  
   dark: '#1c5796',
   darker: '#001E1D',
   white: '#fffffe',

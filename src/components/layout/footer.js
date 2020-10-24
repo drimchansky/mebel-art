@@ -36,7 +36,8 @@ const Footer = () => {
               {data.eMail} <br />
               {data.phone}
             </TextStyled>
-          </Grid>
+           </Grid>
+
           <Grid item md={4}>
             <TitleStyled>Почему выбирают нас?</TitleStyled>
             <ListStyled>
