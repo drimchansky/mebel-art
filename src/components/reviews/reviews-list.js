@@ -22,6 +22,7 @@ const ReviewsList = () => {
               }
             }
             name
+            link
             id
             date(formatString: "DD MMMM, YYYY", locale: "ru")
             childContentfulReviewBodyRichTextNode {
@@ -43,6 +44,7 @@ const ReviewsList = () => {
             <ReviewItem
               key={item.node.id}
               name={item.node.name}
+              link={item.node.link}
               date={item.node.date}
               images={item.node.images}
               html={item.node.childContentfulReviewBodyRichTextNode.childContentfulRichText.html}
