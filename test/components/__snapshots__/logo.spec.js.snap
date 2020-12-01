@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo renders correctly 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #1c5796;
+  font-size: 1.3rem;
+  -webkit-letter-spacing: -1px;
+  -moz-letter-spacing: -1px;
+  -ms-letter-spacing: -1px;
+  letter-spacing: -1px;
+}
+
+.c0 span {
+  font-weight: 800;
+  margin-left: 2px;
+  color: #283646;
+}
+
+<a
+  aria-current="page"
+  className="c0"
+  href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  style={Object {}}
+>
+  Мебель 
+  <span>
+    Арт
+  </span>
+</a>
+`;

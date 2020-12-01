@@ -19,10 +19,8 @@ const Typography = ({ children, html }) => {
 const TypographyStyled = styled.div`
   color: ${colors.black};
 
-  & h1 {
-    font-size: 1.3rem;
-  }
-  & h2 {
+  & h1,
+  h2 {
     font-size: 1.3rem;
   }
   & h3 {
