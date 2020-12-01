@@ -2,6 +2,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 // util
 import { colors } from '../../util/css-config'
 
@@ -11,6 +12,10 @@ const Logo = ({ desctoponly }) => {
       Мебель <span>Арт</span>
     </LogoStyled>
   )
+}
+
+Logo.propTypes = {
+  title: PropTypes.bool,
 }
 
 const LogoStyled = styled(Link)`
