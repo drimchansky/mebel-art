@@ -1,13 +1,12 @@
 // packages
 import React from 'react'
-import Img from 'gatsby-image'
 import styled from 'styled-components'
 // components
 import Typography from '../../typography'
 import Gallery from '@browniebroke/gatsby-image-gallery'
 // utilities
 import '@browniebroke/gatsby-image-gallery/dist/style.css'
-import { colors, shadows, breakpoints } from '../../../util/css-config'
+import { colors, shadows } from '../../../util/css-config'
 
 const ReviewItem = ({ name, date, images, html }) => {
   return (
@@ -63,14 +62,12 @@ const DateStyled = styled.span`
   font-size: 0.8rem;
   padding: 0.3rem 0;
 `
-const ImagesWrapper = styled.div`
-  padding: 1rem 5px 1.5rem;
+// const ImagesWrapper = styled.div`
+//   padding: 1rem 5px 1.5rem;
 
-  @media (min-width: ${breakpoints.small}) {
-    padding: 1rem 20% 2rem;
-  }
-`
-
-
+//   @media (min-width: ${breakpoints.small}) {
+//     padding: 1rem 20% 2rem;
+//   }
+// `
 
 export default ReviewItem

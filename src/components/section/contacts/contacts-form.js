@@ -4,8 +4,7 @@ import styled from 'styled-components'
 import cogoToast from 'cogo-toast'
 import axios from 'axios'
 // compoents
-import { Grid } from '@material-ui/core'
-import TextField from '@material-ui/core/TextField'
+import { Grid, TextField } from '@material-ui/core'
 import CustomButton from '../../ui/custom-button'
 // icons
 import SendIcon from '@material-ui/icons/Send'
