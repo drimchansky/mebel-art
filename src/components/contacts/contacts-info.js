@@ -101,6 +101,7 @@ const InfoStyled = styled.div`
     font-weight: 300;
     font-size: 1rem;
     opacity: 0.8;
+    color: ${colors.black};
   }
 
   & svg {

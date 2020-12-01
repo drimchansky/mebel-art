@@ -31,13 +31,15 @@ const ReviewItemStyled = styled.li`
   flex-direction: column;
   background: ${colors.white};
   box-shadow: ${shadows.one};
+  border-radius: 5px;
 
   &:not(:first-child) {
     margin-top: 1.5rem;
   }
 
   & .review-image {
-    border-radius: 12px;
+    border-radius: 50%;
+    border: 3px solid ${colors.dark};
     cursor: pointer;
   }
 `

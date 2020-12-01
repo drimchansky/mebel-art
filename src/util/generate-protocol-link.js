@@ -4,6 +4,8 @@ const generateProtocolLink = (type, data) => {
       return `mailto:${data}`
     case 'phone':
       return `tel:${data}`
+    default:
+      return null
   }
 }
 

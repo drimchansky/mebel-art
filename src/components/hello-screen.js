@@ -116,8 +116,8 @@ const ButtonStyled = styled(Button)`
 
 const ButtonMoreStyled = styled(Button)`
   padding: 0.5rem 0.5rem !important;
-  border: 3px ${colors.accent} solid !important;
-  color: ${colors.accent} !important;
+  border: 3px ${colors.dark} solid !important;
+  color: ${colors.dark} !important;
   margin-top: 0.5rem !important;
 
   @media (min-width: ${breakpoints.small}) {
@@ -160,7 +160,7 @@ const HelloScreenWrapperStyled = styled.div`
     }
 
     @media (min-width: ${breakpoints.medium}) {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
     }
 
     @media (min-width: ${breakpoints.large}) {
@@ -169,7 +169,7 @@ const HelloScreenWrapperStyled = styled.div`
   }
 
   & p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.3;
     margin: 2rem 0;
     color: ${colors.gray};

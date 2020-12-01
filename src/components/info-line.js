@@ -1,13 +1,28 @@
 // packages
 import React from 'react'
 import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
 // components
 import Container from '@material-ui/core/Container'
 import { Link } from 'gatsby'
 // util
 import { colors, breakpoints } from '../util/css-config'
+import generateProtocolLink from '../util/generate-protocol-link'
 
 const InfoLine = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulGeneralInfo {
+        edges {
+          node {
+            eMail
+            phone
+          }
+        }
+      }
+    }
+  `).allContentfulGeneralInfo.edges[0].node
+
   return (
     <InfoLineStyled>
       <ContainerStyled maxWidth="xl">
@@ -19,7 +34,7 @@ const InfoLine = () => {
             <Link to="#">Партнёры</Link>
           </li>
         </LinksList>
-        <PhoneStyled href="tel:89657265897">+7 (965) 726-58-97</PhoneStyled>
+        <PhoneStyled href={generateProtocolLink('phone', data.phone)}>{data.phone}</PhoneStyled>
       </ContainerStyled>
     </InfoLineStyled>
   )
@@ -46,16 +61,23 @@ const LinksList = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
+  height: 100%;
 
   & li {
+    display: flex;
   }
 
   & a {
     font-size: 0.7rem;
+    height: 100%;
     text-decoration: none;
     color: ${colors.white};
-    padding: 0.5rem;
+    display: block;
     transition: opacity 0.1s ease;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
 
     &:hover,
     &:focus {
