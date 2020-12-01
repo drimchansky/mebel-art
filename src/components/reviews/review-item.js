@@ -2,11 +2,11 @@
 import React from 'react'
 import styled from 'styled-components'
 // components
-import Typography from '../../typography'
+import Typography from '../typography'
 import Gallery from '@browniebroke/gatsby-image-gallery'
 // utilities
 import '@browniebroke/gatsby-image-gallery/dist/style.css'
-import { colors, shadows } from '../../../util/css-config'
+import { colors, shadows } from '../../util/css-config'
 
 const ReviewItem = ({ name, date, images, html }) => {
   return (
@@ -37,7 +37,8 @@ const ReviewItemStyled = styled.li`
   }
 
   & .review-image {
-    border-radius: 10px;
+    border-radius: 12px;
+    cursor: pointer;
   }
 `
 

@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 // utils
-import { colors } from '../../util/css-config'
+import { colors } from '../util/css-config'
 
 const Main = ({ children }) => {
   return <MainStyled>{children}</MainStyled>

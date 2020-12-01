@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 // components
 import BackgroundImage from 'gatsby-background-image'
 // utils
-import { colors } from '../../../util/css-config'
+import { colors } from '../../util/css-config'
 
 const ContactsBg = () => {
   const data = useStaticQuery(graphql`

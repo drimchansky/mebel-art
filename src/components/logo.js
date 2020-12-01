@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 // util
-import { colors } from '../../util/css-config'
+import { colors } from '../util/css-config'
 
 const Logo = ({ desctoponly }) => {
   return (

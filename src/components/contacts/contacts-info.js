@@ -7,7 +7,8 @@ import PlaceIcon from '@material-ui/icons/Place'
 import MailOutlineIcon from '@material-ui/icons/MailOutline'
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone'
 // utils
-import { colors } from '../../../util/css-config'
+import { colors } from '../../util/css-config'
+import generateProtocolLink from '../../util/generate-protocol-link'
 
 const ContactsInfo = () => {
   const data = useStaticQuery(graphql`
@@ -33,11 +34,15 @@ const ContactsInfo = () => {
         </li>
         <li>
           <MailOutlineIcon />
-          <span>{data.eMail}</span>
+          <span>
+            <a href={generateProtocolLink('email', data.phone)}>{data.eMail}</a>
+          </span>
         </li>
         <li>
           <PhoneIphoneIcon />
-          <span>{data.phone}</span>
+          <span>
+            <a href={generateProtocolLink('phone', data.phone)}>{data.phone}</a>
+          </span>
         </li>
       </ul>
     </InfoStyled>
@@ -45,7 +50,7 @@ const ContactsInfo = () => {
 }
 
 const InfoStyled = styled.div`
-  color: ${colors.black};
+  color: ${colors.dark};
   padding: 2rem;
   padding-left: 3rem;
 
@@ -81,6 +86,11 @@ const InfoStyled = styled.div`
     display: block;
     font-size: 1.1rem;
     margin-bottom: 0.3rem;
+    color: ${colors.black};
+
+    & a {
+      color: ${colors.black};
+    }
 
     @media (min-width: 960px) {
       margin-bottom: 1rem;
@@ -97,7 +107,7 @@ const InfoStyled = styled.div`
     position: absolute;
     left: -2rem;
     top: -0.2rem;
-    fill: ${colors.accent};
+    fill: ${colors.dark};
   }
 `
 

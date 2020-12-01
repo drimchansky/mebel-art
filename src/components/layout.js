@@ -6,9 +6,9 @@ import Header from './header'
 import Main from './main'
 import Footer from './footer'
 import BodyWrapper from './body-wrapper'
-import InfoLine from '../section/info-line'
+import InfoLine from './info-line'
 // util
-import GlobalStyle from '../../util/global-style'
+import GlobalStyle from '../util/global-style'
 
 const Layout = ({ children }) => {
   // Mobile menu state

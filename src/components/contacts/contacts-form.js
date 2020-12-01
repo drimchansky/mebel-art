@@ -5,11 +5,11 @@ import cogoToast from 'cogo-toast'
 import axios from 'axios'
 // compoents
 import { Grid, TextField } from '@material-ui/core'
-import CustomButton from '../../ui/custom-button'
+import CustomButton from '../custom-button'
 // icons
 import SendIcon from '@material-ui/icons/Send'
 // utils
-import { colors, shadows } from '../../../util/css-config'
+import { colors, shadows } from '../../util/css-config'
 
 const ContactsForm = () => {
   const [formName, setFormName] = useState('')

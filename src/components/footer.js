@@ -8,7 +8,8 @@ import Grid from '@material-ui/core/Grid'
 // icons
 import DoneIcon from '@material-ui/icons/Done'
 // utils
-import { colors } from '../../util/css-config'
+import { colors } from '../util/css-config'
+import generateProtocolLink from '../util/generate-protocol-link'
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -33,10 +34,11 @@ const Footer = () => {
             <TextStyled>Ярославль и Ярославская область</TextStyled>
             <TitleStyled marginTop="10px">Контакты</TitleStyled>
             <TextStyled>
-              {data.eMail} <br />
-              {data.phone}
+              <a href={generateProtocolLink('email', data.phone)}>{data.eMail}</a>
+              <br />
+              <a href={generateProtocolLink('phone', data.phone)}>{data.phone}</a>
             </TextStyled>
-           </Grid>
+          </Grid>
 
           <Grid item md={4}>
             <TitleStyled>Почему выбирают нас?</TitleStyled>
@@ -95,6 +97,10 @@ const TextStyled = styled.p`
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.5;
+
+  & a {
+    color: ${colors.dark};
+  }
 `
 
 const ListStyled = styled.ul`

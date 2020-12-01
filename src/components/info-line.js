@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Container from '@material-ui/core/Container'
 import { Link } from 'gatsby'
 // util
-import { colors, breakpoints } from '../../util/css-config'
+import { colors, breakpoints } from '../util/css-config'
 
 const InfoLine = () => {
   return (

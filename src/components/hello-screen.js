@@ -7,7 +7,7 @@ import Container from '@material-ui/core/Container'
 import { Button } from 'gatsby-theme-material-ui'
 import BackgroundImage from 'gatsby-background-image'
 // util
-import { colors, breakpoints } from '../../util/css-config'
+import { colors, breakpoints } from '../util/css-config'
 
 const HelloScreen = () => {
   const data = useStaticQuery(graphql`

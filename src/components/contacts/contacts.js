@@ -7,7 +7,7 @@ import ContactsForm from './contacts-form'
 import ContactsInfo from './contacts-info'
 import ContactsBg from './contacts-bg'
 // utils
-import { colors } from '../../../util/css-config'
+import { colors } from '../../util/css-config'
 
 const Contacts = () => {
   return (
