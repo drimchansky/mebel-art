@@ -41,13 +41,9 @@ exports[`Logo renders correctly With props 1`] = `
 }
 
 <a
-  aria-current="page"
   className="c0"
   desctoponly="true"
   href="/"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  style={Object {}}
 >
   Мебель 
   <span>
@@ -77,12 +73,8 @@ exports[`Logo renders correctly Without props 1`] = `
 }
 
 <a
-  aria-current="page"
   className="c0"
   href="/"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  style={Object {}}
 >
   Мебель 
   <span>

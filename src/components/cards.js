@@ -72,13 +72,14 @@ const CardStyled = styled.div`
 
   & h3 {
     font-size: 1.1rem;
-    color: ${colors.dark};
+    color: ${colors.black};
     margin: 0.5rem 0;
   }
   & p {
     font-size: 0.8rem;
     margin: 0.5rem 0;
-    color: ${colors.gray};
+    color: ${colors.black};
+    font-weight: 300;
   }
 `
 const DescriptionStyled = styled.div`

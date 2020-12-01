@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
-import Logo from '../../src/components/ui/logo'
+import Logo from '../../src/components/logo'
 
 describe('Logo renders correctly', () => {
   it('Without props', () => {
