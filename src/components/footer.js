@@ -1,12 +1,15 @@
 // packages
 import React from 'react'
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 // components
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 // icons
-import DoneIcon from '@material-ui/icons/Done'
+import ImageIcon from '@material-ui/icons/Image'
+import HomeIcon from '@material-ui/icons/Home'
+import MessageIcon from '@material-ui/icons/Message'
+import ContactsIcon from '@material-ui/icons/Contacts'
 // utils
 import { colors } from '../util/css-config'
 import generateProtocolLink from '../util/generate-protocol-link'
@@ -41,36 +44,34 @@ const Footer = () => {
           </Grid>
 
           <Grid item md={4}>
-            <TitleStyled>Почему выбирают нас?</TitleStyled>
+            <TitleStyled>Навигация</TitleStyled>
             <ListStyled>
               <li>
-                <DoneIcon fontSize="small" />
-                Огромный вариант отделки
+                <Link to="/">Главная</Link>
               </li>
               <li>
-                <DoneIcon fontSize="small" />
-                Безопасные материалы
+                <Link to="/works">Работы</Link>
               </li>
               <li>
-                <DoneIcon fontSize="small" />
-                Гарантия качества
+                <Link to="/reviews">Отзывы</Link>
               </li>
               <li>
-                <DoneIcon fontSize="small" />
-                Работаем с 2017 года
-              </li>
-              <li>
-                <DoneIcon fontSize="small" />
-                Индивидуальное производство
+                <Link to="/contacts">Контакты</Link>
               </li>
             </ListStyled>
           </Grid>
           <Grid item md={4}>
-            <TitleStyled>Услуги</TitleStyled>
-            <ListStyled dotted>
-              <li>Произведение замера</li>
-              <li>Проектирование кухни</li>
-              <li>Доставка и установка</li>
+            <TitleStyled>Узнать больше</TitleStyled>
+            <ListStyled>
+              <li>
+                <Link to="/about-us">О нас</Link>
+              </li>
+              <li>
+                <Link to="/faq">Ответы на вопросы</Link>
+              </li>
+              <li>
+                <Link to="/partners">Партнёры</Link>
+              </li>
             </ListStyled>
           </Grid>
         </Grid>
@@ -106,16 +107,18 @@ const TextStyled = styled.p`
 const ListStyled = styled.ul`
   margin: 0;
   padding-top: 0.5rem;
-  padding-left: ${(props) => (props.dotted ? '1rem' : '0')};
-  list-style-type: ${(props) => (props.dotted ? 'disc' : 'none')};
+  padding-left: 0;
+  list-style-type: none;
   color: ${colors.black};
 
   & li {
-    padding: 0.3rem 0;
-    display: ${(props) => (props.dotted ? 'list-item' : 'flex')};
+    &:not(:first-child) {
+      margin-top: 0.6rem;
+    }
 
-    & svg {
-      margin-right: 4px;
+    & a {
+      display: flex;
+      color: ${colors.dark};
     }
 
     &:first-child {
