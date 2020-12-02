@@ -5,11 +5,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 // components
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
-// icons
-import ImageIcon from '@material-ui/icons/Image'
-import HomeIcon from '@material-ui/icons/Home'
-import MessageIcon from '@material-ui/icons/Message'
-import ContactsIcon from '@material-ui/icons/Contacts'
+import Social from './social'
 // utils
 import { colors } from '../util/css-config'
 import generateProtocolLink from '../util/generate-protocol-link'
@@ -41,6 +37,7 @@ const Footer = () => {
               <br />
               <a href={generateProtocolLink('phone', data.phone)}>{data.phone}</a>
             </TextStyled>
+            <Social />
           </Grid>
 
           <Grid item md={4}>
