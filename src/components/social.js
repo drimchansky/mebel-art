@@ -49,7 +49,7 @@ const SocialStyled = styled.ul`
   display: flex;
 
   & li:not(:first-child) {
-    margin-left: 10px;
+    margin-left: 15px;
   }
 
   & a {
