@@ -5,6 +5,7 @@ import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
 import ReviewItem from './review-item'
+import Title from '../title'
 
 const ReviewsList = () => {
   const reviewsData = useStaticQuery(graphql`
@@ -38,6 +39,15 @@ const ReviewsList = () => {
 
   return (
     <Container maxWidth="md">
+      <Title>
+        <h1>Отзывы наших клиентов</h1>
+        <span>
+          Вы можете увидеть больше или написать свой в нашей группе{' '}
+          <a href="https://vk.com/mebelart76" target="_blank" rel="noreferrer">
+            ВКонтакте
+          </a>
+        </span>
+      </Title>
       <ReviewsListStyled>
         {reviewsData.map((item) => {
           return (

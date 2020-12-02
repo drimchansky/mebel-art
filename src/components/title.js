@@ -30,6 +30,10 @@ const TitleStyled = styled.div`
     font-weight: 300;
     margin-top: 0.5rem;
   }
+
+  & a {
+    color: ${colors.dark};
+  }
 `
 
 export default Title

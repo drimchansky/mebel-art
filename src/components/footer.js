@@ -40,7 +40,7 @@ const Footer = () => {
             <Social />
           </Grid>
 
-          <Grid item md={4}>
+          <Grid item md={2}>
             <TitleStyled>Навигация</TitleStyled>
             <ListStyled>
               <li>
@@ -57,7 +57,7 @@ const Footer = () => {
               </li>
             </ListStyled>
           </Grid>
-          <Grid item md={4}>
+          <Grid item md={3}>
             <TitleStyled>Узнать больше</TitleStyled>
             <ListStyled>
               <li>
@@ -73,14 +73,14 @@ const Footer = () => {
           </Grid>
         </Grid>
       </Container>
+      <BottomLineStyled>© Все права защищены. 2013-2020 Мебель Арт </BottomLineStyled>
     </FooterStyled>
   )
 }
 
 const FooterStyled = styled.footer`
-  border-bottom: 8px solid ${colors.dark};
   flex-shrink: 0;
-  padding: 4rem 0;
+  padding: 4rem 0 0 0;
 `
 const TitleStyled = styled.h4`
   margin: 0;
@@ -122,6 +122,15 @@ const ListStyled = styled.ul`
       padding-top: 0;
     }
   }
+`
+
+const BottomLineStyled = styled.div`
+  background: ${colors.dark};
+  color: ${colors.white};
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 0.3rem 0;
+  margin-top: 4rem;
 `
 
 export default Footer

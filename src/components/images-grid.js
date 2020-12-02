@@ -5,6 +5,7 @@ import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
 import Gallery from '@browniebroke/gatsby-image-gallery'
+import Title from '../components/title'
 // utilities
 import '@browniebroke/gatsby-image-gallery/dist/style.css'
 
@@ -22,9 +23,9 @@ const ImagesGrid = () => {
               full: fluid(maxWidth: 1024) {
                 ...GatsbyContentfulFluid
               }
-            } 
+            }
           }
-        } 
+        }
       }
     }
   `).allContentfulGallery.edges[0].node.images
@@ -32,6 +33,15 @@ const ImagesGrid = () => {
   return (
     <ImagesGridStyled>
       <Container maxWidth="md">
+        <Title>
+          <h1>Фотографии наших работ</h1>
+          <span>
+            Вы можете увидеть больше или загрузить свои в нашей группе{' '}
+            <a href="https://vk.com/mebelart76" target="_blank" rel="noreferrer">
+              ВКонтакте
+            </a>
+          </span>
+        </Title>
         <Gallery images={images} />
       </Container>
     </ImagesGridStyled>
@@ -39,7 +49,11 @@ const ImagesGrid = () => {
 }
 
 const ImagesGridStyled = styled.section`
-  padding: 2rem 0;
+  padding-bottom: 2rem;
+
+  & img {
+    cursor: pointer;
+  }
 `
 
 export default ImagesGrid
