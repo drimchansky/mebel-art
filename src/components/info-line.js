@@ -29,9 +29,9 @@ const InfoLine = () => {
         <LinksList>
           <li>
             {/* <Link to="#">Акции</Link> */}
-            <Link to="/about-us">О нас</Link>
+            <Link to="/about-company">О компании</Link>
             <Link to="/faq">Ответы на вопросы</Link>
-            <Link to="/partners">Партнёры</Link>
+            {/* <Link to="/partners">Партнёры</Link> */}
           </li>
         </LinksList>
         <PhoneStyled href={generateProtocolLink('phone', data.phone)}>{data.phone}</PhoneStyled>

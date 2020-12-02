@@ -61,19 +61,19 @@ const Footer = () => {
             <TitleStyled>Узнать больше</TitleStyled>
             <ListStyled>
               <li>
-                <Link to="/about-us">О нас</Link>
+                <Link to="/about-company">О компании</Link>
               </li>
               <li>
                 <Link to="/faq">Ответы на вопросы</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/partners">Партнёры</Link>
-              </li>
+              </li> */}
             </ListStyled>
           </Grid>
         </Grid>
       </Container>
-      <BottomLineStyled>© Все права защищены. 2013-2020 Мебель Арт </BottomLineStyled>
+      <BottomLineStyled>© Все права защищены. Компания Мебель Арт 2020</BottomLineStyled>
     </FooterStyled>
   )
 }
@@ -98,6 +98,12 @@ const TextStyled = styled.p`
 
   & a {
     color: ${colors.dark};
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
   }
 `
 
@@ -116,6 +122,12 @@ const ListStyled = styled.ul`
     & a {
       display: flex;
       color: ${colors.dark};
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
     }
 
     &:first-child {

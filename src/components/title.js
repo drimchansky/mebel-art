@@ -20,7 +20,7 @@ const TitleStyled = styled.div`
   h5,
   h6 {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 300;
     margin: 0;
   }
 
