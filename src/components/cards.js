@@ -6,6 +6,7 @@ import styled from 'styled-components'
 // components
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import Title from './title'
 // utils
 import { colors, shadows } from '../util/css-config'
 
@@ -32,7 +33,10 @@ const Cards = () => {
   return (
     <CardsStyled>
       <Container maxWidth="lg">
-        {/* <Title>Почему с нами выгодно?</Title> */}
+        <Title>
+          <h2>Наши преимущества</h2>
+          <span>Работать с нами выгодно </span>
+        </Title>
         <Grid container spacing={3} justify="space-around">
           {cardsData.map((item) => {
             return (
