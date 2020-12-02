@@ -4,14 +4,14 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 // components
-import CustomButton from '../ui/CustomButton'
+import Button from '@material-ui/core/Button'
 // util
 import { colors, breakpoints } from '../../util/css-config'
 
 const HelloScreen = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: { eq: "images" }, name: { eq: "preview" }) {
+      file(sourceInstanceName: { eq: "images" }, name: { eq: "kitchen-02" }) {
         childImageSharp {
           fluid(maxWidth: 1920, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
@@ -27,17 +27,17 @@ const HelloScreen = () => {
       <BackgroundImageStyled Tag="div" fluid={imageData} backgroundColor={`${colors.dark}`}>
         <WrapperStyled>
           <h1>
-            Ваша новая кухня <br />
-            по индивидуальному дизайн-проекту
+            Кухни по индивидуальному <br />
+            дизайн-проекту в Ярославле
           </h1>
-          <CustomButton
-            bgcolor={colors.highlight}
-            textcolor={colors.darker}
-            size="medium"
-            href="/contacts"
-            disableElevation>
-            Бесплатный замер и дизайн проект
-          </CustomButton>
+          <ButtonsWrapper>
+            <ButtonStyled href="/contacts" disableElevation>
+              Связаться с нами
+            </ButtonStyled>
+            <ButtonMoreStyled variant="outlined" href="#advantages" disableElevation>
+              Узнать больше
+            </ButtonMoreStyled>
+          </ButtonsWrapper>
         </WrapperStyled>
       </BackgroundImageStyled>
     </HelloScreenStyled>
@@ -75,6 +75,38 @@ const WrapperStyled = styled.div`
 
   @media (min-width: ${breakpoints.medium}) {
     padding: 6rem 0;
+  }
+`
+
+const ButtonsWrapper = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+
+  @media (min-width: ${breakpoints.small}) {
+    flex-direction: row;
+  } ;
+`
+
+const ButtonStyled = styled(Button)`
+  padding: 0.5rem 1rem !important;
+  background: ${colors.dark} !important;
+  color: ${colors.white} !important;
+
+  @media (min-width: ${breakpoints.small}) {
+    padding: 0.5rem 2rem !important;
+  }
+`
+
+const ButtonMoreStyled = styled(Button)`
+  padding: 0.5rem 0.5rem !important;
+  border: 3px ${colors.white} solid !important;
+  color: ${colors.white} !important;
+  margin-top: 0.5rem !important;
+
+  @media (min-width: ${breakpoints.small}) {
+    padding: 0.5rem 1rem !important;
+    margin-top: 0 !important;
+    margin-left: 0.5rem !important;
   }
 `
 

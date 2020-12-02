@@ -31,7 +31,7 @@ const Cards = () => {
   `).allContentfulFeature.edges
 
   return (
-    <CardsStyled>
+    <CardsStyled id="advantages">
       <Container maxWidth="lg">
         <Title>
           <h2>Наши преимущества</h2>

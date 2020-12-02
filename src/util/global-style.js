@@ -17,7 +17,8 @@ html {
   font-family: ${fonts.main};
   line-height: 1.15; 
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden; 
+  overflow-x: hidden;
+   
 
   @media(min-width: ${breakpoints.small}) {
     font-size: 18px;
@@ -76,6 +77,7 @@ body {
   margin: 0;
   height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 hr {
