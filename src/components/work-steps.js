@@ -3,19 +3,102 @@ import React from 'react'
 import styled from 'styled-components'
 // components
 import Title from './title'
+import Container from '@material-ui/core/Container'
+import Grid from '@material-ui/core/Grid'
 // utils
 import { colors } from '../util/css-config'
+// icons
+import {
+  DesignIcon,
+  MeasureIcon,
+  ContractIcon,
+  ManufactureIcon,
+  DeliveryIcon,
+  HappinessIcon,
+} from '../util/svg-components'
 
 const WorkSteps = () => {
   return (
     <WorkStepsStyled>
-      <Title>
-        <h3>Порядок работы</h3>
-      </Title>
+      <Container maxWidth="xl">
+        <Title>
+          <h3>Порядок работы</h3>
+        </Title>
+        <Grid container spacing={2} style={{ marginTop: 20 }}>
+          <Grid item xs={12} sm={6} md={2}>
+            <CardStyled>
+              <DesignIcon />
+              <span>Дизайн-проект</span>
+              <p>Дизайнер создаст дизайн-проект учитывая все Ваши пожелания</p>
+            </CardStyled>
+          </Grid>
+          <Grid item xs={12} sm={6} md={2}>
+            <CardStyled>
+              <MeasureIcon />
+              <span>Замер</span>
+              <p>Наши замерщики приедут в удобное для Вас время</p>
+            </CardStyled>
+          </Grid>
+          <Grid item xs={12} sm={6} md={2}>
+            <CardStyled>
+              <ContractIcon />
+              <span>Договор</span>
+              <p>Прописываем все условия и сроки, оформляем предоплату</p>
+            </CardStyled>
+          </Grid>
+          <Grid item xs={12} sm={6} md={2}>
+            <CardStyled>
+              <ManufactureIcon />
+              <span>Производство</span>
+              <p>После заключения договора дизайн-проект отправляется на фабрику</p>
+            </CardStyled>
+          </Grid>
+          <Grid item xs={12} sm={6} md={2}>
+            <CardStyled>
+              <DeliveryIcon />
+              <span>Доставка и сборка</span>
+              <p>Доставим кухню в удобное для вас время, соберем и подключим технику</p>
+            </CardStyled>
+          </Grid>
+          <Grid item xs={12} sm={6} md={2}>
+            <CardStyled>
+              <HappinessIcon />
+              <span>Готово</span>
+              <p>Вы радуетесь новой кухне!</p>
+            </CardStyled>
+          </Grid>
+        </Grid>
+      </Container>
     </WorkStepsStyled>
   )
 }
 
-const WorkStepsStyled = styled.section``
+const WorkStepsStyled = styled.section`
+  background: ${colors.medium};
+  padding: 3rem 0 4rem;
+`
+
+const CardStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  & span {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  & p {
+    font-weight: 300;
+    font-size: 0.8rem;
+  }
+
+  & svg {
+    height: 50%;
+    width: 50%;
+    fill: ${colors.black};
+  }
+`
 
 export default WorkSteps
