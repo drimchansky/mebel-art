@@ -42,7 +42,7 @@ const ContactsForm = () => {
   }
 
   return (
-    <FormStyled onSubmit={handleSubmit}>
+    <FormStyled onSubmit={handleSubmit} id="contact-form">
       <TitleStyled>Заинтересованы в покупке кухни мечты?</TitleStyled>
       <Grid container spacing={2} justify="center">
         <Grid item container xs={12} sm={8} md={5} justify="center">

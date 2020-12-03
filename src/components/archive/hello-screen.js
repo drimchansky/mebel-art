@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 // components
-import Button from '@material-ui/core/Button'
+// import Button from '@material-ui/core/Button'
+import { Button } from 'gatsby-theme-material-ui'
 // util
 import { colors, breakpoints } from '../../util/css-config'
 
@@ -31,7 +32,7 @@ const HelloScreen = () => {
             дизайн-проекту в Ярославле
           </h1>
           <ButtonsWrapper>
-            <ButtonStyled href="/contacts" disableElevation>
+            <ButtonStyled to="/contacts#contact-form" disableElevation>
               Связаться с нами
             </ButtonStyled>
             <ButtonMoreStyled variant="outlined" href="#advantages" disableElevation>

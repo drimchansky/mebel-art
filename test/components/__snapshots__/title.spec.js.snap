@@ -14,7 +14,7 @@ exports[`Without props 1`] = `
 .c0 h5,
 .c0 h6 {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 300;
   margin: 0;
 }
 
@@ -23,6 +23,10 @@ exports[`Without props 1`] = `
   font-size: 1rem;
   font-weight: 300;
   margin-top: 0.5rem;
+}
+
+.c0 a {
+  color: #1c5796;
 }
 
 <div

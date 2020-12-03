@@ -24,7 +24,7 @@ const WorkSteps = () => {
         <Title>
           <h3>Порядок работы</h3>
         </Title>
-        <Grid container spacing={2} style={{ marginTop: 20 }}>
+        <Grid container spacing={2} style={{ marginTop: 60 }}>
           <Grid item xs={12} sm={6} md={2}>
             <CardStyled>
               <DesignIcon />
@@ -95,8 +95,8 @@ const CardStyled = styled.div`
   }
 
   & svg {
-    height: 50%;
-    width: 50%;
+    height: 40%;
+    width: 40%;
     fill: ${colors.black};
   }
 `
