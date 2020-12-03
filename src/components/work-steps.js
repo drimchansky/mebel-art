@@ -21,7 +21,7 @@ const WorkSteps = () => {
   return (
     <WorkStepsStyled>
       <Container maxWidth="xl">
-        <Title>
+        <Title textColor={colors.white}>
           <h3>Порядок работы</h3>
         </Title>
         <Grid container spacing={2} style={{ marginTop: 60 }}>
@@ -74,7 +74,7 @@ const WorkSteps = () => {
 }
 
 const WorkStepsStyled = styled.section`
-  background: ${colors.medium};
+  background: ${colors.dark};
   padding: 3rem 0 4rem;
 `
 
@@ -83,6 +83,7 @@ const CardStyled = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  color: ${colors.white};
 
   & span {
     margin-top: 1rem;
@@ -97,7 +98,7 @@ const CardStyled = styled.div`
   & svg {
     height: 40%;
     width: 40%;
-    fill: ${colors.black};
+    fill: ${colors.white};
   }
 `
 

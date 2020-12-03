@@ -4,12 +4,12 @@ import styled from 'styled-components'
 // utils
 import { colors } from '../util/css-config'
 
-const Title = ({ children }) => {
-  return <TitleStyled>{children}</TitleStyled>
+const Title = ({ children, textColor }) => {
+  return <TitleStyled textColor={textColor}>{children}</TitleStyled>
 }
 
 const TitleStyled = styled.div`
-  color: ${colors.black};
+  color: ${(props) => props.textColor || colors.black};
   text-align: center;
   margin: 1rem 0 2rem 0;
 

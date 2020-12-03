@@ -6,6 +6,7 @@ import SEO from '../components/SEO'
 import HelloScreen from '../components/archive/hello-screen'
 import Cards from '../components/cards'
 import WorkSteps from '../components/work-steps'
+import OurSocials from '../components/our-socials'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <HelloScreen />
         <Cards />
         <WorkSteps />
+        <OurSocials />
       </Layout>
     </>
   )
