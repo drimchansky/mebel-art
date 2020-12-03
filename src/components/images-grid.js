@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import Container from '@material-ui/core/Container'
 import Gallery from '@browniebroke/gatsby-image-gallery'
 import Title from '../components/title'
+import CustomBreadcrumbs from './custom-breadcrumbs'
 // utilities
 import '@browniebroke/gatsby-image-gallery/dist/style.css'
 
@@ -33,6 +34,7 @@ const ImagesGrid = () => {
   return (
     <ImagesGridStyled>
       <Container maxWidth="md">
+        <CustomBreadcrumbs currentPage="Наши проекты" />
         <Title>
           <h1>Фотографии наших работ</h1>
           <span>

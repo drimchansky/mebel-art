@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import Container from '@material-ui/core/Container'
 import ReviewItem from './review-item'
 import Title from '../title'
+import CustomBreadcrumbs from '../custom-breadcrumbs'
 
 const ReviewsList = () => {
   const reviewsData = useStaticQuery(graphql`
@@ -39,6 +40,7 @@ const ReviewsList = () => {
 
   return (
     <Container maxWidth="md">
+      <CustomBreadcrumbs currentPage="Отзывы клиентов" />
       <Title>
         <h1>Отзывы наших клиентов</h1>
         <span>
