@@ -6,7 +6,7 @@ import SocialHorizontal from './social-horizontal'
 import Container from '@material-ui/core/Container'
 import Title from './title'
 // utils
-import { colors } from '../util/css-config'
+// import { colors } from '../util/css-config'
 
 const OurSocials = ({ bgColor, titleColor }) => {
   return (

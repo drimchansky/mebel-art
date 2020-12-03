@@ -37,7 +37,7 @@ const Cards = () => {
           <h2>Наши преимущества</h2>
           <span>Работать с нами выгодно </span>
         </Title>
-        <Grid container spacing={3} justify="space-around">
+        <Grid container spacing={3} justify="space-around" style={{ marginTop: 50 }}>
           {cardsData.map((item) => {
             return (
               <GridItemStyled key={item.node.title} item sm={6} md={4}>

@@ -6,23 +6,30 @@ import axios from 'axios'
 // compoents
 import { Grid, TextField } from '@material-ui/core'
 import CustomButton from '../custom-button'
+import Title from '../title'
+import SocialHorizontal from '../social-horizontal'
 // icons
 import SendIcon from '@material-ui/icons/Send'
+import HourglassEmptyIcon from '@material-ui/icons/HourglassEmpty'
 // utils
-import { colors, shadows } from '../../util/css-config'
+import { colors, shadows, breakpoints } from '../../util/css-config'
 
 const ContactsForm = () => {
   const [formName, setFormName] = useState('')
   const [formPhone, setFormPhone] = useState('')
   const [formMessage, setFormMessage] = useState('')
 
+  const [loading, setLoading] = useState(false)
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = new FormData(e.target)
+    setLoading(true)
 
     axios({
       method: 'POST',
       url: 'https://formsubmit.co/ajax/deko32@mail.ru',
+      // url: 'https://formsubmit.co/ajax/drimchansky@gmail.com',
       data: data,
     })
       .then(function (response) {
@@ -30,6 +37,7 @@ const ContactsForm = () => {
         setFormName('')
         setFormPhone('')
         setFormMessage('')
+        setLoading(false)
       })
       .catch(function (response) {
         cogoToast.error(
@@ -43,7 +51,14 @@ const ContactsForm = () => {
 
   return (
     <FormStyled onSubmit={handleSubmit} id="contact-form">
-      <TitleStyled>Заинтересованы в покупке кухни мечты?</TitleStyled>
+      <Title alignment="left">
+        <h2>Заинтересованы в покупке кухни мечты?</h2>
+        <span>Вы можете связаться с нами в удобной для вас социальной сети или мессенджере:</span>
+      </Title>
+      <SocialHorizontal />
+      <Title alignment="left">
+        <span>Или оставить заявку за звонок:</span>
+      </Title>
       <Grid container spacing={2} justify="center">
         <Grid item container xs={12} sm={8} md={5} justify="center">
           <TextFieldStyled
@@ -96,13 +111,14 @@ const ContactsForm = () => {
         </Grid>
         <Grid item container xs={12} justify="center">
           <CustomButton
-            bgcolor={colors.accent}
+            bgcolor={colors.dark}
             textcolor={colors.white}
             size="large"
             type="submit"
             variant="contained"
-            startIcon={<SendIcon />}
-            margintop="1.5rem">
+            startIcon={loading ? <HourglassEmptyIcon /> : <SendIcon />}
+            margintop="1.5rem"
+            disabled={loading}>
             Отправить
           </CustomButton>
         </Grid>
@@ -111,34 +127,24 @@ const ContactsForm = () => {
   )
 }
 
-const TitleStyled = styled.span`
-  display: block;
-  padding: 0.5rem 0 2rem 0;
-  font-size: 1.2rem;
-  color: ${colors.black};
-
-  @media (min-width: 960px) {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-    color: ${colors.black};
-  }
-`
-
 const FormStyled = styled.form`
   margin: 0 auto;
   padding: 1rem 0.5rem 2rem;
 
-  @media (min-width: 960px) {
+  @media (min-width: ${breakpoints.medium}) {
     position: absolute;
     bottom: -2rem;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 3%);
     padding: 3rem 3.5rem 4rem 3.5rem;
     width: 900px;
     background: ${colors.white};
-    /* border: 1px solid black; */
     box-shadow: ${shadows.five};
     border-radius: 7px;
+  }
+
+  @media (min-width: ${breakpoints.large}) {
+    transform: translate(-50%, 30%);
   }
 `
 //
@@ -148,7 +154,7 @@ const FormStyled = styled.form`
 const TextFieldStyled = styled(TextField)`
   flex-direction: row !important;
 
-  @media (min-width: 960px) {
+  @media (min-width: ${breakpoints.medium}) {
     margin-bottom: 0 !important;
   }
 
