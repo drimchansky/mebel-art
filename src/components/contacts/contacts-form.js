@@ -57,7 +57,7 @@ const ContactsForm = () => {
       </Title>
       <SocialHorizontal />
       <Title alignment="left">
-        <span>Или оставить заявку за звонок:</span>
+        <span>Или оставить заявку на звонок:</span>
       </Title>
       <Grid container spacing={2} justify="center">
         <Grid item container xs={12} sm={8} md={5} justify="center">

@@ -32,7 +32,7 @@ const HelloScreen = () => {
             дизайн-проекту в Ярославле
           </h1>
           <ButtonsWrapper>
-            <ButtonStyled to="/contacts" disableElevation>
+            <ButtonStyled to="/contacts#contact-form" disableElevation>
               Связаться с нами
             </ButtonStyled>
             <ButtonMoreStyled variant="outlined" href="#advantages" disableElevation>
