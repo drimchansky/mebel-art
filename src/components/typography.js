@@ -18,22 +18,21 @@ const Typography = ({ children, html }) => {
 
 const TypographyStyled = styled.div`
   color: ${colors.black};
+  font-weight: 400;
 
-  & h1,
-  h2 {
+  & h1 {
     font-size: 1.3rem;
   }
-  & h3 {
-    font-size: 1.3rem;
-  }
-  & h4 {
+
+  & h2 {
     font-size: 1.2rem;
   }
-  & h5 {
-    font-size: 1.15rem;
-  }
-  & h6 {
-    font-size: 1rem;
+
+  & h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1.1rem;
   }
 
   & p {
