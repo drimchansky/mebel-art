@@ -1,28 +1,43 @@
 // packages
 import React from 'react'
 import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
 // utils
 import { colors, breakpoints } from '../util/css-config'
 // icons
 import { VKIcon, ViberIcon, TelegramIcon } from '../util/svg-components'
 
 const SocialHorizontal = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulGeneralInfo {
+        edges {
+          node {
+            vk
+            telegram
+            viber
+          }
+        }
+      }
+    }
+  `).allContentfulGeneralInfo.edges[0].node
+
   return (
     <SocialHorizontalStyled>
       <li>
-        <LinkStyled href="/" bg="#4b729f">
+        <LinkStyled href={data.vk} bg="#4b729f">
           <VKIcon fill={colors.white} size="30px" />
           <span>ВКонтакте</span>
         </LinkStyled>
       </li>
       <li>
-        <LinkStyled href="/" bg="#8e24aa">
+        <LinkStyled href={data.viber} bg="#8e24aa">
           <ViberIcon fill={colors.white} size="30px" />
           <span>Viber</span>
         </LinkStyled>
       </li>
       <li>
-        <LinkStyled href="/" bg="#039be5">
+        <LinkStyled href={data.telegram} bg="#039be5">
           <TelegramIcon fillOuter={colors.white} fillInner="#039be5" size="30" />
           <span>Telegram</span>
         </LinkStyled>

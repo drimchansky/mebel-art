@@ -1,26 +1,41 @@
 // packages
 import React from 'react'
 import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
 // icons
 import { VKIcon, ViberIcon, TelegramIcon } from '../util/svg-components'
 // utils
 import { colors } from '../util/css-config'
 
 const Social = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulGeneralInfo {
+        edges {
+          node {
+            vk
+            telegram
+            viber
+          }
+        }
+      }
+    }
+  `).allContentfulGeneralInfo.edges[0].node
+
   return (
     <SocialStyled>
       <li>
-        <a href="https://vk.com/mebelart76" target="_blank" rel="noreferrer">
+        <a href={data.vk} target="_blank" rel="noreferrer">
           <VKIcon fill="#4b729f" />
         </a>
       </li>
       <li>
-        <a href="/" target="_blank" rel="noreferrer">
+        <a href={data.viber} target="_blank" rel="noreferrer">
           <ViberIcon fill="#8e24aa" />
         </a>
       </li>
       <li>
-        <a href="/" target="_blank" rel="noreferrer">
+        <a href={data.telegram} target="_blank" rel="noreferrer">
           <TelegramIcon fillOuter="#039be5" fillInner={colors.white} />
         </a>
       </li>
