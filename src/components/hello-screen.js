@@ -10,11 +10,18 @@ import { Button } from 'gatsby-theme-material-ui'
 import { colors, breakpoints } from '../util/css-config'
 
 const HelloScreen = () => {
-  const data = useStaticQuery(graphql`
+  const { mobileImage, desktopImage } = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: { eq: "images" }, name: { eq: "kitchen-02" }) {
+      desktopImage: file(sourceInstanceName: { eq: "images" }, name: { eq: "kitchen-02" }) {
         childImageSharp {
           fluid(maxWidth: 1920, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      mobileImage: file(sourceInstanceName: { eq: "images" }, name: { eq: "image-bg" }) {
+        childImageSharp {
+          fluid(maxWidth: 600, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -22,10 +29,17 @@ const HelloScreen = () => {
     }
   `)
 
-  const imageData = data.file.childImageSharp.fluid
+  const sources = [
+    mobileImage.childImageSharp.fluid,
+    {
+      ...desktopImage.childImageSharp.fluid,
+      media: `(min-width: 600px)`,
+    },
+  ]
+
   return (
     <HelloScreenStyled>
-      <BackgroundImageStyled Tag="div" fluid={imageData} backgroundColor={`${colors.dark}`}>
+      <BackgroundImageStyled Tag="div" fluid={sources} backgroundColor={`${colors.dark}`}>
         <WrapperStyled>
           <h1>
             Кухня по индивидуальному <br />
