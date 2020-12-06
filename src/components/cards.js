@@ -8,7 +8,7 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Title from './title'
 // utils
-import { colors, shadows } from '../util/css-config'
+import { colors, shadows, breakpoints } from '../util/css-config'
 
 const Cards = () => {
   const cardsData = useStaticQuery(graphql`
@@ -75,15 +75,23 @@ const CardStyled = styled.div`
   flex-direction: column;
 
   & span {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: ${colors.black};
     margin: 0.5rem 0;
+
+    @media (min-width: ${breakpoints.medium}) {
+      font-size: 1.1rem;
+    }
   }
   & p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin: 0.5rem 0;
     color: ${colors.black};
     font-weight: 300;
+
+    @media (min-width: ${breakpoints.medium}) {
+      font-size: 0.8rem;
+    }
   }
 `
 const DescriptionStyled = styled.div`

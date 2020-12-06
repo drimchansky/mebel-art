@@ -9,6 +9,7 @@ import { colors } from '../util/css-config'
 import Title from './title'
 import Img from 'gatsby-image'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import Container from '@material-ui/core/Container'
 // Import Swiper styles
 import 'swiper/swiper.scss'
 
@@ -39,16 +40,15 @@ const Suppliers = () => {
         <h5>Наши поставщики</h5>
       </Title>
       <Swiper
-        spaceBetween={10}
+        style={{ paddingLeft: 18, paddingRight: 18 }}
+        spaceBetween={20}
         slidesPerView={2}
         breakpoints={{
           600: {
             slidesPerView: 3,
-            spaceBetween: 15,
           },
           960: {
             slidesPerView: 4,
-            spaceBetween: 20,
           },
         }}
         loop={true}

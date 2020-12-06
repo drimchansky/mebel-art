@@ -6,7 +6,7 @@ import Title from './title'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 // utils
-import { colors } from '../util/css-config'
+import { colors, breakpoints } from '../util/css-config'
 // icons
 import {
   DesignIcon,
@@ -87,12 +87,20 @@ const CardStyled = styled.div`
 
   & span {
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.3rem;
+
+    @media (min-width: ${breakpoints.medium}) {
+      font-size: 1.1rem;
+    }
   }
 
   & p {
     font-weight: 300;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
+
+    @media (min-width: ${breakpoints.medium}) {
+      font-size: 0.8rem;
+    }
   }
 
   & svg {

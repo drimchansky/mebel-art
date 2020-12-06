@@ -23,14 +23,14 @@ const TitleStyled = styled.div`
   h4,
   h5,
   h6 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 300;
     margin: 0;
   }
 
   & span {
     display: block;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 300;
     margin-top: 0.5rem;
   }

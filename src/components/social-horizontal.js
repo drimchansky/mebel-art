@@ -60,7 +60,7 @@ const SocialHorizontalStyled = styled.ul`
   }
 
   & li {
-    width: 60%;
+    width: 80%;
 
     @media (min-width: ${breakpoints.small}) {
       width: 30%;
