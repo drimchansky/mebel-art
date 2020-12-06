@@ -84,6 +84,7 @@ const LinkStyled = styled.a`
   border-radius: 5px;
   transition: opacity 0.2s;
   text-decoration: none;
+  font-weight: 700;
 
   &:hover,
   &:focus {
