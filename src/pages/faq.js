@@ -7,6 +7,7 @@ import Title from '../components/title'
 import OurSocials from '../components/our-socials'
 import Container from '@material-ui/core/Container'
 import Questions from '../components/questions'
+import CustomBreadcrumbs from '../components/custom-breadcrumbs'
 // utils
 import { colors } from '../util/css-config'
 
@@ -16,6 +17,7 @@ export default function faq() {
       <SEO title="Ответы на вопросы" description="Ответы на часто задаваемые вопросы" />
       <Layout>
         <Container maxWidth="md" style={{ paddingBottom: 50 }}>
+          <CustomBreadcrumbs currentPage="Часто задаваемые вопросы" />
           <Title>
             <h1>Часто задаваемые вопросы</h1>
           </Title>

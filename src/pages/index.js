@@ -7,6 +7,7 @@ import HelloScreen from '../components/archive/hello-screen'
 import Cards from '../components/cards'
 import WorkSteps from '../components/work-steps'
 import OurSocials from '../components/our-socials'
+import Suppliers from '../components/suppliers'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Cards />
         <WorkSteps />
         <OurSocials />
+        <Suppliers />
       </Layout>
     </>
   )
