@@ -134,7 +134,7 @@ exports[`Without props 1`] = `
       desctoponly="true"
       href="/"
     >
-      Мебель 
+      Мебель
       <span>
         Арт
       </span>

@@ -45,7 +45,7 @@ exports[`Logo renders correctly With props 1`] = `
   desctoponly="true"
   href="/"
 >
-  Мебель 
+  Мебель
   <span>
     Арт
   </span>
@@ -76,7 +76,7 @@ exports[`Logo renders correctly Without props 1`] = `
   className="c0"
   href="/"
 >
-  Мебель 
+  Мебель
   <span>
     Арт
   </span>

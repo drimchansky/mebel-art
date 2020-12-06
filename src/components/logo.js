@@ -9,7 +9,7 @@ import { colors } from '../util/css-config'
 const Logo = ({ desctoponly }) => {
   return (
     <LogoStyled desctoponly={desctoponly} to="/">
-      Мебель <span>Арт</span>
+      Мебель<span>Арт</span>
     </LogoStyled>
   )
 }

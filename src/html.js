@@ -44,9 +44,9 @@ export default function HTML(props) {
 
         <meta
           name="google-site-verification"
-          content="G4uA9d9gfAG6-nqFgZLBj_VXSZb-M7ur2BFS9rKymQc"
+          content="ePV4KdCIkkLnbrhaJF-iIZYtfB0tGZqNd2LORSdj68E"
         />
-        <meta name="yandex-verification" content="7bc37e493d31c119" />
+        <meta name="yandex-verification" content="50f048b178fdca09" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

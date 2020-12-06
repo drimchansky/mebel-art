@@ -2,96 +2,80 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
-// components
-import Container from '@material-ui/core/Container'
-import { Button } from 'gatsby-theme-material-ui'
 import BackgroundImage from 'gatsby-background-image'
+// components
+// import Button from '@material-ui/core/Button'
+import { Button } from 'gatsby-theme-material-ui'
 // util
 import { colors, breakpoints } from '../util/css-config'
 
 const HelloScreen = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulGeneralInfo {
-        edges {
-          node {
-            description
-            ourOffer
-          }
-        }
-      }
-      file(sourceInstanceName: { eq: "images" }, name: { eq: "kitchen-art" }) {
+      file(sourceInstanceName: { eq: "images" }, name: { eq: "kitchen-02" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+          fluid(maxWidth: 1920, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
     }
   `)
 
-  const generalInfo = data.allContentfulGeneralInfo.edges[0].node
   const imageData = data.file.childImageSharp.fluid
-
   return (
-    <BackgroundImageStyled Tag="section" fluid={imageData}>
-      <HelloScreenStyled>
-        <Container maxWidth="lg">
-          <HelloScreenWrapperStyled>
-            <h1>
-              Лучшие <span>кухни -</span>
-              <br />
-              <span>для</span> лучших <span>людей</span>
-            </h1>
-            {/* <h1>{generalInfo.description}</h1> */}
-            <p>{generalInfo.ourOffer}</p>
-            <ButtonsWrapper>
-              <ButtonStyled href="/contacts" disableElevation>
-                Свяжитесь с нами
-              </ButtonStyled>
-              <ButtonMoreStyled variant="outlined" href="#" disableElevation>
-                Узнать больше
-              </ButtonMoreStyled>
-            </ButtonsWrapper>
-          </HelloScreenWrapperStyled>
-        </Container>
-      </HelloScreenStyled>
-    </BackgroundImageStyled>
+    <HelloScreenStyled>
+      <BackgroundImageStyled Tag="div" fluid={imageData} backgroundColor={`${colors.dark}`}>
+        <WrapperStyled>
+          <h1>
+            Кухня по индивидуальному <br />
+            дизайн-проекту в Ярославле
+          </h1>
+          <ButtonsWrapper>
+            <ButtonStyled to="/contacts#contact-form" disableElevation>
+              Связаться с нами
+            </ButtonStyled>
+            <ButtonMoreStyled variant="outlined" href="#advantages" disableElevation>
+              Узнать больше
+            </ButtonMoreStyled>
+          </ButtonsWrapper>
+        </WrapperStyled>
+      </BackgroundImageStyled>
+    </HelloScreenStyled>
   )
 }
 
+const HelloScreenStyled = styled.section``
+
 const BackgroundImageStyled = styled(BackgroundImage)`
-  &:before {
-    background-repeat: no-repeat;
-    background-position: right bottom !important;
-    background-size: 40% !important;
-  }
-  &:after {
-    background-repeat: no-repeat;
-    background-position: right bottom !important;
-    background-size: 40% !important;
+  height: 100%;
+`
+const WrapperStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0) linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)) repeat scroll
+    0% 0%;
+  height: 100%;
+  width: 100%;
+  padding: 7rem 0;
+
+  & h1 {
+    color: ${colors.white};
+    text-shadow: rgba(0, 0, 0, 0.15) 0px 2px 2px;
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.8rem;
+    max-width: 1060px;
+
+    @media (min-width: ${breakpoints.small}) {
+      font-size: 2rem;
+    }
   }
 
   @media (min-width: ${breakpoints.medium}) {
-    &:before {
-      background-position: right center !important;
-      z-index: 1 !important;
-    }
-    &:after {
-      background-position: right center !important;
-      z-index: 1 !important;
-    }
-  }
-
-  @media (min-width: ${breakpoints.large}) {
-    &:before {
-      background-size: 45% !important;
-      background-position: 90% center !important;
-    }
-    &:after {
-      background-size: 45% !important;
-      background-position: 90% center !important;
-    }
+    padding: 6rem 0;
   }
 `
 
@@ -105,7 +89,7 @@ const ButtonsWrapper = styled.div`
 `
 
 const ButtonStyled = styled(Button)`
-  padding: 0.5rem 1rem !important;
+  padding: 1rem 3.5rem !important;
   background: ${colors.dark} !important;
   color: ${colors.white} !important;
 
@@ -116,75 +100,14 @@ const ButtonStyled = styled(Button)`
 
 const ButtonMoreStyled = styled(Button)`
   padding: 0.5rem 0.5rem !important;
-  border: 3px ${colors.dark} solid !important;
-  color: ${colors.dark} !important;
-  margin-top: 0.5rem !important;
+  border: 3px ${colors.white} solid !important;
+  color: ${colors.white} !important;
+  margin-top: 0.8rem !important;
 
   @media (min-width: ${breakpoints.small}) {
     padding: 0.5rem 1rem !important;
     margin-top: 0 !important;
     margin-left: 0.5rem !important;
-  }
-`
-
-const HelloScreenStyled = styled.section`
-  padding: 3rem 0;
-
-  @media (min-width: ${breakpoints.small}) {
-    padding: 2.5rem 0 3.5rem;
-  }
-
-  @media (min-width: 960px) {
-    background: linear-gradient(to right, ${colors.white} 68%, ${colors.lightgray} 32%);
-    padding-bottom: 5rem;
-  }
-`
-
-const HelloScreenWrapperStyled = styled.div`
-  color: ${colors.accent};
-  z-index: 2;
-  position: relative;
-
-  & h1 {
-    max-width: 620px;
-    font-size: 1.6rem;
-    font-weight: 800;
-    line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    margin: 0;
-
-    & span {
-      font-weight: 800;
-      letter-spacing: initial;
-    }
-
-    @media (min-width: ${breakpoints.medium}) {
-      font-size: 2.3rem;
-    }
-
-    @media (min-width: ${breakpoints.large}) {
-      max-width: 1200px;
-    }
-  }
-
-  & p {
-    font-size: 0.9rem;
-    line-height: 1.3;
-    margin: 2rem 0;
-    color: ${colors.gray};
-
-    @media (min-width: 400px) {
-      max-width: 70%;
-    }
-
-    @media (min-width: ${breakpoints.small}) {
-      max-width: 65%;
-    }
-
-    @media (min-width: ${breakpoints.large}) {
-      max-width: 50%;
-    }
   }
 `
 
