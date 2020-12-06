@@ -25,17 +25,17 @@ const Social = () => {
   return (
     <SocialStyled>
       <li>
-        <a href={data.vk} target="_blank" rel="noreferrer">
+        <a href={data.vk} target="_blank" rel="noreferrer" aria-label="ВКонтакте">
           <VKIcon fill="#4b729f" />
         </a>
       </li>
       <li>
-        <a href={data.viber} target="_blank" rel="noreferrer">
+        <a href={data.viber} target="_blank" rel="noreferrer" aria-label="Viber">
           <ViberIcon fill="#8e24aa" />
         </a>
       </li>
       <li>
-        <a href={data.telegram} target="_blank" rel="noreferrer">
+        <a href={data.telegram} target="_blank" rel="noreferrer" aria-label="Telegram">
           <TelegramIcon fillOuter="#039be5" fillInner={colors.white} />
         </a>
       </li>

@@ -6,11 +6,7 @@ import { colors, breakpoints } from '../util/css-config'
 
 const Hamburger = ({ active, setActive }) => {
   return (
-    <HamburgerStyled
-      onClick={() => setActive(!active)}
-      type="button"
-      aria-label="Menu"
-      aria-controls="navigation">
+    <HamburgerStyled onClick={() => setActive(!active)} type="button" aria-controls="navigation">
       <HamburderBoxStyled>
         <HamburderInnerStyled></HamburderInnerStyled>
       </HamburderBoxStyled>

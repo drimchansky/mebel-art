@@ -37,8 +37,8 @@ const SocialHorizontal = () => {
         </LinkStyled>
       </li>
       <li>
-        <LinkStyled href={data.telegram} bg="#039be5">
-          <TelegramIcon fillOuter={colors.white} fillInner="#039be5" size="30" />
+        <LinkStyled href={data.telegram} bg="#5682a3">
+          <TelegramIcon fillOuter={colors.white} fillInner="#5682a3" size="30" />
           <span>Telegram</span>
         </LinkStyled>
       </li>

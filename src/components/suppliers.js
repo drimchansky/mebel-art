@@ -9,7 +9,6 @@ import { colors } from '../util/css-config'
 import Title from './title'
 import Img from 'gatsby-image'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import Container from '@material-ui/core/Container'
 // Import Swiper styles
 import 'swiper/swiper.scss'
 
