@@ -24,6 +24,7 @@ export default function HTML(props) {
             @font-face {
               font-family: 'Roboto';
               font-style: normal;
+              font-display: swap;
               font-weight: 300;
               src: url('fonts/roboto-v20-cyrillic-300.woff2') format('woff2'),
                 url('fonts/roboto-v20-cyrillic-300.woff') format('woff');
@@ -32,6 +33,7 @@ export default function HTML(props) {
             @font-face {
               font-family: 'Roboto';
               font-style: normal;
+              font-display: swap;
               font-weight: 400;
               src: url('fonts/roboto-v20-cyrillic-regular.woff2') format('woff2'),
                 url('fonts/roboto-v20-cyrillic-regular.woff') format('woff');
@@ -40,6 +42,7 @@ export default function HTML(props) {
             @font-face {
               font-family: 'Roboto';
               font-style: normal;
+              font-display: swap;
               font-weight: 700;
               src: url('fonts/roboto-v20-cyrillic-700.woff2') format('woff2'),
                 url('fonts/roboto-v20-cyrillic-700.woff') format('woff');
