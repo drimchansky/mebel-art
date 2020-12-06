@@ -144,7 +144,7 @@ const FormStyled = styled.form`
   }
 
   @media (min-width: ${breakpoints.large}) {
-    transform: translate(-50%, 30%);
+    transform: translate(-50%, 33%);
   }
 `
 //
