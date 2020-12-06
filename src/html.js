@@ -48,13 +48,19 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
-        <noscript>
-          <iframe
+        {/* Google Tag Manager */}
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `
+            <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KGPGF2V"
             height="0"
             width="0"
             style="display:none;visibility:hidden"></iframe>
-        </noscript>
+        `,
+          }}
+        />
+        {/* End Google Tag Manager  */}
 
         {props.preBodyComponents}
         <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
