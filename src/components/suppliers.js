@@ -61,7 +61,7 @@ const Suppliers = () => {
           return (
             <SwiperSlide key={item.node.id}>
               <WrapperLinkStyled href={item.node.url}>
-                <ImageStyled fluid={item.node.image.fluid} />
+                <ImageStyled fluid={item.node.image.fluid} alt="Компания поставщик" />
               </WrapperLinkStyled>
             </SwiperSlide>
           )

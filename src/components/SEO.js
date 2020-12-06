@@ -12,7 +12,7 @@ const SEO = ({ title, description }) => {
         siteMetadata {
           title
           description
-          url
+          siteUrl
         }
       }
     }
@@ -25,7 +25,7 @@ const SEO = ({ title, description }) => {
           index
             ? `${data.site.siteMetadata.description} | ${data.site.siteMetadata.title}`
             : `${title}`
-        }> 
+        }>
         <meta name="description" content={description || data.site.siteMetadata.description} />
 
         <meta property="og:title" content={data.site.siteMetadata.title} />

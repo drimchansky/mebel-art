@@ -42,9 +42,9 @@ const Cards = () => {
             return (
               <GridItemStyled key={item.node.title} item sm={6} md={4}>
                 <CardStyled>
-                  <ImageStyled fluid={item.node.image.fluid} />
+                  <ImageStyled fluid={item.node.image.fluid} alt={item.node.title} />
                   <DescriptionStyled>
-                    <h3>{item.node.title}</h3>
+                    <span>{item.node.title}</span>
                     <p>{item.node.description}</p>
                   </DescriptionStyled>
                 </CardStyled>
@@ -74,7 +74,7 @@ const CardStyled = styled.div`
   display: flex;
   flex-direction: column;
 
-  & h3 {
+  & span {
     font-size: 1.1rem;
     color: ${colors.black};
     margin: 0.5rem 0;
