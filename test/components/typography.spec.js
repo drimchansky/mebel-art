@@ -1,10 +1,10 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Header from '../../src/components/header'
+import Typography from '../../src/components/typography'
 
-describe('Header', () => {
+describe('Typography', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Header />).toJSON()
+    const tree = renderer.create(<Typography />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

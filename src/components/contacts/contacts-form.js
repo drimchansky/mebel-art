@@ -6,7 +6,7 @@ import cogoToast from 'cogo-toast'
 import axios from 'axios'
 // compoents
 import { Grid, TextField } from '@material-ui/core'
-import CustomButton from '../custom-button'
+import { Button } from 'gatsby-theme-material-ui'
 import Title from '../title'
 import SocialHorizontal from '../social-horizontal'
 // icons
@@ -26,6 +26,13 @@ const useStyles = makeStyles((theme) => ({
     },
     '& textarea, & input': {
       height: '100% !important',
+    },
+  },
+  button: {
+    color: colors.white,
+    background: colors.dark,
+    '&:hover': {
+      background: colors.dark,
     },
   },
 }))
@@ -131,9 +138,8 @@ const ContactsForm = () => {
           />
         </Grid>
         <Grid item container xs={12} justify="center">
-          <CustomButton
-            bgcolor={colors.dark}
-            textcolor={colors.white}
+          <Button
+            className={classes.button}
             size="large"
             type="submit"
             variant="contained"
@@ -141,7 +147,7 @@ const ContactsForm = () => {
             margintop="1.5rem"
             disabled={loading}>
             Отправить
-          </CustomButton>
+          </Button>
         </Grid>
       </Grid>
     </FormStyled>

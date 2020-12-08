@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImagesGrid renders correctly 1`] = `
+<styled.section>
+  <WithStyles(ForwardRef(Container))
+    maxWidth="md"
+  >
+    <CustomBreadcrumbs
+      currentPage="Наши проекты"
+    />
+    <Title>
+      <h1>
+        Фотографии наших работ
+      </h1>
+      <span>
+        Вы можете увидеть больше или загрузить свои в нашей группе
+         
+        <a
+          href="https://vk.com/mebelart76"
+          rel="noreferrer"
+          target="_blank"
+        >
+          ВКонтакте
+        </a>
+      </span>
+    </Title>
+    <Gallery />
+  </WithStyles(ForwardRef(Container))>
+</styled.section>
+`;

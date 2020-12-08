@@ -1,10 +1,10 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Header from '../../src/components/header'
+import BodyWrapper from '../../src/components/body-wrapper'
 
-describe('Header', () => {
+describe('BodyWrapper', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Header />).toJSON()
+    const tree = renderer.create(<BodyWrapper />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

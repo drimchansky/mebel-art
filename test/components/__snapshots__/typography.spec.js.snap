@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography renders correctly 1`] = `
+.c0 {
+  color: #212529;
+  font-weight: 400;
+}
+
+.c0 h1 {
+  font-size: 1.3rem;
+}
+
+.c0 h2 {
+  font-size: 1.2rem;
+}
+
+.c0 h3,
+.c0 h4,
+.c0 h5,
+.c0 h6 {
+  font-size: 1.1rem;
+}
+
+.c0 p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+<div
+  className="c0"
+/>
+`;

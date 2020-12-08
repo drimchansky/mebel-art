@@ -1,9 +1,18 @@
 {
   "plugins": [
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
-    "@babel/plugin-transform-modules-commonjs"
+    "@babel/plugin-transform-modules-commonjs",
+    "transform-export-extensions"
   ],
   "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
     "@babel/preset-react",
     [
       "babel-preset-gatsby",

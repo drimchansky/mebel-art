@@ -10,7 +10,27 @@ import CustomBreadcrumbs from './custom-breadcrumbs'
 // utilities
 import '@browniebroke/gatsby-image-gallery/dist/style.css'
 
-const ImagesGrid = () => {
+export const PureImagesGrid = ({ images }) => {
+  return (
+    <ImagesGridStyled>
+      <Container maxWidth="md">
+        <CustomBreadcrumbs currentPage="Наши проекты" />
+        <Title>
+          <h1>Фотографии наших работ</h1>
+          <span>
+            Вы можете увидеть больше или загрузить свои в нашей группе{' '}
+            <a href="https://vk.com/mebelart76" target="_blank" rel="noreferrer">
+              ВКонтакте
+            </a>
+          </span>
+        </Title>
+        <Gallery images={images} />
+      </Container>
+    </ImagesGridStyled>
+  )
+}
+
+export const ImagesGrid = () => {
   const images = useStaticQuery(graphql`
     query {
       allContentfulGallery {
@@ -31,23 +51,7 @@ const ImagesGrid = () => {
     }
   `).allContentfulGallery.edges[0].node.images
 
-  return (
-    <ImagesGridStyled>
-      <Container maxWidth="md">
-        <CustomBreadcrumbs currentPage="Наши проекты" />
-        <Title>
-          <h1>Фотографии наших работ</h1>
-          <span>
-            Вы можете увидеть больше или загрузить свои в нашей группе{' '}
-            <a href="https://vk.com/mebelart76" target="_blank" rel="noreferrer">
-              ВКонтакте
-            </a>
-          </span>
-        </Title>
-        <Gallery images={images} />
-      </Container>
-    </ImagesGridStyled>
-  )
+  return <PureImagesGrid images={images} />
 }
 
 const ImagesGridStyled = styled.section`

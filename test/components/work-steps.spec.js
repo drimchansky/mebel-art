@@ -1,10 +1,10 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Header from '../../src/components/header'
+import WorkSteps from '../../src/components/work-steps'
 
-describe('Header', () => {
+describe('WorkSteps', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Header />).toJSON()
+    const tree = renderer.create(<WorkSteps />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

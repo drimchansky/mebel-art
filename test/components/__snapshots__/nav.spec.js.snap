@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav renders correctly 1`] = `
+.c0 {
+  margin-top: 30px;
+}
+
+.c0 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-width: 60%;
+}
+
+.c0 a {
+  text-transform: uppercase;
+  display: block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #fffffe;
+  padding: 1rem 1.4rem;
+  font-size: 0.8rem;
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+}
+
+.c0 a:hover,
+.c0 a:focus {
+  opacity: 0.8;
+}
+
+@media (min-width:600px) {
+  .c0 ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:600px) {
+  .c0 a {
+    color: #283646;
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (min-width:600px) {
+  .c0 {
+    margin: 0;
+  }
+}
+
+<nav
+  className="c0"
+>
+  <ul>
+    <li>
+      <a
+        href="/"
+      >
+        Главная
+      </a>
+    </li>
+    <li>
+      <a
+        href="/works"
+      >
+        Работы
+      </a>
+    </li>
+    <li>
+      <a
+        href="/reviews"
+      >
+        Отзывы
+      </a>
+    </li>
+    <li>
+      <a
+        href="/contacts"
+      >
+        Контакты
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
