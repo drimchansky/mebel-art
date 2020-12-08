@@ -7,21 +7,7 @@ import { colors, breakpoints } from '../util/css-config'
 // icons
 import { VKIcon, ViberIcon, TelegramIcon } from '../util/svg-components'
 
-const SocialHorizontal = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulGeneralInfo {
-        edges {
-          node {
-            vk
-            telegram
-            viber
-          }
-        }
-      }
-    }
-  `).allContentfulGeneralInfo.edges[0].node
-
+export const PureSocialHorizontal = ({ data }) => {
   return (
     <SocialHorizontalStyled>
       <li>
@@ -44,6 +30,24 @@ const SocialHorizontal = () => {
       </li>
     </SocialHorizontalStyled>
   )
+}
+
+export const SocialHorizontal = (props) => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulGeneralInfo {
+        edges {
+          node {
+            vk
+            telegram
+            viber
+          }
+        }
+      }
+    }
+  `).allContentfulGeneralInfo.edges[0].node
+
+  return <PureSocialHorizontal {...props} data={data} />
 }
 
 const SocialHorizontalStyled = styled.ul`

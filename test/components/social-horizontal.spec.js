@@ -1,9 +1,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { PureSocial as Social } from '../../src/components/social'
+import { PureSocialHorizontal as SocialHorizontal } from '../../src/components/social-horizontal'
 import { StaticQuery } from 'gatsby'
 
-describe('Social', () =>
+describe('SocialHorizontal', () =>
   it('renders correctly', () => {
     const data = StaticQuery.mockImplementationOnce(({ render }) =>
       render({
@@ -19,6 +19,6 @@ describe('Social', () =>
       })
     )
 
-    const tree = renderer.create(<Social data={data} />).toJSON()
+    const tree = renderer.create(<SocialHorizontal data={data} />).toJSON()
     expect(tree).toMatchSnapshot()
   }))

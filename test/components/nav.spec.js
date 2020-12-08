@@ -1,9 +1,10 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Title from '../../src/components/title'
+import Nav from '../../src/components/nav'
 
-describe('Title', () =>
+describe('Nav', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Title />).toJSON()
+    const tree = renderer.create(<Nav />).toJSON()
     expect(tree).toMatchSnapshot()
-  }))
+  })
+})

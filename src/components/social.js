@@ -7,21 +7,7 @@ import { VKIcon, ViberIcon, TelegramIcon } from '../util/svg-components'
 // utils
 import { colors } from '../util/css-config'
 
-const Social = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulGeneralInfo {
-        edges {
-          node {
-            vk
-            telegram
-            viber
-          }
-        }
-      }
-    }
-  `).allContentfulGeneralInfo.edges[0].node
-
+export const PureSocial = ({ data }) => {
   return (
     <SocialStyled>
       <li>
@@ -41,6 +27,24 @@ const Social = () => {
       </li>
     </SocialStyled>
   )
+}
+
+const Social = (props) => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulGeneralInfo {
+        edges {
+          node {
+            vk
+            telegram
+            viber
+          }
+        }
+      }
+    }
+  `).allContentfulGeneralInfo.edges[0].node
+
+  return <PureSocial {...props} data={data}></PureSocial>
 }
 
 const SocialStyled = styled.ul`

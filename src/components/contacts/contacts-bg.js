@@ -7,7 +7,15 @@ import BackgroundImage from 'gatsby-background-image'
 // utils
 import { colors } from '../../util/css-config'
 
-const ContactsBg = () => {
+export const PureContactsBg = ({ imageData }) => {
+  return (
+    <BG Tag="section" fluid={imageData} backgroundColor={`${colors.dark}`}>
+      <Overflow />
+    </BG>
+  )
+}
+
+export const ContactsBg = () => {
   const data = useStaticQuery(graphql`
     query {
       file(sourceInstanceName: { eq: "images" }, name: { eq: "kitchen-vertical" }) {
@@ -19,12 +27,9 @@ const ContactsBg = () => {
       }
     }
   `)
+
   const imageData = data.file.childImageSharp.fluid
-  return (
-    <BG Tag="section" fluid={imageData} backgroundColor={`${colors.dark}`}>
-      <Overflow />
-    </BG>
-  )
+  return <PureContactsBg imageData={imageData} />
 }
 
 const BG = styled(BackgroundImage)`
