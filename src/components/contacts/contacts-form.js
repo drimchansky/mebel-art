@@ -1,5 +1,6 @@
 // packages
 import React, { useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
 import styled from 'styled-components'
 import cogoToast from 'cogo-toast'
 import axios from 'axios'
@@ -14,7 +15,24 @@ import HourglassEmptyIcon from '@material-ui/icons/HourglassEmpty'
 // utils
 import { colors, shadows, breakpoints } from '../../util/css-config'
 
+const useStyles = makeStyles((theme) => ({
+  field: {
+    flexDirection: 'row',
+    [theme.breakpoints.up('md')]: {
+      marginBottom: 0,
+    },
+    '& fieldset': {
+      borderColor: colors.black,
+    },
+    '& textarea, & input': {
+      height: '100% !important',
+    },
+  },
+}))
+
 const ContactsForm = () => {
+  const classes = useStyles()
+
   const [formName, setFormName] = useState('')
   const [formPhone, setFormPhone] = useState('')
   const [formMessage, setFormMessage] = useState('')
@@ -61,7 +79,8 @@ const ContactsForm = () => {
       </Title>
       <Grid container spacing={2} justify="center">
         <Grid item container xs={12} sm={8} md={5} justify="center">
-          <TextFieldStyled
+          <TextField
+            className={classes.field}
             id="name"
             label="Имя"
             name="Имя"
@@ -75,7 +94,8 @@ const ContactsForm = () => {
               marginRight: '3px',
             }}
           />
-          <TextFieldStyled
+          <TextField
+            className={classes.field}
             id="tel"
             type="tel"
             label="Телефон"
@@ -93,7 +113,8 @@ const ContactsForm = () => {
           />
         </Grid>
         <Grid item container xs={12} sm={8} md={7}>
-          <TextFieldStyled
+          <TextField
+            className={classes.field}
             id="textarea"
             multiline
             label="Cообщение"
@@ -145,39 +166,6 @@ const FormStyled = styled.form`
 
   @media (min-width: ${breakpoints.large}) {
     transform: translate(-50%, 33%);
-  }
-`
-//
-//  Overwriting MaterialUI styles. Using IMPORTANT is justified
-//
-
-const TextFieldStyled = styled(TextField)`
-  flex-direction: row !important;
-
-  @media (min-width: ${breakpoints.medium}) {
-    margin-bottom: 0 !important;
-  }
-
-  & fieldset {
-    border-color: ${colors.black} !important;
-  }
-
-  & label {
-    color: ${colors.black} !important;
-    @media (min-width: 960px) {
-      color: ${colors.black} !important;
-    }
-  }
-
-  & textarea,
-  & input {
-    color: ${colors.black};
-    height: 100% !important;
-
-    @media (min-width: 960px) {
-      color: ${colors.black};
-      margin-bottom: none !important;
-    }
   }
 `
 

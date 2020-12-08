@@ -44,7 +44,6 @@ module.exports = {
     },
 
     `gatsby-plugin-material-ui`,
-    `@contentful/gatsby-transformer-contentful-richtext`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
   ],

@@ -7,6 +7,8 @@ import Container from '@material-ui/core/Container'
 import ReviewItem from './review-item'
 import Title from '../title'
 import CustomBreadcrumbs from '../custom-breadcrumbs'
+// utils
+import contentfulRichTextTransform from '../../util/contentful-rich-text-transform'
 
 const ReviewsList = () => {
   const reviewsData = useStaticQuery(graphql`
@@ -27,10 +29,8 @@ const ReviewsList = () => {
             link
             id
             date(formatString: "DD MMMM, YYYY", locale: "ru")
-            childContentfulReviewBodyRichTextNode {
-              childContentfulRichText {
-                html
-              }
+            body {
+              raw
             }
           }
         }
@@ -59,7 +59,7 @@ const ReviewsList = () => {
               link={item.node.link}
               date={item.node.date}
               images={item.node.images}
-              html={item.node.childContentfulReviewBodyRichTextNode.childContentfulRichText.html}
+              html={contentfulRichTextTransform(item.node.body.raw)}
             />
           )
         })}
