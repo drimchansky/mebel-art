@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Without props 1`] = `
+exports[`Title renders correctly 1`] = `
 .c0 {
   color: #212529;
   text-align: center;
@@ -13,14 +13,14 @@ exports[`Without props 1`] = `
 .c0 h4,
 .c0 h5,
 .c0 h6 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 300;
   margin: 0;
 }
 
 .c0 span {
   display: block;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 300;
   margin-top: 0.5rem;
 }
