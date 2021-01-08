@@ -19,7 +19,7 @@ const ReviewItem = ({ name, date, images, html, link }) => {
       </NameStyled>
       <DateStyled>{date}</DateStyled>
       <Typography html={html}></Typography>
-      {images ? <Gallery mdColWidth={20} imgClass="review-image" images={images} /> : ''}
+      {images && <Gallery mdColWidth={20} imgClass="review-image" images={images} />}
     </ReviewItemStyled>
   )
 }
@@ -65,12 +65,5 @@ const DateStyled = styled.span`
   font-size: 0.8rem;
   padding: 0.3rem 0;
 `
-// const ImagesWrapper = styled.div`
-//   padding: 1rem 5px 1.5rem;
-
-//   @media (min-width: ${breakpoints.small}) {
-//     padding: 1rem 20% 2rem;
-//   }
-// `
 
 export default ReviewItem

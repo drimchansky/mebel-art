@@ -43,11 +43,9 @@ const Suppliers = () => {
         spaceBetween={20}
         slidesPerView={2}
         breakpoints={{
-          600: {
-            slidesPerView: 3,
-          },
           960: {
-            slidesPerView: 4,
+            slidesPerView: 3,
+            spaceBetween: 50,
           },
         }}
         loop={true}
