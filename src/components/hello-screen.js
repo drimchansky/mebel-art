@@ -42,7 +42,7 @@ const HelloScreen = () => {
       <BackgroundImageStyled Tag="div" fluid={sources} backgroundColor={`${colors.dark}`}>
         <WrapperStyled>
           <h1>
-            Кухня по индивидуальному <br />
+            Кухни по индивидуальному <br />
             дизайн-проекту в Ярославле
           </h1>
           <ButtonsWrapper>
