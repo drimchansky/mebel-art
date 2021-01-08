@@ -7,11 +7,17 @@ import Accordion from '@material-ui/core/Accordion'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+// utils
+import { colors } from '../util/css-config'
+
+function createMarkup(answer) {
+  return { __html: answer }
+}
 
 const Questions = () => {
   const questionsData = useStaticQuery(graphql`
     query {
-      allContentfulQuestion {
+      allContentfulQuestion(sort: { fields: updatedAt, order: DESC }) {
         edges {
           node {
             id
@@ -33,8 +39,9 @@ const Questions = () => {
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <QuestionStyled>{question.node.question}</QuestionStyled>
             </AccordionSummary>
+
             <AccordionDetails>
-              <AnswerStyled>{question.node.answer.answer}</AnswerStyled>
+              <AnswerStyled dangerouslySetInnerHTML={createMarkup(question.node.answer.answer)} />
             </AccordionDetails>
           </Accordion>
         )
@@ -51,6 +58,12 @@ const QuestionStyled = styled.p`
 const AnswerStyled = styled.p`
   font-size: 0.9rem;
   font-weight: 300;
+  line-height: 1.5;
+
+  & a {
+    color: ${colors.dark};
+    font-weight: 700;
+  }
 `
 
 export default Questions
