@@ -17,6 +17,7 @@ const InfoLine = () => {
           node {
             eMail
             phone
+            phone_format
           }
         }
       }
@@ -28,13 +29,14 @@ const InfoLine = () => {
       <ContainerStyled maxWidth="xl">
         <LinksList>
           <li>
-            {/* <Link to="#">Акции</Link> */}
             <Link to="/about-company">О компании</Link>
             <Link to="/faq">Ответы на вопросы</Link>
-            {/* <Link to="/partners">Партнёры</Link> */}
           </li>
         </LinksList>
-        <PhoneStyled href={generateProtocolLink('phone', data.phone)}>{data.phone}</PhoneStyled>
+
+        <PhoneStyled href={generateProtocolLink('phone', data.phone_format)}>
+          {data.phone}
+        </PhoneStyled>
       </ContainerStyled>
     </InfoLineStyled>
   )

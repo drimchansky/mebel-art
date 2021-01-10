@@ -66,6 +66,7 @@
     "jest-css-modules": "^2.1.0",
     "jest-styled-components": "^7.0.3",
     "jest-transform-stub": "^2.0.0",
+    "prettier": "^2.2.1",
     "react-test-renderer": "^17.0.1"
   }
 }

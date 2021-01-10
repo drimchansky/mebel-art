@@ -1,5 +1,6 @@
 // packages
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 // utils
 import { colors } from '../util/css-config'
@@ -10,6 +11,12 @@ const Title = ({ children, textColor, alignment }) => {
       {children}
     </TitleStyled>
   )
+}
+
+Title.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.element]),
+  textColor: PropTypes.string,
+  alignment: PropTypes.string,
 }
 
 const TitleStyled = styled.div`

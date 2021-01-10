@@ -15,7 +15,7 @@ const Logo = ({ desctoponly }) => {
 }
 
 Logo.propTypes = {
-  title: PropTypes.bool,
+  desctoponly: PropTypes.number,
 }
 
 const LogoStyled = styled(Link)`

@@ -8,11 +8,11 @@ import Container from '@material-ui/core/Container'
 // utils
 import { colors, breakpoints } from '../util/css-config'
 
-const Header = ({ active, setActive }) => {
+const Header = () => {
   return (
     <HeaderStyled>
       <ContainerStyled disableGutters maxWidth="xl">
-        <Logo desctoponly="true" />
+        <Logo desctoponly={1} />
         <Nav />
       </ContainerStyled>
     </HeaderStyled>

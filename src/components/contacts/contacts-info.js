@@ -20,6 +20,7 @@ const ContactsInfo = () => {
           node {
             eMail
             phone
+            where
           }
         }
       }
@@ -31,21 +32,23 @@ const ContactsInfo = () => {
       <ul className="info-list">
         <li className="info-item">
           <PlaceIcon className="info-svg" />
-          <span>Где мы работаем</span>
-          <small>Ярославль и Ярославская область</small>
+          <span>{data.where}</span>
         </li>
+
         <li className="info-item">
           <MailOutlineIcon className="info-svg" />
           <span>
             <a href={generateProtocolLink('email', data.phone)}>{data.eMail}</a>
           </span>
         </li>
+
         <li className="info-item">
           <PhoneIphoneIcon className="info-svg" />
           <span>
             <a href={generateProtocolLink('phone', data.phone)}>{data.phone}</a>
           </span>
         </li>
+
         <li className="info-item">
           <Social className="info-svg" />
         </li>
@@ -104,13 +107,6 @@ const InfoStyled = styled.div`
     @media (min-width: 960px) {
       margin-bottom: 1rem;
     }
-  }
-
-  & small {
-    font-weight: 300;
-    font-size: 1rem;
-    opacity: 0.8;
-    color: ${colors.black};
   }
 
   & .info-svg {

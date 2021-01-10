@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const ContactsForm = () => {
-
   const classes = useStyles()
 
   const [formName, setFormName] = useState('')
@@ -59,14 +58,14 @@ const ContactsForm = () => {
       // url: 'https://formsubmit.co/ajax/drimchansky@gmail.com',
       data: data,
     })
-      .then(function (response) {
+      .then(() => {
         cogoToast.success('Ваше сообщение отправлено!')
         setFormName('')
         setFormPhone('')
         setFormMessage('')
         setLoading(false)
       })
-      .catch(function (response) {
+      .catch(() => {
         cogoToast.error(
           'Что-то пошло не так, вы можете связаться с нами через социальные сети или по телефону',
           {
@@ -82,10 +81,13 @@ const ContactsForm = () => {
         <h2>Заинтересованы в покупке кухни мечты?</h2>
         <span>Вы можете связаться с нами в удобной для вас социальной сети или мессенджере:</span>
       </Title>
+
       <SocialHorizontal />
+
       <Title alignment="left">
         <span>Или оставить заявку на звонок:</span>
       </Title>
+
       <Grid container spacing={2} justify="center">
         <Grid item container xs={12} sm={8} md={5} justify="center">
           <TextField
@@ -141,6 +143,7 @@ const ContactsForm = () => {
             }}
           />
         </Grid>
+
         <Grid item container xs={12} justify="center">
           <Button
             className={classes.button}

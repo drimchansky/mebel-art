@@ -11,7 +11,6 @@ import { colors } from '../util/css-config'
 import generateProtocolLink from '../util/generate-protocol-link'
 
 const Footer = () => {
-
   const data = useStaticQuery(graphql`
     query {
       allContentfulGeneralInfo {
@@ -19,6 +18,8 @@ const Footer = () => {
           node {
             eMail
             phone
+            phone_format
+            where
           }
         }
       }
@@ -31,12 +32,12 @@ const Footer = () => {
         <Grid container spacing={3}>
           <Grid item md={4}>
             <TitleStyled>Адрес</TitleStyled>
-            <TextStyled>Ярославль и Ярославская область</TextStyled>
+            <TextStyled>{data.where}</TextStyled>
             <TitleStyled marginTop="10px">Контакты</TitleStyled>
             <TextStyled>
-              <a href={generateProtocolLink('email', data.phone)}>{data.eMail}</a>
+              <a href={generateProtocolLink('email', data.eMail)}>{data.eMail}</a>
               <br />
-              <a href={generateProtocolLink('phone', data.phone)}>{data.phone}</a>
+              <a href={generateProtocolLink('phone', data.phone_format)}>{data.phone}</a>
             </TextStyled>
             <Social />
           </Grid>
@@ -58,6 +59,7 @@ const Footer = () => {
               </li>
             </ListStyled>
           </Grid>
+
           <Grid item md={3}>
             <TitleStyled>Узнать больше</TitleStyled>
             <ListStyled>
@@ -67,9 +69,6 @@ const Footer = () => {
               <li>
                 <Link to="/faq">Ответы на вопросы</Link>
               </li>
-              {/* <li>
-                <Link to="/partners">Партнёры</Link>
-              </li> */}
             </ListStyled>
           </Grid>
         </Grid>

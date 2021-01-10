@@ -38,6 +38,7 @@ const Suppliers = () => {
       <Title textColor={colors.lightgray}>
         <h5>Наши поставщики</h5>
       </Title>
+
       <Swiper
         style={{ paddingLeft: 18, paddingRight: 18 }}
         spaceBetween={20}
@@ -58,7 +59,11 @@ const Suppliers = () => {
           return (
             <SwiperSlide key={item.node.id}>
               <WrapperLinkStyled href={item.node.url}>
-                <ImageStyled fluid={item.node.image.fluid} alt="Компания поставщик" />
+                <ImageStyled
+                  fadeIn={false}
+                  fluid={item.node.image.fluid}
+                  alt="Компания поставщик"
+                />
               </WrapperLinkStyled>
             </SwiperSlide>
           )
@@ -70,7 +75,7 @@ const Suppliers = () => {
 
 const SuppliersStyled = styled.section`
   background: ${colors.dark};
-  padding: 1.5rem 0 2.5rem;
+  padding: 0.5rem 0 2.5rem;
 `
 
 const WrapperLinkStyled = styled.a`
