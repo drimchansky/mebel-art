@@ -10,7 +10,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -22,7 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        displayName: process.env.MODE == 'development' ? true : false,
+        displayName: process.env.MODE === 'development' ? true : false,
         minify: false,
         transpileTemplateLiterals: false,
       },

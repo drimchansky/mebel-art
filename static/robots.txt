@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://mebel-art76.ru/sitemap.xml
+Disallow: /404.html
