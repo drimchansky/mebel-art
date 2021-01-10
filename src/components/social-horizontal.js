@@ -17,7 +17,7 @@ export const PureSocialHorizontal = ({ data }) => {
         </LinkStyled>
       </li>
       <li>
-        <LinkStyled href={data.viber} bg="#8e24aa">
+        <LinkStyled href={`viber://add?number=${data.phone_format}`} bg="#8e24aa">
           <ViberIcon fill={colors.white} size="30px" />
           <span>Viber</span>
         </LinkStyled>
@@ -41,6 +41,7 @@ export const SocialHorizontal = (props) => {
             vk
             telegram
             viber
+            phone_format
           }
         }
       }

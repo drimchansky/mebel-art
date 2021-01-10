@@ -7,7 +7,7 @@ import Main from './main'
 import Footer from './footer'
 import BodyWrapper from './body-wrapper'
 import InfoLine from './info-line'
-// util
+// utils
 import GlobalStyle from '../util/global-style'
 
 const Layout = ({ children }) => {

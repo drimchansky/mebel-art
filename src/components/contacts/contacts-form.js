@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       marginBottom: 0,
     },
+
     '& fieldset': {
       borderColor: colors.black,
     },
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const ContactsForm = () => {
+
   const classes = useStyles()
 
   const [formName, setFormName] = useState('')
@@ -101,6 +103,7 @@ const ContactsForm = () => {
               marginRight: '3px',
             }}
           />
+
           <TextField
             className={classes.field}
             id="tel"
@@ -119,6 +122,7 @@ const ContactsForm = () => {
             }}
           />
         </Grid>
+
         <Grid item container xs={12} sm={8} md={7}>
           <TextField
             className={classes.field}

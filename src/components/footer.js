@@ -11,6 +11,7 @@ import { colors } from '../util/css-config'
 import generateProtocolLink from '../util/generate-protocol-link'
 
 const Footer = () => {
+
   const data = useStaticQuery(graphql`
     query {
       allContentfulGeneralInfo {

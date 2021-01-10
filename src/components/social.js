@@ -1,5 +1,6 @@
 // packages
 import React from 'react'
+import PropTypes from 'prop-types';
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 // icons
@@ -15,11 +16,13 @@ export const PureSocial = ({ data }) => {
           <VKIcon fill="#4b729f" />
         </a>
       </li>
+
       <li>
-        <a href={data.viber} target="_blank" rel="noreferrer" aria-label="Viber">
+        <a href={`viber://add?number=${data.phone_format}`} target="_blank" rel="noreferrer" aria-label="Viber">
           <ViberIcon fill="#8e24aa" />
         </a>
       </li>
+
       <li>
         <a href={data.telegram} target="_blank" rel="noreferrer" aria-label="Telegram">
           <TelegramIcon fillOuter="#039be5" fillInner={colors.white} />
@@ -29,7 +32,12 @@ export const PureSocial = ({ data }) => {
   )
 }
 
+PureSocial.propTypes = {
+  data: PropTypes.object
+};
+
 const Social = (props) => {
+
   const data = useStaticQuery(graphql`
     query {
       allContentfulGeneralInfo {
@@ -37,7 +45,7 @@ const Social = (props) => {
           node {
             vk
             telegram
-            viber
+            phone_format
           }
         }
       }
