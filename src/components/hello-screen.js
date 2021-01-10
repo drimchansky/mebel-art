@@ -39,7 +39,7 @@ const HelloScreen = () => {
 
   return (
     <HelloScreenStyled>
-      <BackgroundImageStyled Tag="div" fluid={sources} backgroundColor={`${colors.dark}`}>
+      <BackgroundImageStyled Tag="div" fluid={sources}>
         <WrapperStyled>
           <h1>
             Кухни по индивидуальному <br />
