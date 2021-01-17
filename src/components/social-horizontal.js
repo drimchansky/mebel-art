@@ -17,12 +17,12 @@ export const PureSocialHorizontal = ({ data }) => {
           <span>ВКонтакте</span>
         </LinkStyled>
       </li>
-      <li>
+      {/* <li>
         <LinkStyled href={data.viber} bg="#8e24aa">
           <ViberIcon fill={colors.white} size="30px" />
           <span>Viber</span>
         </LinkStyled>
-      </li>
+      </li> */}
       <li>
         <LinkStyled href={data.telegram} bg="#3b76a3">
           <TelegramIcon fillOuter={colors.white} fillInner="#3b76a3" size="30" />
@@ -60,7 +60,7 @@ const SocialHorizontalStyled = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -74,6 +74,9 @@ const SocialHorizontalStyled = styled.ul`
 
     @media (min-width: ${breakpoints.small}) {
       width: 30%;
+      &:not(:first-child) {
+      margin-left: 20px;
+    }
     }
 
     @media (max-width: ${breakpoints.small}) {
