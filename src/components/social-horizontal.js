@@ -2,6 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
+import PropTypes from 'prop-types'
 // utils
 import { colors, breakpoints } from '../util/css-config'
 // icons
@@ -17,7 +18,7 @@ export const PureSocialHorizontal = ({ data }) => {
         </LinkStyled>
       </li>
       <li>
-        <LinkStyled href={`viber://add?number=${data.phone_format}`} bg="#8e24aa">
+        <LinkStyled href={data.viber} bg="#8e24aa">
           <ViberIcon fill={colors.white} size="30px" />
           <span>Viber</span>
         </LinkStyled>
@@ -30,6 +31,10 @@ export const PureSocialHorizontal = ({ data }) => {
       </li>
     </SocialHorizontalStyled>
   )
+}
+
+PureSocialHorizontal.propTypes = {
+  data: PropTypes.object
 }
 
 export const SocialHorizontal = (props) => {
