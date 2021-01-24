@@ -15,6 +15,7 @@ function createMarkup(answer) {
 }
 
 const Questions = () => {
+
   const questionsData = useStaticQuery(graphql`
     query {
       allContentfulQuestion(sort: { fields: updatedAt, order: DESC }) {
@@ -37,11 +38,11 @@ const Questions = () => {
         return (
           <Accordion key={question.node.id}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <QuestionStyled>{question.node.question}</QuestionStyled>
+              <SQuestion>{question.node.question}</SQuestion>
             </AccordionSummary>
 
             <AccordionDetails>
-              <AnswerStyled dangerouslySetInnerHTML={createMarkup(question.node.answer.answer)} />
+              <SAnswer dangerouslySetInnerHTML={createMarkup(question.node.answer.answer)} />
             </AccordionDetails>
           </Accordion>
         )
@@ -50,12 +51,12 @@ const Questions = () => {
   )
 }
 
-const QuestionStyled = styled.p`
+const SQuestion = styled.p`
   font-size: 1rem;
   font-weight: 400;
 `
 
-const AnswerStyled = styled.p`
+const SAnswer = styled.p`
   font-size: 0.9rem;
   font-weight: 300;
   line-height: 1.5;

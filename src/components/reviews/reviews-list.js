@@ -8,7 +8,7 @@ import ReviewItem from './review-item'
 import Title from '../title'
 import CustomBreadcrumbs from '../custom-breadcrumbs'
 // utils
-import contentfulRichTextTransform from '../../util/contentful-rich-text-transform'
+import { contentfulRichTextTransform } from '../../util/funcs'
 
 const ReviewsList = () => {
   const reviewsData = useStaticQuery(graphql`

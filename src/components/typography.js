@@ -10,13 +10,13 @@ function createMarkup(html) {
 
 const Typography = ({ children, html }) => {
   if (html) {
-    return <TypographyStyled dangerouslySetInnerHTML={createMarkup(html)} />
+    return <STypo dangerouslySetInnerHTML={createMarkup(html)} />
   } else {
-    return <TypographyStyled>{children}</TypographyStyled>
+    return <STypo>{children}</STypo>
   }
 }
 
-const TypographyStyled = styled.div`
+const STypo = styled.div`
   color: ${colors.black};
   font-weight: 400;
 

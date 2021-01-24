@@ -9,6 +9,7 @@ import Container from '@material-ui/core/Container'
 import { colors, breakpoints } from '../util/css-config'
 
 const Header = () => {
+
   return (
     <HeaderStyled>
       <ContainerStyled disableGutters maxWidth="xl">

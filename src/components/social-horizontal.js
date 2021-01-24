@@ -10,26 +10,26 @@ import { VKIcon, ViberIcon, TelegramIcon } from '../util/svg-components'
 
 export const PureSocialHorizontal = ({ data }) => {
   return (
-    <SocialHorizontalStyled>
+    <SSocialHorizontal>
       <li>
-        <LinkStyled href={data.vk} bg="#4b729f">
+        <SLink href={data.vk} bg="#4b729f">
           <VKIcon fill={colors.white} size="30px" />
           <span>ВКонтакте</span>
-        </LinkStyled>
+        </SLink>
       </li>
       {/* <li>
-        <LinkStyled href={data.viber} bg="#8e24aa">
+        <SLink href={data.viber} bg="#8e24aa">
           <ViberIcon fill={colors.white} size="30px" />
           <span>Viber</span>
-        </LinkStyled>
+        </SLink>
       </li> */}
       <li>
-        <LinkStyled href={data.telegram} bg="#3b76a3">
+        <SLink href={data.telegram} bg="#3b76a3">
           <TelegramIcon fillOuter={colors.white} fillInner="#3b76a3" size="30" />
           <span>Telegram</span>
-        </LinkStyled>
+        </SLink>
       </li>
-    </SocialHorizontalStyled>
+    </SSocialHorizontal>
   )
 }
 
@@ -56,7 +56,7 @@ export const SocialHorizontal = (props) => {
   return <PureSocialHorizontal {...props} data={data} />
 }
 
-const SocialHorizontalStyled = styled.ul`
+const SSocialHorizontal = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +87,7 @@ const SocialHorizontalStyled = styled.ul`
   }
 `
 
-const LinkStyled = styled.a`
+const SLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;

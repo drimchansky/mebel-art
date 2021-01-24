@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useMatch } from '@reach/router'
@@ -36,6 +37,11 @@ const SEO = ({ title, description }) => {
       </Helmet>
     </>
   )
+}
+
+SEO.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string
 }
 
 export default SEO

@@ -19,7 +19,7 @@ import {
 
 const WorkSteps = () => {
   return (
-    <WorkStepsStyled>
+    <SWorkSteps>
       <Container maxWidth="xl">
         <Title textColor={colors.white}>
           <h3>Порядок работы</h3>
@@ -27,64 +27,64 @@ const WorkSteps = () => {
 
         <Grid container spacing={4} style={{ marginTop: 70 }}>
           <Grid item xs={12} sm={6} md={2}>
-            <CardStyled>
+            <SCard>
               <MeasureIcon />
               <span>Замер</span>
               <p>Наши замерщики приедут в удобное для Вас время</p>
-            </CardStyled>
+            </SCard>
           </Grid>
 
           <Grid item xs={12} sm={6} md={2}>
-            <CardStyled>
+            <SCard>
               <DesignIcon />
               <span>Дизайн-проект</span>
               <p>Дизайнер создаст дизайн-проект учитывая все Ваши пожелания</p>
-            </CardStyled>
+            </SCard>
           </Grid>
 
           <Grid item xs={12} sm={6} md={2}>
-            <CardStyled>
+            <SCard>
               <ContractIcon />
               <span>Договор</span>
               <p>Прописываем все условия и сроки, оформляем предоплату</p>
-            </CardStyled>
+            </SCard>
           </Grid>
 
           <Grid item xs={12} sm={6} md={2}>
-            <CardStyled>
+            <SCard>
               <ManufactureIcon />
               <span>Производство</span>
               <p>После заключения договора дизайн-проект отправляется на фабрику</p>
-            </CardStyled>
+            </SCard>
           </Grid>
 
           <Grid item xs={12} sm={6} md={2}>
-            <CardStyled>
+            <SCard>
               <DeliveryIcon />
               <span>Доставка и сборка</span>
               <p>Доставим кухню в удобное для вас время, соберем и подключим технику</p>
-            </CardStyled>
+            </SCard>
           </Grid>
 
           <Grid item xs={12} sm={6} md={2}>
-            <CardStyled>
+            <SCard>
               <HappinessIcon />
               <span>Готово</span>
               <p>Вы радуетесь новой кухне!</p>
-            </CardStyled>
+            </SCard>
           </Grid>
         </Grid>
       </Container>
-    </WorkStepsStyled>
+    </SWorkSteps>
   )
 }
 
-const WorkStepsStyled = styled.section`
+const SWorkSteps = styled.section`
   background: ${colors.dark};
   padding: 3rem 0 4rem;
 `
 
-const CardStyled = styled.div`
+const SCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

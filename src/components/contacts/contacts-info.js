@@ -10,9 +10,10 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline'
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone'
 // utils
 import { colors } from '../../util/css-config'
-import generateProtocolLink from '../../util/generate-protocol-link'
+import { generateProtocolLink } from '../../util/funcs'
 
 const ContactsInfo = () => {
+
   const data = useStaticQuery(graphql`
     query {
       allContentfulGeneralInfo {

@@ -11,6 +11,7 @@ import Title from './title'
 import { colors, shadows, breakpoints } from '../util/css-config'
 
 const Cards = () => {
+
   const cardsData = useStaticQuery(graphql`
     query {
       allContentfulFeature {
@@ -31,44 +32,46 @@ const Cards = () => {
   `).allContentfulFeature.edges
 
   return (
-    <CardsStyled id="advantages">
+    <SCards id="advantages">
       <Container maxWidth="lg">
+
         <Title>
           <h2>Наши преимущества</h2>
           <span>Работать с нами выгодно </span>
         </Title>
+
         <Grid container spacing={3} justify="space-around" style={{ marginTop: 50 }}>
           {cardsData.map((item) => {
             return (
-              <GridItemStyled key={item.node.title} item sm={6} md={4}>
-                <CardStyled>
-                  <ImageStyled fluid={item.node.image.fluid} alt={item.node.title} />
-                  <DescriptionStyled>
+              <SGridItem key={item.node.title} item sm={6} md={4}>
+                <SCard>
+                  <SImage fluid={item.node.image.fluid} alt={item.node.title} />
+                  <SDescription>
                     <span>{item.node.title}</span>
                     <p>{item.node.description}</p>
-                  </DescriptionStyled>
-                </CardStyled>
-              </GridItemStyled>
+                  </SDescription>
+                </SCard>
+              </SGridItem>
             )
           })}
         </Grid>
       </Container>
-    </CardsStyled>
+    </SCards>
   )
 }
 
-const CardsStyled = styled.section`
+const SCards = styled.section`
   padding: 3rem 0 4rem;
 `
 
-const GridItemStyled = styled(Grid)`
+const SGridItem = styled(Grid)`
   max-width: 400px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 `
 
-const CardStyled = styled.div`
+const SCard = styled.div`
   box-shadow: ${shadows.two};
   flex-grow: 1;
   display: flex;
@@ -94,14 +97,14 @@ const CardStyled = styled.div`
     }
   }
 `
-const DescriptionStyled = styled.div`
+const SDescription = styled.div`
   background: ${colors.white};
   padding: 0.5rem;
   flex-grow: 1;
   border-radius: 0 0 5px 5px;
 `
 
-const ImageStyled = styled(Img)`
+const SImage = styled(Img)`
   border-radius: 5px 5px 0 0;
   border-bottom: 4px solid ${colors.dark};
 `

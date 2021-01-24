@@ -1,6 +1,5 @@
 // packages
 import React from 'react'
-import PropTypes from 'prop-types';
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 // icons
@@ -8,7 +7,22 @@ import { VKIcon, ViberIcon, TelegramIcon } from '../util/svg-components'
 // utils
 import { colors } from '../util/css-config'
 
-export const PureSocial = ({ data }) => {
+const Social = () => {
+
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulGeneralInfo {
+        edges {
+          node {
+            vk
+            telegram
+            phone_format
+          }
+        }
+      }
+    }
+  `).allContentfulGeneralInfo.edges[0].node
+
   return (
     <SocialStyled>
       <li>
@@ -30,29 +44,6 @@ export const PureSocial = ({ data }) => {
       </li>
     </SocialStyled>
   )
-}
-
-PureSocial.propTypes = {
-  data: PropTypes.object
-};
-
-const Social = (props) => {
-
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulGeneralInfo {
-        edges {
-          node {
-            vk
-            telegram
-            phone_format
-          }
-        }
-      }
-    }
-  `).allContentfulGeneralInfo.edges[0].node
-
-  return <PureSocial {...props} data={data}></PureSocial>
 }
 
 const SocialStyled = styled.ul`

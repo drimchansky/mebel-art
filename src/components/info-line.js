@@ -7,9 +7,10 @@ import Container from '@material-ui/core/Container'
 import { Link } from 'gatsby'
 // util
 import { colors, breakpoints } from '../util/css-config'
-import generateProtocolLink from '../util/generate-protocol-link'
+import { generateProtocolLink } from '../util/funcs'
 
 const InfoLine = () => {
+
   const data = useStaticQuery(graphql`
     query {
       allContentfulGeneralInfo {

@@ -1,5 +1,6 @@
 // packages
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 // components
 import SocialHorizontal from './social-horizontal'
@@ -8,18 +9,23 @@ import Title from './title'
 
 const OurSocials = ({ bgColor, titleColor }) => {
   return (
-    <OurSocialsStyled bgColor={bgColor}>
+    <SOurSocials bgColor={bgColor}>
       <Container maxWidth="md">
         <Title textColor={titleColor}>
           <h4>Свяжитесь с нами как вам удобно!</h4>
         </Title>
         <SocialHorizontal />
       </Container>
-    </OurSocialsStyled>
+    </SOurSocials>
   )
 }
 
-const OurSocialsStyled = styled.section`
+OurSocials.propTypes = {
+  bgColor: PropTypes.string,
+  titleColor: PropTypes.string
+}
+
+const SOurSocials = styled.section`
   padding: 2rem 0 4rem;
   background: ${(props) => props.bgColor};
 `

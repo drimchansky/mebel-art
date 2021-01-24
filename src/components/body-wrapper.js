@@ -1,6 +1,7 @@
 // packages
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 // components
 import Hamburger from './hamburger'
 import Logo from './logo'
@@ -8,17 +9,28 @@ import Logo from './logo'
 import { breakpoints, colors, shadows } from '../util/css-config'
 
 const BodyWrapper = ({ children, active, setActive }) => {
+
   return (
-    <BodyWrapperStyled active={active}>
+    <SBodyWrapper active={active}>
+
       <MobileHeader>
         <Hamburger active={active} setActive={setActive} />
         <Logo />
       </MobileHeader>
+
       {children}
-    </BodyWrapperStyled>
+
+    </SBodyWrapper>
   )
 }
-const BodyWrapperStyled = styled.div`
+
+BodyWrapper.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.element]),
+  active: PropTypes.bool,
+  setActive: PropTypes.func
+}
+
+const SBodyWrapper = styled.div`
   flex-grow: 1;
   height: 100%;
   display: flex;

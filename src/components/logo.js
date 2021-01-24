@@ -7,10 +7,11 @@ import PropTypes from 'prop-types'
 import { colors } from '../util/css-config'
 
 const Logo = ({ desctoponly }) => {
+
   return (
-    <LogoStyled desctoponly={desctoponly} to="/">
+    <SLogo desctoponly={desctoponly} to="/">
       Мебель<span>Арт</span>
-    </LogoStyled>
+    </SLogo>
   )
 }
 
@@ -18,7 +19,7 @@ Logo.propTypes = {
   desctoponly: PropTypes.number,
 }
 
-const LogoStyled = styled(Link)`
+const SLogo = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 300;

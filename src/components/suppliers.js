@@ -9,10 +9,11 @@ import { colors } from '../util/css-config'
 import Title from './title'
 import Img from 'gatsby-image'
 import { Swiper, SwiperSlide } from 'swiper/react'
-// Import Swiper styles
+
 import 'swiper/swiper.scss'
 
 const Suppliers = () => {
+
   SwiperCore.use([Autoplay])
 
   const suppliersData = useStaticQuery(graphql`
@@ -34,7 +35,7 @@ const Suppliers = () => {
   `).allContentfulSupplier.edges
 
   return (
-    <SuppliersStyled>
+    <SSuppliers>
       <Title textColor={colors.lightgray}>
         <h5>Наши поставщики</h5>
       </Title>
@@ -58,32 +59,32 @@ const Suppliers = () => {
         {suppliersData.map((item) => {
           return (
             <SwiperSlide key={item.node.id}>
-              <WrapperLinkStyled href={item.node.url}>
-                <ImageStyled
+              <SWrapper href={item.node.url}>
+                <SImage
                   fadeIn={false}
                   fluid={item.node.image.fluid}
                   alt="Компания поставщик"
                 />
-              </WrapperLinkStyled>
+              </SWrapper>
             </SwiperSlide>
           )
         })}
       </Swiper>
-    </SuppliersStyled>
+    </SSuppliers>
   )
 }
 
-const SuppliersStyled = styled.section`
+const SSuppliers = styled.section`
   background: ${colors.dark};
   padding: 0.5rem 0 2.5rem;
 `
 
-const WrapperLinkStyled = styled.a`
+const SWrapper = styled.a`
   position: relative;
   padding-bottom: 33.33%;
 `
 
-const ImageStyled = styled(Img)`
+const SImage = styled(Img)`
   position: absolute;
   position: absolute;
   height: 100%;

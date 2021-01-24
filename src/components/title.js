@@ -7,9 +7,9 @@ import { colors } from '../util/css-config'
 
 const Title = ({ children, textColor, alignment }) => {
   return (
-    <TitleStyled textColor={textColor} alignment={alignment}>
+    <STitle textColor={textColor} alignment={alignment}>
       {children}
-    </TitleStyled>
+    </STitle>
   )
 }
 
@@ -19,17 +19,12 @@ Title.propTypes = {
   alignment: PropTypes.string,
 }
 
-const TitleStyled = styled.div`
+const STitle = styled.div`
   color: ${(props) => props.textColor || colors.black};
   text-align: ${(props) => props.alignment || 'center'};
   margin: 1.5rem 0;
 
-  & h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  & h1, h2, h3, h4, h5, h6 {
     font-size: 1.7rem;
     font-weight: 300;
     margin: 0;

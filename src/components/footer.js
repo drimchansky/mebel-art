@@ -8,9 +8,10 @@ import Grid from '@material-ui/core/Grid'
 import Social from './social'
 // utils
 import { colors } from '../util/css-config'
-import generateProtocolLink from '../util/generate-protocol-link'
+import { generateProtocolLink } from '../util/funcs'
 
 const Footer = () => {
+
   const data = useStaticQuery(graphql`
     query {
       allContentfulGeneralInfo {
@@ -27,24 +28,24 @@ const Footer = () => {
   `).allContentfulGeneralInfo.edges[0].node
 
   return (
-    <FooterStyled>
+    <SFooter>
       <Container maxWidth="lg">
         <Grid container spacing={3}>
           <Grid item md={4}>
-            <TitleStyled>Адрес</TitleStyled>
-            <TextStyled>{data.where}</TextStyled>
-            <TitleStyled marginTop="10px">Контакты</TitleStyled>
-            <TextStyled>
+            <STitle>Адрес</STitle>
+            <SText>{data.where}</SText>
+            <STitle marginTop="10px">Контакты</STitle>
+            <SText>
               <a href={generateProtocolLink('email', data.eMail)}>{data.eMail}</a>
               <br />
               <a href={generateProtocolLink('phone', data.phone_format)}>{data.phone}</a>
-            </TextStyled>
+            </SText>
             <Social />
           </Grid>
 
           <Grid item md={2}>
-            <TitleStyled>Навигация</TitleStyled>
-            <ListStyled>
+            <STitle>Навигация</STitle>
+            <SList>
               <li>
                 <Link to="/">Главная</Link>
               </li>
@@ -57,39 +58,39 @@ const Footer = () => {
               <li>
                 <Link to="/contacts">Контакты</Link>
               </li>
-            </ListStyled>
+            </SList>
           </Grid>
 
           <Grid item md={3}>
-            <TitleStyled>Узнать больше</TitleStyled>
-            <ListStyled>
+            <STitle>Узнать больше</STitle>
+            <SList>
               <li>
                 <Link to="/about-company">О компании</Link>
               </li>
               <li>
                 <Link to="/faq">Ответы на вопросы</Link>
               </li>
-            </ListStyled>
+            </SList>
           </Grid>
         </Grid>
       </Container>
-      <BottomLineStyled>© Все права защищены. Компания Мебель Арт 2020</BottomLineStyled>
-    </FooterStyled>
+      <SBottom>© Все права защищены. Компания Мебель Арт 2020</SBottom>
+    </SFooter>
   )
 }
 
-const FooterStyled = styled.footer`
+const SFooter = styled.footer`
   flex-shrink: 0;
   padding: 4rem 0 0 0;
 `
-const TitleStyled = styled.h4`
+const STitle = styled.h4`
   margin: 0;
   margin-top: ${(props) => (props.marginTop ? '1rem' : '0')};
   color: ${colors.black};
   font-size: 1.1rem;
 `
 
-const TextStyled = styled.p`
+const SText = styled.p`
   color: ${colors.black};
   padding: 0.2rem 0 0.5rem;
   margin: 0;
@@ -107,7 +108,7 @@ const TextStyled = styled.p`
   }
 `
 
-const ListStyled = styled.ul`
+const SList = styled.ul`
   margin: 0;
   padding-top: 0.5rem;
   padding-left: 0;
@@ -136,7 +137,7 @@ const ListStyled = styled.ul`
   }
 `
 
-const BottomLineStyled = styled.div`
+const SBottom = styled.div`
   background: ${colors.dark};
   color: ${colors.white};
   text-align: center;

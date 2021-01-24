@@ -6,9 +6,10 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Typography from './typography'
 // utils
 import { colors } from '../util/css-config'
-import contentfulRichTextTransform from '../util/contentful-rich-text-transform'
+import { contentfulRichTextTransform } from '../util/funcs'
 
 const CompanyInfo = () => {
+
   const data = useStaticQuery(graphql`
     query {
       allContentfulGeneralInfo {
@@ -24,13 +25,13 @@ const CompanyInfo = () => {
   `).allContentfulGeneralInfo.edges[0].node.about_company.raw
 
   return (
-    <CompanyInfoStyled>
+    <SCompanyInfo>
       <Typography html={contentfulRichTextTransform(data)} />
-    </CompanyInfoStyled>
+    </SCompanyInfo>
   )
 }
 
-const CompanyInfoStyled = styled.section`
+const SCompanyInfo = styled.section`
   background: ${colors.white};
   border-radius: 5px;
   padding: 1rem 2rem;

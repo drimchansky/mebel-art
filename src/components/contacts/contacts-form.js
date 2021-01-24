@@ -76,7 +76,7 @@ const ContactsForm = () => {
   }
 
   return (
-    <FormStyled onSubmit={handleSubmit} id="contact-form">
+    <SForm onSubmit={handleSubmit} id="contact-form">
       <Title alignment="left">
         <h2>Заинтересованы в покупке кухни мечты?</h2>
         <span>Вы можете связаться с нами в удобной для вас социальной сети или мессенджере:</span>
@@ -157,11 +157,11 @@ const ContactsForm = () => {
           </Button>
         </Grid>
       </Grid>
-    </FormStyled>
+    </SForm>
   )
 }
 
-const FormStyled = styled.form`
+const SForm = styled.form`
   margin: 0 auto;
   padding: 1rem 0.5rem 2rem;
 

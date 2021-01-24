@@ -10,9 +10,11 @@ import ContactsBg from './contacts-bg'
 import { colors } from '../../util/css-config'
 
 const Contacts = () => {
+
   return (
-    <SectionStyled>
-      <ContainerStyled maxWidth="xl" disableGutters>
+    <SSection>
+      <SContainer maxWidth="xl" disableGutters>
+
         <Grid container>
           <Grid item xs={12} md={7}>
             <ContactsInfo />
@@ -21,13 +23,15 @@ const Contacts = () => {
             <ContactsBg />
           </Grid>
         </Grid>
+
         <ContactsForm />
-      </ContainerStyled>
-    </SectionStyled>
+
+      </SContainer>
+    </SSection>
   )
 }
 
-const SectionStyled = styled.section`
+const SSection = styled.section`
   background: ${colors.white};
 
   @media (min-width: 1200px) {
@@ -36,7 +40,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const ContainerStyled = styled(Container)`
+const SContainer = styled(Container)`
   @media (min-width: 960px) {
     position: relative;
   }

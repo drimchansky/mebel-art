@@ -7,18 +7,13 @@ import { breakpoints, colors } from '../util/css-config'
 
 const Nav = () => {
   return (
-    <NavStyled>
+    <SNav>
       <ul>
         <li>
           <Link to="/" activeClassName="active">
             Главная
           </Link>
         </li>
-        {/* <li>
-          <Link to="/services" activeClassName="active">
-            Услуги
-          </Link>
-        </li> */}
         <li>
           <Link to="/works" activeClassName="active">
             Работы
@@ -35,11 +30,11 @@ const Nav = () => {
           </Link>
         </li>
       </ul>
-    </NavStyled>
+    </SNav>
   )
 }
 
-const NavStyled = styled.nav`
+const SNav = styled.nav`
   margin-top: 30px;
 
   & ul {

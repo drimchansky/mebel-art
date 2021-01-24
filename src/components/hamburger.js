@@ -1,20 +1,27 @@
 // packages
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 // util
 import { colors, breakpoints } from '../util/css-config'
 
 const Hamburger = ({ active, setActive }) => {
+
   return (
-    <HamburgerStyled onClick={() => setActive(!active)} type="button" aria-label="Открыть меню">
-      <HamburderBoxStyled>
-        <HamburderInnerStyled></HamburderInnerStyled>
-      </HamburderBoxStyled>
-    </HamburgerStyled>
+    <SHamburger onClick={() => setActive(!active)} type="button" aria-label="Открыть меню">
+      <SBox>
+        <SInner></SInner>
+      </SBox>
+    </SHamburger>
   )
 }
 
-const HamburgerStyled = styled.button`
+Hamburger.propTypes = {
+  active: PropTypes.bool,
+  setActive: PropTypes.func
+}
+
+const SHamburger = styled.button`
   position: absolute;
   display: inline-block;
   cursor: pointer;
@@ -40,14 +47,14 @@ const HamburgerStyled = styled.button`
   }
 `
 
-const HamburderBoxStyled = styled.span`
+const SBox = styled.span`
   width: 40px;
   height: 24px;
   display: inline-block;
   position: relative;
 `
 
-const HamburderInnerStyled = styled.span`
+const SInner = styled.span`
   display: block;
   top: 50%;
   margin-top: -2px;
