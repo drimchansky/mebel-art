@@ -35,7 +35,7 @@ const SSection = styled.section`
   background: ${colors.white};
 
   @media (min-width: 1200px) {
-    background: linear-gradient(0deg, ${colors.dark} 35%, ${colors.lightgray} 0);
+    background: ${colors.lightgray};
     padding-bottom: 14rem;
   }
 `

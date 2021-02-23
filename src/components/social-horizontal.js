@@ -2,42 +2,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
-import PropTypes from 'prop-types'
 // utils
 import { colors, breakpoints } from '../util/css-config'
+import { generateProtocolLink } from '../util/funcs'
 // icons
-import { VKIcon, ViberIcon, TelegramIcon } from '../util/svg-components'
+import { VKIcon, TelegramIcon } from '../util/svg-components'
 
-export const PureSocialHorizontal = ({ data }) => {
-  return (
-    <SSocialHorizontal>
-      <li>
-        <SLink href={data.vk} bg="#4b729f">
-          <VKIcon fill={colors.white} size="30px" />
-          <span>ВКонтакте</span>
-        </SLink>
-      </li>
-      {/* <li>
-        <SLink href={data.viber} bg="#8e24aa">
-          <ViberIcon fill={colors.white} size="30px" />
-          <span>Viber</span>
-        </SLink>
-      </li> */}
-      <li>
-        <SLink href={data.telegram} bg="#3b76a3">
-          <TelegramIcon fillOuter={colors.white} fillInner="#3b76a3" size="30" />
-          <span>Telegram</span>
-        </SLink>
-      </li>
-    </SSocialHorizontal>
-  )
-}
+export const SocialHorizontal = () => {
 
-PureSocialHorizontal.propTypes = {
-  data: PropTypes.object
-}
-
-export const SocialHorizontal = (props) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulGeneralInfo {
@@ -53,7 +25,27 @@ export const SocialHorizontal = (props) => {
     }
   `).allContentfulGeneralInfo.edges[0].node
 
-  return <PureSocialHorizontal {...props} data={data} />
+  return (
+    <SSocialHorizontal>
+      <li>
+        <SLink href={data.vk} bg="#4b729f">
+          <VKIcon fill={colors.white} size="30px" />
+          <span>ВКонтакте</span>
+        </SLink>
+      </li>
+      <li>
+        <SLink href={data.telegram} bg="#3b76a3">
+          <TelegramIcon fillOuter={colors.white} fillInner="#3b76a3" size="30" />
+          <span>Telegram</span>
+        </SLink>
+      </li>
+      <li>
+        <SLink href={generateProtocolLink('phone', data.phone_format)} bg={colors.dark}>
+          <span>Позвонить</span>
+        </SLink>
+      </li>
+    </SSocialHorizontal>
+  )
 }
 
 const SSocialHorizontal = styled.ul`
@@ -92,8 +84,7 @@ const SLink = styled.a`
   justify-content: center;
   align-items: center;
   background: ${(props) => props.bg};
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  height: 50px;
   border-radius: 5px;
   transition: opacity 0.2s;
   text-decoration: none;
