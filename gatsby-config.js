@@ -5,6 +5,7 @@ module.exports = {
     title: 'Мебель Арт',
     description: 'Купить кухню по индивидуальному дизайн-проекту, город Ярославль',
     siteUrl: 'https://mebel-art76.ru',
+    year: new Date().getFullYear()
   },
   plugins: [
     `gatsby-transformer-sharp`,

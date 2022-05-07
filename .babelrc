@@ -1,6 +1,7 @@
 {
   "plugins": [
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-private-property-in-object", { "loose": true }],
     "@babel/plugin-transform-modules-commonjs",
     "transform-export-extensions"
   ],

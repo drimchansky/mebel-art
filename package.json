@@ -1,9 +1,8 @@
 {
   "private": true,
   "scripts": {
+    "watch": "gatsby develop",
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
