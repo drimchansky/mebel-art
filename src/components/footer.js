@@ -14,6 +14,11 @@ const Footer = () => {
 
   const data = useStaticQuery(graphql`
     query {
+      site {
+        siteMetadata {
+          year
+        }
+      }
       allContentfulGeneralInfo {
         edges {
           node {
@@ -25,7 +30,10 @@ const Footer = () => {
         }
       }
     }
-  `).allContentfulGeneralInfo.edges[0].node
+  `)
+
+  const dataContentful = data.allContentfulGeneralInfo.edges[0].node
+  const dataConfig = data.site.siteMetadata.year
 
   return (
     <SFooter>
@@ -33,12 +41,12 @@ const Footer = () => {
         <Grid container spacing={3}>
           <Grid item md={4}>
             <STitle>Адрес</STitle>
-            <SText>{data.where}</SText>
+            <SText>{dataContentful.where}</SText>
             <STitle marginTop="10px">Контакты</STitle>
             <SText>
-              <a href={generateProtocolLink('email', data.eMail)}>{data.eMail}</a>
+              <a href={generateProtocolLink('email', dataContentful.eMail)}>{dataContentful.eMail}</a>
               <br />
-              <a href={generateProtocolLink('phone', data.phone_format)}>{data.phone}</a>
+              <a href={generateProtocolLink('phone', dataContentful.phone_format)}>{dataContentful.phone}</a>
             </SText>
             <Social />
           </Grid>
@@ -74,7 +82,7 @@ const Footer = () => {
           </Grid>
         </Grid>
       </Container>
-      <SBottom>© Все права защищены. Компания Мебель Арт 2020</SBottom>
+      <SBottom>© Все права защищены. Компания Мебель Арт {dataConfig}</SBottom>
     </SFooter>
   )
 }
