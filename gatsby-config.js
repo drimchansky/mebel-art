@@ -8,6 +8,7 @@ module.exports = {
     year: new Date().getFullYear()
   },
   plugins: [
+    `gatsby-plugin-pnpm`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
